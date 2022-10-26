@@ -9,6 +9,7 @@ import News from './views/News.vue';
     <header>
         <template>
             <Header />
+            Test
         </template>
     </header>
 
