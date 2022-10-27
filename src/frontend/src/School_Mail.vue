@@ -33,7 +33,7 @@ import Footer from './views/Footer.vue';
   justify-content: center;
   width: 100%;
   height: 100px;
-  background-color: rgb(200, 200, 200);
+  background-color: rgb(149, 149, 149);
 }
 
 #body {

@@ -2,16 +2,41 @@ import axios from 'axios'
 
 axios.baseURL = "127.0.0.1:8000"
 
-function get(url, params = {}) {
-  return axios.get(
+export async function get(url, params = {}) {
+
+  let value;
+
+  await axios.get(
     url, 
     params,
   )
+  .then((response) => {
+    value = response.data
+  })
+  .catch((error) => {
+    console.log(error)
+    value = error
+  })
+
+  return value;
+
 }
 
-function post(url, data = {}) {
-  return axios.post(
+export async function post(url, data = {}) {
+
+  let value;
+  
+  await axios.post(
     url,
     data,
   )
+  .then((response) => {
+    value = response.data
+  })
+  .catch((error) => {
+    console.log(error)
+    value = error
+  })
+
+  return value;
 }

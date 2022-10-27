@@ -1,8 +1,38 @@
-<script setup>
+<script setup>  
+import { ref } from 'vue'
 
-    // import login_request from '@/api/api.js';
+import { login_request, register_request }from '@/api/api.js';
 
-    var formTitle = "用户注册";
+const formTitle = ref('注册信息')
+const message = ref('')
+
+const username = ref('')
+const password = ref('')
+const checkPassword = ref('')
+const email    = ref('')
+
+async function register () {  
+
+    if (username.value == '' || password.value == '' || checkPassword.value == '' || email.value == '') {
+        message.value = '请填写完整信息'
+        return
+    }
+    else if (password.value != checkPassword.value) {
+        message.value = '两次密码不一致'
+        return
+    }
+
+    var data = {
+        username: username.value,
+        password: password.value,
+        email: email.value
+    }
+
+    var value = await register_request(data)
+
+    message.value = value['data']
+
+}
 
 </script>
 
@@ -11,24 +41,26 @@
         <div id="title">
             {{formTitle}}
         </div>
-        <div id="form">
+        <form>
             <div id="username">
                 <label for="username">用户名</label>
-                <input type="text" id="username" name="username" placeholder="请输入用户名">
+                <input v-model="username" type="text" placeholder="用户名" />
             </div>
             <div id="password">
                 <label for="password">密码</label>
-                <input type="password" id="password" name="password" placeholder="请输入密码">
+                <input v-model="password" type="password" placeholder="密码" />
             </div>
-            <div id="check_password">
-                <label for="check_password">确认密码</label>
-                <input type="password" id="check_password" name="check_password" placeholder="请再次输入密码">
+            <div id="checkPassword">
+                <label for="checkPassword">确认密码</label>
+                <input v-model="checkPassword" type="password" placeholder="确认密码" />
             </div>
             <div id="email">
                 <label for="email">邮箱</label>
-                <input type="email" id="email" name="email" placeholder="请输入邮箱">
+                <input v-model="email" type="email" placeholder="邮箱" />
             </div>
-        </div>
+            <input v-on:click="register" type="button" value="注册" />
+            {{message}}
+        </form>
     </div>
 </template>
 
@@ -53,7 +85,7 @@
     background-color: rgb(113, 113, 113);
 }
 
-#form {
+form {
     display: flex;
     flex-direction: column;
     justify-content: center;
