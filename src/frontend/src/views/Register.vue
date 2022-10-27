@@ -1,7 +1,7 @@
 <script setup>  
 import { ref } from 'vue'
 
-import { login_request, register_request }from '@/api/api.js';
+import { register_request }from '@/api/api.js';
 
 const formTitle = ref('注册信息')
 const message = ref('')
