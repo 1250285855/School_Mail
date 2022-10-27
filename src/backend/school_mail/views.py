@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.views import generic
+from django.contrib import auth
 from django.contrib.auth.models import User
 
 from rest_framework import viewsets
@@ -42,22 +41,17 @@ class AccountUserView(viewsets.GenericViewSet):
     def login(self, request, *args, **kwargs):
         username = request.data.get('username')
         password = request.data.get('password')
-        if User.objects.filter(username=username).exists():
-            user = User.objects.get(username=username)
-            if password == user.password:
-                resp = {
-                    'status': True,
-                    'data': '登录成功'
-                }
-            else:
-                resp = {
-                    'status': False,
-                    'data': '密码错误'
-                }
+        user = auth.authenticate(username=username, password=password)
+        if user:
+            auth.login(request, user)
+            resp = {
+                'status': True,
+                'data': '登录成功'
+            }
         else:
             resp = {
                 'status': False,
-                'data': '用户不存在'
+                'data': '账号或密码错误'
             }
         return Response(resp)
 
@@ -66,28 +60,23 @@ class AccountUserView(viewsets.GenericViewSet):
         username = request.data.get('username')
         password = request.data.get('password')
         superCode = request.data.get('superCode')
-        if User.objects.filter(username=username).exists():
-            user = User.objects.get(username=username)
-            if password == user.password:
-                if superCode == TheSuperCode:
-                    user.delete()
-                    resp = {
-                        'status': True,
-                        'data': '账号删除成功'
-                    }
-                else:
-                    resp = {
-                        'status': False,
-                        'data': '超级密码错误'
-                    }
+        user = auth.authenticate(username=username, password=password)
+        if user:
+            if superCode == TheSuperCode:
+                user.delete()
+                resp = {
+                    'status': True,
+                    'data': '账号删除成功'
+                }
             else:
                 resp = {
                     'status': False,
-                    'data': '密码错误'
+                    'data': '超级密码错误'
                 }
         else:
             resp = {
                 'status': False,
-                'data': '用户不存在'
+                'data': '账号或密码错误'
             }
+
         return Response(resp)
