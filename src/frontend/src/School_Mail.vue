@@ -23,8 +23,7 @@ import Footer from './views/Footer.vue';
 
 #app {
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
+  flex-direction: column;
   height: 100%;
   width: 100%;
 }
@@ -34,6 +33,14 @@ import Footer from './views/Footer.vue';
   justify-content: center;
   width: 100%;
   height: 100px;
+  background-color: rgb(200, 200, 200);
+}
+
+#body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
   background-color: rgb(200, 200, 200);
 }
 
