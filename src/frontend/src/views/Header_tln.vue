@@ -1,0 +1,123 @@
+<script setup>
+
+
+</script>
+
+<template>
+
+    <link rel="stylesheet" href="@css/Computer Engineering Front-end Style.css">
+    <div class="_all">
+        <div class="_title">
+            <div class="_title1">
+                <div class="_logo"></div>
+                <div class="_navigation">
+                    <a href="#">专业简介</a>
+                    <a href="#">关于我们</a>
+                    <a href="#">班级荣誉</a>
+                    <a href="#">团日活动</a>
+                    <a href="#">学生风采</a>
+                    <a href="#">社区互动</a>
+                    <a href="#">共创营地</a>
+                </div>
+                <div class="_logo_landing"></div>
+                <div class="_landing">
+                    <a href="#">欢迎登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+<style scoped>
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    overflow: hidden;
+    height: 2233.63px;
+}
+._all {
+    width: 100%;
+    height: 2233.63px;
+    /* background-color: pink; */
+}
+._all ._title {
+    width: 100%;
+    height: 67.35px;
+    border-top:5px solid #ff8500;
+    border-bottom: 3px solid #edeef0;
+    background-color: #fcfcfc;
+}
+._all ._title ._title1 {
+    width: 1300px;
+    height: 67.35px;
+    /* background-color: aqua; */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    /* float: left; */
+} 
+._all ._title ._title1 ._logo {
+    width: 60.83px;
+    height: 67.35px;
+    margin-right: 80px;
+    /* background-color: blue; */
+    background-image: url(../assets/imgs/IDEC_CE_Logo.png);
+    background-size: 67px 67px;
+    background-position: center;
+    background-repeat: no-repeat;
+    float: left;
+}
+._all ._title ._title1 ._navigation {
+    width: 900px;
+    height: 67.35px;
+    line-height: 67.35px;
+    margin-right: 75px;
+    /* background-color: pink; */
+    float: left;
+}
+._all ._title ._title1 ._navigation a {
+    font-size: 18px;
+    height: 67.35px;
+    padding: 0 20px;
+    color: #4c4c4c;
+    text-decoration: none;
+    display: inline-block;
+}
+._all ._title ._title1 ._navigation a:hover {
+    background-color: #eee;
+    color: #ff8500;
+}
+._all ._title ._title1 ._logo_landing {
+    width: 68.28px;
+    height: 67.35px;
+    background-image: url(../assets/icons/Login.png);
+    background-size: 46px 46px;
+    background-position: center;
+    background-repeat: no-repeat;
+    float: left;
+}
+._all ._title ._title1 ._landing {
+    width: 100px;
+    height: 67.35px;
+    line-height: 67.35px;
+    float: right;
+}
+._all ._title ._title1 ._landing a {
+    font-size: 18px;
+    height: 67.35px;
+    color: #4c4c4c;
+    text-decoration: none;
+    display: inline-block;
+}
+._all ._title ._title1 ._landing a:hover {
+    background-color: #eee;
+    color: #ff8500;
+}
+
+</style>

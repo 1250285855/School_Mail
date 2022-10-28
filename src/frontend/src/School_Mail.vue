@@ -3,6 +3,7 @@
 import Header from './views/Header.vue';
 import Body from './views/Body.vue';
 import Footer from './views/Footer.vue';
+import Header_tln from './views/Header_tln.vue';
 
 </script>
 
@@ -13,6 +14,7 @@ import Footer from './views/Footer.vue';
     <Header id="header"></Header>
     <Body id="body"></Body>
     <Footer id="footer"></Footer>
+    <Header_tln></Header_tln>
   </div>
 
 </template>
