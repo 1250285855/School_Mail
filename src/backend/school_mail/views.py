@@ -80,3 +80,12 @@ class AccountUserView(viewsets.GenericViewSet):
             }
 
         return Response(resp)
+
+    @action(detail=False, methods=['POST'])
+    def account_list(self, request, *args, **kwargs):
+        user = User.objects.all()
+        resp = {
+            'status': True,
+            'data': user
+        }
+        return Response(resp)
