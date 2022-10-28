@@ -11,9 +11,9 @@ import Header_tln from './views/Header_tln.vue';
 
   <div id="app">
     
-    <!-- <Header id="header"></Header>
+    <Header id="header"></Header>
     <Body id="body"></Body>
-    <Footer id="footer"></Footer> -->
+    <Footer id="footer"></Footer>
     <Header_tln></Header_tln>
   </div>
 
