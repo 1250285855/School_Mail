@@ -7,8 +7,12 @@
 ## 接口列表
 
 | 地址 | 说明 | 详情 |
-| :---: | :---: | :---: |
+| :--- | :---: | :---: |
 | /api/login | 登录请求 | [详情](./api_login.md) |
+| /api/register | 注册请求 | [详情](./api_register.md) |
+| /api/logout | 登出请求 | [详情](./api_logout.md) |
+| /api/delete_account | 删除账户请求 | [详情](./api_delete_account.md) |
+| /api/account_list | 获取账户列表 | [详情](./api_account_list.md) |
 
 
 <!-- ## 服务接入
