@@ -1,7 +1,6 @@
 <script setup>
 
 import Header from './views/Header.vue';
-import News from './views/News.vue';
 import Body from './views/Body.vue';
 import Footer from './views/Footer.vue';
 
@@ -12,7 +11,6 @@ import Footer from './views/Footer.vue';
   <div id="app">
     
     <Header id="header"></Header>
-    <News id="news"></News>
     <Body id="body"></Body>
     <Footer id="footer"></Footer>
   </div>
@@ -24,8 +22,7 @@ import Footer from './views/Footer.vue';
 
 #app {
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
+  flex-direction: column;
   height: 100%;
   width: 100%;
 }
@@ -35,6 +32,14 @@ import Footer from './views/Footer.vue';
   justify-content: center;
   width: 100%;
   height: 100px;
+  background-color: rgb(149, 149, 149);
+}
+
+#body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
   background-color: rgb(200, 200, 200);
 }
 
