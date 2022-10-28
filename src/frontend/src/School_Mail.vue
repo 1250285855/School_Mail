@@ -10,6 +10,7 @@ import Footer from './views/Footer.vue';
 <template>
 
   <div id="app">
+    
     <Header id="header"></Header>
     <News id="news"></News>
     <Body id="body"></Body>
