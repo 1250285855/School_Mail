@@ -55,6 +55,15 @@ class AccountUserView(viewsets.GenericViewSet):
             }
         return Response(resp)
 
+    @action(detail=False, methods=['GET'])
+    def logout(self, request, *args, **kwargs):
+        auth.logout(request)
+        resp = {
+            'status': True,
+            'data': '登出成功'
+        }
+        return Response(resp)
+
     @action(detail=False, methods=['POST'])
     def delete_account(self, request, *args, **kwargs):
         username = request.data.get('username')
