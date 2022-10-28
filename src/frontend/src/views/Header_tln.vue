@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer Engineering Front-end</title>
-</head>
-<body>
+<script setup>
+
+
+</script>
+
+<template>
+
     <link rel="stylesheet" href="../assets/style/Engineering Front-end Style.css">
     <div class="_all">
         <div class="_title">
@@ -28,10 +26,11 @@
             </div>
         </div>
     </div>
-</body>
-</html>
 
-<style>
+</template>
+
+<style scoped>
+
 * {
     margin: 0;
     padding: 0;
@@ -120,4 +119,5 @@ body {
     background-color: #eee;
     color: #ff8500;
 }
+
 </style>
