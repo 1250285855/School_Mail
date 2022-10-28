@@ -1,7 +1,6 @@
 <script setup>
 
 import Header from './views/Header.vue';
-import News from './views/components/News.vue';
 import Body from './views/Body.vue';
 import Footer from './views/Footer.vue';
 
@@ -11,7 +10,6 @@ import Footer from './views/Footer.vue';
 
   <div id="app">
     <Header id="header"></Header>
-    <News id="news"></News>
     <Body id="body"></Body>
     <Footer id="footer"></Footer>
   </div>
