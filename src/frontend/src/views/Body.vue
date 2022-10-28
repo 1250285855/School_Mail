@@ -1,7 +1,7 @@
 <script setup>
-    import Register from './Register.vue';
-    import Login from './Login.vue';
-    import DeleteAccount from './DeleteAccount.vue';
+    import Register from './components/Register.vue';
+    import Login from './components/Login.vue';
+    import DeleteAccount from './components/DeleteAccount.vue';
 </script>
 
 <template>
@@ -9,6 +9,7 @@
         <div id="register">
             <Register></Register>
             <DeleteAccount></DeleteAccount>
+            <Login></Login>
         </div>
     </div>
 </template>

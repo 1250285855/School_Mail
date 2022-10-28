@@ -1,7 +1,7 @@
 <script setup>
 
 import Header from './views/Header.vue';
-import News from './views/News.vue';
+import News from './views/components/News.vue';
 import Body from './views/Body.vue';
 import Footer from './views/Footer.vue';
 

@@ -90,7 +90,7 @@ class AccountUserView(viewsets.GenericViewSet):
 
         return Response(resp)
 
-    @action(detail=False, methods=['POST'])
+    @action(detail=False, methods=['GET'])
     def account_list(self, request, *args, **kwargs):
         user = User.objects.all()
         resp = {
