@@ -5,7 +5,7 @@
 
 <template>
 
-    <link rel="stylesheet" href="../assets/style/Engineering Front-end Style.css">
+    <link rel="stylesheet" href="@css/Computer Engineering Front-end Style.css">
     <div class="_all">
         <div class="_title">
             <div class="_title1">
