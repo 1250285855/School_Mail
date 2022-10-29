@@ -11,10 +11,10 @@ import Header_tln from './views/Header_tln.vue';
 
   <div id="app">
     
-    <Header id="header"></Header>
-    <Body id="body"></Body>
+    <!-- <Header id="header"></Header> -->
+    <!-- <Body id="body"></Body> -->
     <Footer id="footer"></Footer>
-    <Header_tln></Header_tln>
+    <Header_tln id="header1"></Header_tln>
   </div>
 
 </template>
@@ -27,6 +27,21 @@ import Header_tln from './views/Header_tln.vue';
   flex-direction: column;
   height: 100%;
   width: 100%;
+  min-width: 1200px;
+  min-height: 800px;
+}
+
+#header1 {
+    overflow: hidden;
+    height: 2233.63px;
+    height: 100%;
+    width: 100%;
+    min-width: 1200px;
+    background-image: url('@img/IT2.jpg');
+    background-color: red;
+    background-repeat: no-repeat;
+    background-size: 1480px 822px;
+    background-position: center top;
 }
 
 #header {

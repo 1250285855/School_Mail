@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import School_Mail from './School_Mail.vue'
+import Header_tln from './views/Header_tln.vue'
 
 import './assets/main.css'
 
@@ -8,4 +9,4 @@ import './assets/main.css'
 // createApp(App).mount('#app')
 
 // 校函App
-createApp(School_Mail).mount('#app')
+createApp(Header_tln).mount('#app')
