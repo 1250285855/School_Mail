@@ -11,6 +11,7 @@ export default defineConfig({
       '@img': resolve(__dirname, 'src/assets/imgs'),
       '@css': resolve(__dirname, 'src/assets/css'),
       '@icons': resolve(__dirname, 'src/assets/icons'),
+      '@js': resolve(__dirname, 'src/assets/js'),
     },
   },
   base: '',

@@ -2,6 +2,11 @@
 
 import { ref, onMounted } from 'vue'
 import { login_request } from '@/api/api.js'
+import { randomBg } from '@js/random_bg.js'
+
+console.log(randomBg())
+
+document.getElementById('test').src = randomBg()
 
 const title = ref('登录')
 const message = ref('')
@@ -9,11 +14,11 @@ const username = ref('')
 const password = ref('')
 
 const main = ref(null)
-const Login_background = ref('@img/Login_background.jpg')
+const Login_background = ref(randomBg())
 
 // 生命周期
 onMounted(() => {
-//   main.value.style.backgroundImage = 'url(${Login_background.value})'
+  main.value.style.backgroundImage = Login_background
 })
 
 async function login() {
@@ -43,13 +48,14 @@ async function login() {
 
 <template>
 
-    <div id="main" ref="main" style="background-image: url(../assets/imgs/Login_background.jpg)">
+    <div id="main" ref="main">
         <div id="body">
             <div id="title">
                 {{title}}
             </div>
             <div id="form">
                 <form>
+                    <img id="test">
                     <div id="username">
                         <label for="username">用户名</label>
                         <input v-model="username" placeholder="用户名" />
