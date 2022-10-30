@@ -10,6 +10,7 @@ export default defineConfig({
       '@': resolve(__dirname, 'src'),
       '@img': resolve(__dirname, 'src/assets/imgs'),
       '@css': resolve(__dirname, 'src/assets/css'),
+      '@icons': resolve(__dirname, 'src/assets/icons'),
     },
   },
   base: '',
@@ -26,5 +27,5 @@ export default defineConfig({
   build: {
     outDir: resolve('./dist'),
     minify: false,
-  }
+  },
 })

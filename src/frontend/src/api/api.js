@@ -36,3 +36,10 @@ export async function account_list() {
   return value
 
 }
+
+export async function isLogin() {
+  
+    let value = await get('/api/is_login/')
+    return value
+  
+}

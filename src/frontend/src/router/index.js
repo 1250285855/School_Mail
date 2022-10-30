@@ -1,8 +1,10 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 import School_Mail from '@/views/School_Mail.vue'
 import Login from '@/views/Login.vue'
+import NotFound from '@/views/NotFound.vue'
 
+// router 教程: https://router.vuejs.org/zh/guide/#javascript
 const routes = [
     {
         path: '/',
@@ -13,11 +15,20 @@ const routes = [
         path: '/login',
         name: 'Login',
         component: Login,
+    },
+    {
+        path: '/404',
+        name: '404',
+        component: NotFound,
+    },
+    {
+        path: '/:catchAll(.*)',
+        redirect: '/404',
     }
 ]
 
 const router = createRouter({
-    history: createWebHashHistory(),
+    history: createWebHistory(),
     routes,
 })
 

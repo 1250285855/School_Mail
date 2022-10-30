@@ -98,3 +98,17 @@ class AccountUserView(viewsets.GenericViewSet):
             'data': user
         }
         return Response(resp)
+
+    @action(detail=False, methods=['GET'])
+    def is_login(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            resp = {
+                'status': True,
+                'data': '已登录'
+            }
+        else:
+            resp = {
+                'status': False,
+                'data': '未登录'
+            }
+        return Response(resp)

@@ -1,6 +1,7 @@
 <script setup>
 
 import { isLogin } from '@/api/api.js'
+import router from '@/router/index.js'
 import Header from './Header.vue';
 import Body from './Body.vue';
 import Footer from './Footer.vue';
@@ -16,7 +17,7 @@ async function profile() {
   // 没登录的话跳转到登录页面
   else {
     // this.$router.push('/login');
-    // await router.push('/login');
+    router.push('/login');
   }
 }
 profile()
