@@ -2,11 +2,9 @@
 
 import { ref, onMounted } from 'vue'
 import { login_request } from '@/api/api.js'
-import { randomBg } from '@js/random_bg.js'
+import { getRandomBg } from '@js/random_bg.js'
 
-console.log(randomBg())
-
-document.getElementById('test').src = randomBg()
+import router from '@/router'
 
 const title = ref('登录')
 const message = ref('')
@@ -14,11 +12,11 @@ const username = ref('')
 const password = ref('')
 
 const main = ref(null)
-const Login_background = ref(randomBg())
+const Login_background = getRandomBg()
 
 // 生命周期
 onMounted(() => {
-  main.value.style.backgroundImage = Login_background
+  main.value.style.backgroundImage = "url(" + Login_background + ")"
 })
 
 async function login() {
@@ -39,6 +37,10 @@ async function login() {
 
     var value = await login_request(data)
 
+    if (value['status'] == 'true') {
+        router.push('/')
+    }
+
     message.value = value['data']
 
 
@@ -55,7 +57,6 @@ async function login() {
             </div>
             <div id="form">
                 <form>
-                    <img id="test">
                     <div id="username">
                         <label for="username">用户名</label>
                         <input v-model="username" placeholder="用户名" />
@@ -86,8 +87,7 @@ async function login() {
     width: 100%;
     min-height: 800px;
     min-width: 1200px;
-    /* background-image: url(../assets/imgs/Login_background.jpg) */
-    /* background-image: url("@img/Login_background.jpg") */
+    background-image: url('@img/IT2.jpg');
 }
 
 </style>
