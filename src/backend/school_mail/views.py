@@ -32,7 +32,7 @@ class AccountUserView(viewsets.GenericViewSet):
                 'data': '邮箱已被注册'
             }
         else:
-            user = User.objects.create_user(username=username, password=password)
+            User.objects.create_user(username=username, password=password, email=email)
             resp = {
                 'status': True,
                 'data': '注册成功'
@@ -96,10 +96,13 @@ class AccountUserView(viewsets.GenericViewSet):
 
     @action(detail=False, methods=['GET'])
     def account_list(self, request, *args, **kwargs):
+        data = {}
         user = User.objects.all()
+        for i in user:
+            data.update({i.username: i.email})
         resp = {
             'status': True,
-            'data': user
+            'data': data
         }
         return Response(resp)
 
@@ -117,11 +120,11 @@ class AccountUserView(viewsets.GenericViewSet):
             }
         return Response(resp)
 
-    @action(detail=False, methods=['GET'])
-    def foo(self, request, *args, **kwargs):
-        csrf_token = get_token(request)
-        resp = {
-            'status': True,
-            'data': csrf_token
-        }
-        return Response(resp)
+    # @action(detail=False, methods=['GET'])
+    # def foo(self, request, *args, **kwargs):
+    #     csrf_token = get_token(request)
+    #     resp = {
+    #         'status': True,
+    #         'data': csrf_token
+    #     }
+    #     return Response(resp)
