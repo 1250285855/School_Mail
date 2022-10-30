@@ -1,5 +1,7 @@
 <script setup>
 
+console.log("hello")
+
 </script>
 
 <template>
