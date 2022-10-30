@@ -7,7 +7,7 @@
             <div class="_title1">
                 <div class="_logo"></div>
                 <div class="_navigation">
-                    <a href="#">专业简介</a>
+                    <a href="#">专业概况</a>
                     <a href="#">关于我们</a>
                     <a href="#">班级荣誉</a>
                     <a href="#">团日活动</a>
@@ -58,7 +58,6 @@
     </div>
 </div>
 </template>
-
 <style scoped>
 
 * {
@@ -66,19 +65,25 @@
     padding: 0;
 }
 #main {
+    position: fixed;
+    top: 0;
+    left: 0;
     overflow: hidden;
-    height: 2233.63px;
     height: 100%;
     width: 100%;
-    min-width: 1200px;
+    /* min-width: 1200px; */
     background-image: url('@img/IT2.jpg');
     background-repeat: no-repeat;
-    background-size: 1480px 822px;
+    background-size: cover;
+    /* -webkit-background-size: cover;
+    -o-background-size: cover;
+    z-index: -1000;
+    zoom: 1; */
     background-position: center top;
 }
 ._all {
     width: 100%;
-    height: 2233.63px;
+    height: 822px;
     /* background-color: pink; */
 }
 ._all ._title {
@@ -135,7 +140,7 @@
 ._all ._title ._title1 ._logo_landing {
     width: 68.28px;
     height: 67.35px;
-    background-image: url(@icon/Login1.png);
+    background-image: url(@icons/Login1.png);
     background-size: 36px 36px;
     background-position: center;
     background-repeat: no-repeat;
@@ -167,11 +172,15 @@
     margin-bottom: 0;
     margin-left: auto;
     margin-right: auto;
-    background-image: url(@img/computer\ \(1\).png);
+    background-image: url(@img/computer.png);
     background-size: 70px 70px;
     background-repeat: no-repeat;
     background-position: center;
     /* background-color: green; */
+}
+._all ._Computer img {
+    max-width: 70px;
+    max-height: 70px;
 }
 ._all ._GetIn {
     width: 600px;
