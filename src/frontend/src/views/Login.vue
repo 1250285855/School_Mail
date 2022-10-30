@@ -1,6 +1,6 @@
 <script setup>
 
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onActivated } from 'vue'
 import { login_request } from '@/api/api.js'
 import { getRandomBg } from '@js/random_bg.js'
 
@@ -37,13 +37,16 @@ async function login() {
 
     var value = await login_request(data)
 
-    if (value['status'] == 'true') {
+    if (value['status'] == true) {
         router.push('/')
     }
 
     message.value = value['data']
 
+}
 
+function register() {
+    router.push('/register')
 }
 
 </script>
@@ -63,10 +66,11 @@ async function login() {
                     </div>
                     <div id="password">
                         <label for="password">密码</label>
-                        <input v-model="password" placeholder="密码" />
+                        <input v-model="password" type="password" placeholder="密码" />
                     </div>
                     <div id="submit">
-                        <input v-on:click="login" type="button" value="登录" />
+                        <input @click="login" type="button" value="登录" />
+                        <input @click="register" type="button" value="注册" />
                     </div>
                     <label id="message">{{message}}</label>
                 </form>

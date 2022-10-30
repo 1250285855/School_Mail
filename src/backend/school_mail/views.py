@@ -1,5 +1,7 @@
 from django.contrib import auth
 from django.contrib.auth.models import User
+# from django.views.decorators.csrf import csrf_exempt
+# from django.middleware.csrf import get_token
 
 from rest_framework import viewsets
 from rest_framework.decorators import action
@@ -41,6 +43,8 @@ class AccountUserView(viewsets.GenericViewSet):
     def login(self, request, *args, **kwargs):
         username = request.data.get('username')
         password = request.data.get('password')
+        print(username)
+        print(password)
         user = auth.authenticate(username=username, password=password)
         if user:
             auth.login(request, user)
@@ -111,4 +115,13 @@ class AccountUserView(viewsets.GenericViewSet):
                 'status': False,
                 'data': '未登录'
             }
+        return Response(resp)
+
+    @action(detail=False, methods=['GET'])
+    def foo(self, request, *args, **kwargs):
+        csrf_token = get_token(request)
+        resp = {
+            'status': True,
+            'data': csrf_token
+        }
         return Response(resp)

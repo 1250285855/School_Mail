@@ -3,6 +3,8 @@ import { ref } from 'vue'
 
 import { register_request }from '@/api/api.js';
 
+import router from '@/router'
+
 const formTitle = ref('注册信息')
 const message = ref('')
 
@@ -34,6 +36,10 @@ async function register () {
 
 }
 
+function login(){
+    router.push('login')
+}
+
 </script>
 
 <template>
@@ -58,7 +64,8 @@ async function register () {
                 <label for="email">邮箱</label>
                 <input v-model="email" type="email" placeholder="邮箱" />
             </div>
-            <input v-on:click="register" type="button" value="注册" />
+            <input @click="register" type="button" value="注册" />
+            <input @click="login" type="button" value="登录"/>
             {{message}}
         </form>
     </div>

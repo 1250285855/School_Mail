@@ -10,8 +10,7 @@ import Header_tln from './Header_tln.vue';
 // 判断是否已经登录了
 async function profile() {
   const value = await isLogin();
-  console.log(value)
-  if (value['status'] == 'true') {
+  if (value['status'] == true) {
     return true;
   } 
   // 没登录的话跳转到登录页面

@@ -1,5 +1,5 @@
 <script setup>
-    import Register from './components/Register.vue';
+    import Register from './Register.vue';
     import Login from './components/Login.vue';
     import DeleteAccount from './components/DeleteAccount.vue';
     import News from './components/News.vue';
