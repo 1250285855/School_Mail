@@ -10,6 +10,7 @@ export default defineConfig({
       '@': resolve(__dirname, 'src'),
       '@img': resolve(__dirname, 'src/assets/imgs'),
       '@css': resolve(__dirname, 'src/assets/css'),
+      '@icons': resolve(__dirname, 'src/assets/icons'),
     },
   },
   base: '',
@@ -19,7 +20,7 @@ export default defineConfig({
     cors: true,
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:8000',
+        target: 'http://jyuav.net:8000',
       },
     },
   },
