@@ -54,6 +54,7 @@ profile()
   height: 100%;
   width: 100%;
   min-width: 1200px;
+  max-width: 1905px;
   min-height: 800px;
   background-color: black;
 }
@@ -71,7 +72,7 @@ profile()
 }
 
 #photoWall {
-  height: 800px;
+  height: 900px;
 }
 
 #welcome {
