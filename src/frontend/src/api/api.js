@@ -37,7 +37,7 @@ export async function account_list() {
 
 }
 
-export async function isLogin() {
+export async function is_login() {
   
     let value = await get('/api/is_login/')
     console.log(value)

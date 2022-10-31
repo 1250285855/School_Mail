@@ -1,7 +1,7 @@
 <script setup>
 
 import { ref, onMounted, onActivated } from 'vue'
-import { login_request } from '@/api/api.js'
+import { login_request, is_login } from '@/api/api.js'
 import { getRandomBg } from '@js/random_bg.js'
 
 import router from '@/router'
@@ -13,6 +13,8 @@ const password = ref('')
 
 const main = ref(null)
 const Login_background = getRandomBg()
+
+const isLogin = ref(false)
 
 // 生命周期
 onMounted(() => {
@@ -49,6 +51,18 @@ function register() {
     router.push('/register')
 }
 
+async function profile() {
+  const value = await is_login();
+  if (value['status'] == true) {
+    message.value = '您已经登录了'
+  } 
+  // 没登录的话跳转到登录页面
+  else {
+    // router.push('/login');
+  }
+}
+profile()
+
 </script>
 
 <template>
@@ -72,7 +86,8 @@ function register() {
                         <input @click="login" type="button" value="登录" />
                         <input @click="register" type="button" value="注册" />
                     </div>
-                    <label id="message">{{message}}</label>
+                    <label v-if="!isLogin" id="message">{{message}}</label>
+                    <label v-if="isLogin">您已经登录了</label>
                 </form>
             </div>
         </div>

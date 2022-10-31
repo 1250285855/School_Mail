@@ -1,7 +1,7 @@
 <script setup>
 
 import { ref } from 'vue'
-import { isLogin } from '@/api/api.js'
+import { is_login } from '@/api/api.js'
 import router from '@/router/index.js'
 
 import Header from './components/Header.vue';
@@ -9,13 +9,13 @@ import News from './components/News.vue';
 import Welcome from './components/Welcome.vue';
 import Footer from './components/Footer.vue';
 
-const is_login = ref(false)
+const isLogin = ref(false)
 
 // 判断是否已经登录了
 async function profile() {
-  const value = await isLogin();
+  const value = await is_login();
   if (value['status'] == true) {
-    is_login.value = true
+    isLogin.value = true
     return true;
   } 
   // 没登录的话跳转到登录页面
@@ -30,10 +30,11 @@ profile()
 
   <div id="app">
     
-    <Header id="header" :isLogin=is_login></Header>
-    <News id="news"></News>
+    <Header id="header" :isLogin=isLogin></Header>
     <Welcome id="welcome"></Welcome>
+    <News id="news"></News>
     <Footer id="footer"></Footer>
+    
   </div>
 
 </template>
@@ -66,7 +67,6 @@ profile()
 #welcome {
   min-height: 600px;
   width: 100%;
-  min-width: 1200px;
   background-image: url(@img/IT2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
