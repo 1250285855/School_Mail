@@ -8,7 +8,7 @@ console.log("hello")
  <div id="main">
 
   <div id="logo">
-    <img src="src/assets/imgs/IDEC_CE_Logo_With_Name.png" alt="logo" />
+    <img src="../assets/imgs/IDEC_CE_Logo_With_Name.png" alt="logo" />
   </div>
 
  </div>

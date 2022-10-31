@@ -1,7 +1,9 @@
 <script setup>  
 import { ref } from 'vue'
 
-import { register_request }from '@/api/api.js';
+import { register_request, account_list }from '@/api/api.js';
+
+import router from '@/router'
 
 const formTitle = ref('注册信息')
 const message = ref('')
@@ -10,6 +12,8 @@ const username = ref('')
 const password = ref('')
 const checkPassword = ref('')
 const email    = ref('')
+
+const accountList = ref(null)
 
 async function register () {  
 
@@ -32,6 +36,15 @@ async function register () {
 
     message.value = value['data']
 
+}
+
+function login(){
+    router.push('login')
+}
+
+async function userList(){
+    const user_list = await account_list()
+    accountList.value = user_list['data']
 }
 
 </script>
@@ -58,8 +71,11 @@ async function register () {
                 <label for="email">邮箱</label>
                 <input v-model="email" type="email" placeholder="邮箱" />
             </div>
-            <input v-on:click="register" type="button" value="注册" />
+            <input @click="register" type="button" value="注册" />
+            <input @click="login" type="button" value="登录"/>
+            <input @click="userList" type="button" value="用户列表"/>
             {{message}}
+            {{accountList}}
         </form>
     </div>
 </template>

@@ -40,3 +40,11 @@ export async function post(url, data = {}) {
 
   return value;
 }
+
+async function getToken() {
+  const value = await get('/api/foo')
+  if (value.status == 200) {
+    return value['data']
+  }
+  return null
+}

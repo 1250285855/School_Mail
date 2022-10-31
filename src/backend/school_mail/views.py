@@ -1,5 +1,7 @@
 from django.contrib import auth
 from django.contrib.auth.models import User
+# from django.views.decorators.csrf import csrf_exempt
+# from django.middleware.csrf import get_token
 
 from rest_framework import viewsets
 from rest_framework.decorators import action
@@ -30,7 +32,7 @@ class AccountUserView(viewsets.GenericViewSet):
                 'data': '邮箱已被注册'
             }
         else:
-            user = User.objects.create_user(username=username, password=password)
+            User.objects.create_user(username=username, password=password, email=email)
             resp = {
                 'status': True,
                 'data': '注册成功'
@@ -41,6 +43,8 @@ class AccountUserView(viewsets.GenericViewSet):
     def login(self, request, *args, **kwargs):
         username = request.data.get('username')
         password = request.data.get('password')
+        print(username)
+        print(password)
         user = auth.authenticate(username=username, password=password)
         if user:
             auth.login(request, user)
@@ -92,9 +96,35 @@ class AccountUserView(viewsets.GenericViewSet):
 
     @action(detail=False, methods=['GET'])
     def account_list(self, request, *args, **kwargs):
+        data = {}
         user = User.objects.all()
+        for i in user:
+            data.update({i.username: i.email})
         resp = {
             'status': True,
-            'data': user
+            'data': data
         }
         return Response(resp)
+
+    @action(detail=False, methods=['GET'])
+    def is_login(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            resp = {
+                'status': True,
+                'data': '已登录'
+            }
+        else:
+            resp = {
+                'status': False,
+                'data': '未登录'
+            }
+        return Response(resp)
+
+    # @action(detail=False, methods=['GET'])
+    # def foo(self, request, *args, **kwargs):
+    #     csrf_token = get_token(request)
+    #     resp = {
+    #         'status': True,
+    #         'data': csrf_token
+    #     }
+    #     return Response(resp)

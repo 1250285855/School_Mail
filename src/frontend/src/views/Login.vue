@@ -1,18 +1,59 @@
 <script setup>
 
-import { ref } from 'vue'
+import { ref, onMounted, onActivated } from 'vue'
+import { login_request } from '@/api/api.js'
+import { getRandomBg } from '@js/random_bg.js'
+
+import router from '@/router'
 
 const title = ref('登录')
+const message = ref('')
 const username = ref('')
 const password = ref('')
 
-const Login_background = ref('@img/Login_background.jpg')
+const main = ref(null)
+const Login_background = getRandomBg()
+
+// 生命周期
+onMounted(() => {
+  main.value.style.backgroundImage = "url(" + Login_background + ")"
+})
+
+async function login() {
+
+    if (username.value == '') {
+        message.value = '请填写用户名'
+        return
+    }
+    if (password.value == '') {
+        message.value = '请填写密码'
+        return
+    }
+
+    var data = {
+        username: username.value,
+        password: password.value,
+    }
+
+    var value = await login_request(data)
+
+    if (value['status'] == true) {
+        router.push('/')
+    }
+
+    message.value = value['data']
+
+}
+
+function register() {
+    router.push('/register')
+}
 
 </script>
 
 <template>
 
-    <div id="main" :style="{backgroundImage: Login_background}">
+    <div id="main" ref="main">
         <div id="body">
             <div id="title">
                 {{title}}
@@ -25,11 +66,13 @@ const Login_background = ref('@img/Login_background.jpg')
                     </div>
                     <div id="password">
                         <label for="password">密码</label>
-                        <input v-model="password" placeholder="密码" />
+                        <input v-model="password" type="password" placeholder="密码" />
                     </div>
                     <div id="submit">
-                        <input v-on:click="submit" type="button" value="登录" />
+                        <input @click="login" type="button" value="登录" />
+                        <input @click="register" type="button" value="注册" />
                     </div>
+                    <label id="message">{{message}}</label>
                 </form>
             </div>
         </div>
@@ -48,6 +91,7 @@ const Login_background = ref('@img/Login_background.jpg')
     width: 100%;
     min-height: 800px;
     min-width: 1200px;
+    background-image: url('@img/IT2.jpg');
 }
 
 </style>

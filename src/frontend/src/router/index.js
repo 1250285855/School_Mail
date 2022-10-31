@@ -1,23 +1,39 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
-import School_Mail from '@/views/School_Mail.vue'
-import Login from '@/views/Login.vue'
-
+// router 教程: https://router.vuejs.org/zh/guide/#javascript
 const routes = [
     {
         path: '/',
         name: 'School_Mail',
-        component: School_Mail,
+        keepAlive: false,
+        component: () => import('@/views/School_Mail.vue')
     },
     {
         path: '/login',
         name: 'Login',
-        component: Login,
+        keepAlive: false,
+        component: () => import('@/views/Login.vue')
+    },
+    {
+        path: '/register',
+        name: 'Register',
+        keepAlive: false,
+        component: () => import('@/views/Register.vue'),
+    },
+    {
+        path: '/404',
+        name: '404',
+        keepAlive: false,
+        component: () => import('@/views/NotFound.vue')
+    },
+    {
+        path: '/:catchAll(.*)',
+        redirect: '/404',
     }
 ]
 
 const router = createRouter({
-    history: createWebHashHistory(),
+    history: createWebHistory(),
     routes,
 })
 

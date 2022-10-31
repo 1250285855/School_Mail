@@ -1,4 +1,18 @@
-<script setup></script>
+<script setup>
+
+import router from '@/router'
+
+import { logout_request } from '@/api/api.js'
+
+function logout(){
+
+    logout_request()
+
+    router.push('/')
+    router.go(0)
+}
+
+</script>
 
 <template>
 <div id="main">
@@ -19,6 +33,7 @@
                 <div class="_landing">
                     <a href="#">欢迎登录</a>
                 </div>
+                <input type="button" @click="logout" value="退出登录" />
             </div>
         </div>
         <div class="_Computer"></div>
