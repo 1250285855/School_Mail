@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.main {
+    width: 100%;
+    height: 1211.34px;
+    background-color: rgb(225, 225, 225, 0.9);
+    /* background-color: pink; */
+}
+#main_Logo {
+    width: 100%;
+    height: 150px;
+    background-color: rgb(0, 0, 0, 0.7);
+    position: relative;
+    /* 父盒子：让子盒子垂直居中显示 */
+}
+#main_Logo_img {
+    width: 240px;
+    height: 120px;
+    /* background-color: green; */
+    /* margin-top: 15px; */
+    /* margin-bottom: auto; */
+    position: absolute;
+    top: 50%;
+    margin-top: -60px;
+    margin-left: 100px;
+    /* 让盒子垂直居中显示 */
+    margin-right: 0;
+    background-image: url(IDEC_CE_Logo_With_Name.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 240px 120px;
+    /* float: left; */
+}
+#main_Logo_doc {
+    width: 600px;
+    height: 120px;
+    /* background-color: green; */
+    position: absolute;
+    top: 50%;
+    margin-top: -60px;
+    margin-left: 350px;
+    /* float: left; */
+}
+.chinese {
+    width: 600px;
+    height: 80px;
+    /* background-color: pink; */
+    font-size: 38px;
+    font-weight: 200;
+    line-height: 80px;
+    color: #fcfcfc;
+}
+.english {
+    width: 600px;
+    height: 40px;
+    /* background-color: #fff; */
+    font-size: 20px;
+    color: #fcfcfc;
+    line-height: 10px;
+}
+.main_Navigation {
+    width: 100%;
+    height: 67.35px;
+    border-top: 3px solid #ff8500;
+    border-bottom: 2px solid #edeef0;
+    background-color: rgb(0, 0, 0, 0.7);
+}
+.main_Navigation .main_Navigation1 {
+    width: 1300px;
+    height: 67.35px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.main_Navigation .main_Navigation1 .Navigation {
+    width: 1300px;
+    height: 67.35px;
+    line-height: 67.35px;
+    margin: 0 auto;
+    /* background-color: green; */
+    text-align: center;
+    /* float: left; */
+}
+.main_Navigation .main_Navigation1 .Navigation a {
+    font-size: 18px;
+    height: 67.35px;
+    padding: 0 40px;
+    color: #fcfcfc;
+    text-decoration: none;
+    display: inline-block;
+}
+.main_Navigation .main_Navigation1 .Navigation a:hover {
+    background-color: #eee;
+    color: black;
+}
+.main .Y_All {
+    width: 1200px;
+    height: 800px;
+    /* background-color:  rgb(0, 0, 0, 0.7); */
+    margin: 20px auto;
+}
+.main .Y_All .Y_Navigation {
+    width: 240px;
+    height: 222px;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.3);
+    background-color:  rgb(0, 0, 0, 0.7);
+    position: fixed;
+    float: left;
+}
+.main .Y_All .Y_Navigation h3 {
+    /* width: 240px; */
+    height: 50px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 50px;
+    padding-left: 25px;
+    /* background-color: #ff8500; */
+    border-bottom: 2px solid #ff8500;
+    color: #fcfcfc;
+}
+li {
+    list-style: none;
+}
+.main .Y_All .Y_Navigation ul li {
+    height: 43px;
+    line-height: 43px;
+    padding-left: 20px;
+    font-weight: 200;
+}
+.main .Y_All .Y_Navigation ul li a {
+    font-size: 18px;
+    color: #fcfcfc;
+    text-decoration: none;
+}
+.main .Y_All .Y_Navigation ul li a:hover {
+    color: #ff8500;
+    text-decoration: underline;
+}
+.main .Y_All .Y_Doc {
+    width: 940px;
+    height: 800px;
+    /* border-radius: 20px 20px 20px 20px; */
+    box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.3);
+    background-color:  rgb(0, 0, 0, 0.7);
+    float: right;
+}
+.main .Y_All .Y_Doc .Y_Doc_Navigation {
+    width: 940px;
+    height: 48px;
+    /* border-radius: 20px 20px 0px 0px; */
+    /* background-color: pink; */
+}
+.main .Y_All .Y_Doc .Y_Doc_Navigation h4 {
+    width: 80px;
+    height: 48px;
+    font-size: 20px;
+    line-height: 48px;
+    padding: 0 20px;
+    font-weight: 400;
+    text-align: center;
+    color: #ff8500;
+    border-bottom: 3px solid rgb(225, 225, 225, 0.5);
+    float: left;
+}
+.main .Y_All .Y_Doc .Y_Doc_Navigation .empty {
+    width: 820px;
+    height: 48px;
+    /* background-color: pink; */
+    border-bottom: 1px solid rgb(225, 225, 225, 0.5);
+    float: left;
+}
+.main .Y_All .Y_Doc .Y_Doc_Navigation .empty h3 {
+    width: 215px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+    color: rgb(225, 225, 225, 0.5);
+    float: right;
+}
+.main .Y_All .Y_Doc .Y_Doc_Navigation .empty h3 a {
+    color: rgb(225, 225, 225, 0.5);
+    text-decoration: none;
+}
+.main .Y_All .Y_Doc .Y_Doc_Navigation .empty h3 a:hover {
+    color: #ff8500;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text {
+    width: 940px;
+    height: 500px;
+    /* background-color: #fff; */
+}
+.main .Y_All .Y_Doc .Y_Doc_Text ._text {
+    text-align: center;
+    font-size: 60px;
+    color: #fcfcfc;
+}
+._US {
+    width: 100%;
+    height: 150px;
+    margin-top: 20px;
+    /* height: 100vh; */
+    background-color: rgb(0, 0, 0, 0.3);
+    /* background-color: pink; */
+    /* position: absolute; */
+    /* bottom: 0; */
+}
+.main ._US ._US_Logo {
+    width: 150px;
+    height: 75px;
+    margin-left: 250px;
+    /* background-color: #fff; */
+    background-image: url(IDEC_CE_Logo_With_Name.png);
+    background-size: 150px 75px;
+    background-repeat: no-repeat;
+    float: left;
+}
+.main ._US ._US_Doc {
+    width: 700px;
+    height: 150px;
+    /* background-color: #fff; */
+    float: left;
+}
+.main ._US ._US_Doc ._link {
+    width: 700px;
+    height: 75px;
+    color: #fcfcfc;
+    /* line-height: 50px; */
+    /* background-color: green; */
+}
+.main ._US ._US_Doc ._link a {
+    font-size: 13px;
+    color: #fcfcfc;
+    text-decoration: none;
+}
+.main ._US ._US_Doc ._link a:hover {
+    color: #ff8500;
+}
+.main ._US ._US_Doc ._my {
+    width: 700px;
+    height: 75px;
+    /* background-color: pink; */
+    font-size: 13px;
+    color: #fcfcfc;
+}
+.main ._US ._US_Doc ._my a {
+    font-size: 13px;
+    color: #fcfcfc;
+    text-decoration: none;
+}
+.main ._US ._US_Doc ._my a:hover {
+    color: #ff8500;
+}
