@@ -1,5 +1,7 @@
 <script setup>
 
+import router from '@/router'
+
 </script>
 
 <template>
@@ -17,10 +19,9 @@
                 <a>了解更多</a>
             </div>
             <div class="_Community">
-                <a>进入社区</a>
+                <a @click="">进入社区</a>
             </div>
         </div>
-            
     </div>
 </div>
 </template>
@@ -52,6 +53,10 @@
     width: 100%;
     min-height: 1000px;
     /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 ._all ._Computer {

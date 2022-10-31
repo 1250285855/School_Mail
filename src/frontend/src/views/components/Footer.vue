@@ -34,7 +34,7 @@
     display: flex;
     justify-content: space-around;
     bottom: 0;
-    margin-top: -75px;
+    margin-top: 10px;
 }
 ._all ._US ._US_Logo {
     width: 150px;

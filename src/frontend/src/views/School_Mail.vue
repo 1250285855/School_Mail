@@ -5,6 +5,7 @@ import { isLogin } from '@/api/api.js'
 import router from '@/router/index.js'
 
 import Header from './components/Header.vue';
+import News from './components/News.vue';
 import Welcome from './components/Welcome.vue';
 import Footer from './components/Footer.vue';
 
@@ -30,6 +31,7 @@ profile()
   <div id="app">
     
     <Header id="header" :isLogin=is_login></Header>
+    <News id="news"></News>
     <Welcome id="welcome"></Welcome>
     <Footer id="footer"></Footer>
   </div>
@@ -46,11 +48,19 @@ profile()
   width: 100%;
   min-width: 1200px;
   min-height: 800px;
+  background-color: black;
 }
 
 #header {
   margin-bottom: -80px;
   z-index: 100;
+}
+
+#news {
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #welcome {
