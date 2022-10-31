@@ -30,6 +30,7 @@ const options = ref({
                     </SplideSlide>
                 </SplideTrack>
                 <div class="splide__arrows"></div>
+                <div class="splide__pagination"></div>
             </Splide>
         </div>
     </div>
@@ -80,6 +81,19 @@ const options = ref({
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+}
+
+.splide__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, 0);
     width: 100%;
     height: 100%;
 }
