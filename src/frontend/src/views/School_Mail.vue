@@ -7,7 +7,9 @@ import router from '@/router/index.js'
 import Header from './components/Header.vue';
 import News from './components/News.vue';
 import Welcome from './components/Welcome.vue';
+import PhotoWall from './components/PhotoWall.vue';
 import Footer from './components/Footer.vue';
+import Header_skip from './components/Header_skip.vue';
 
 const isLogin = ref(false)
 
@@ -30,9 +32,13 @@ profile()
 
   <div id="app">
     
-    <Header id="header" :isLogin=isLogin></Header>
+    <!-- <Header id="header" :isLogin=isLogin></Header> -->
+    <Header_skip id="header" :isLogin=isLogin></Header_skip>
+    <Transition name="fade">
+      <News id="news"></News>
+    </Transition>
+    <PhotoWall id="photoWall"></PhotoWall>
     <Welcome id="welcome"></Welcome>
-    <News id="news"></News>
     <Footer id="footer"></Footer>
     
   </div>
@@ -62,6 +68,10 @@ profile()
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#photoWall {
+  height: 800px;
 }
 
 #welcome {

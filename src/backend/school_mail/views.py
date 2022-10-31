@@ -111,7 +111,8 @@ class AccountUserView(viewsets.GenericViewSet):
         if request.user.is_authenticated:
             resp = {
                 'status': True,
-                'data': '已登录'
+                'message': '已登录',
+                'data': request.user.username
             }
         else:
             resp = {
