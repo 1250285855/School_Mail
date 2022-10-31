@@ -1,0 +1,173 @@
+<script setup>
+
+</script>
+
+<template>
+<div id="main">
+    <div class="_all"> 
+        <div class="_Computer"></div>
+        <div class="_GetIn">
+            <a>Computer Engineering</a>
+        </div>
+        <div class="_GetIn1">
+            <a>Around The World</a>
+        </div>
+        <div class="_Auto">
+            <div class="_Know">
+                <a>了解更多</a>
+            </div>
+            <div class="_Community">
+                <a>进入社区</a>
+            </div>
+        </div>
+            
+    </div>
+</div>
+</template>
+<style scoped>
+
+* {
+    margin: 0;
+    padding: 0;
+}
+#main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    min-width: 1200px;
+    min-height: 800px;
+    background-image: url(@img/IT2.jpg);
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    /* -webkit-background-size: cover;
+    -o-background-size: cover;
+    z-index: -1000;
+    zoom: 1; */
+    background-position: center;
+}
+._all {
+    width: 100%;
+    min-height: 1000px;
+    /* background-color: pink; */
+}
+
+._all ._Computer {
+    width: 100px;
+    height: 100px;
+    margin-top: 100px;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(@img/computer.png);
+    background-size: 70px 70px;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-color: green; */
+}
+._all ._Computer img {
+    max-width: 70px;
+    max-height: 70px;
+}
+._all ._GetIn {
+    width: 600px;
+    height: 80px;
+    font-size: 45px;
+    line-height: 80px;
+    margin: 0 auto;
+    text-align: center;
+    /* background-color: green; */
+}
+._all ._GetIn a {
+    color: black;
+    text-decoration: none;
+    /* user-select: none; */
+}
+._all ._GetIn a:hover {
+    background-color: rgb(0, 0, 0, 0);
+}
+._all ._GetIn1 {
+    width: 600px;
+    height: 80px;
+    font-size: 45px;
+    line-height: 80px;
+    margin: 0 auto;
+    text-align: center;
+    /* background-color: green; */
+}
+._all ._GetIn1 a {
+    color: black;
+    text-decoration: none;
+    /* user-select: none; */
+}
+._all ._GetIn1 a:hover {
+    background-color: rgb(0, 0, 0, 0);
+}
+._all ._Auto {
+    width: 450px;
+    height: 40px;
+    margin-top: 50px;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: green; */
+}
+._all ._Auto ._Know {
+    width: 225px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 36px 0 0 36px;
+    /* background-color: rgb(0, 0, 0, 0.7); */
+    text-align: center;
+    float: left;
+}
+/* ._all ._Auto ._Know:hover {
+    background-color: rgb(255, 255, 255, 0.7);
+} */
+._all ._Auto ._Know a {
+    padding: 8px 72.5px 8px 72.5px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 36px 0 0 36px;
+    background-color: rgb(0, 0, 0, 0.7);
+    text-decoration: none;
+    color: #fcfcfc;
+    user-select: none;
+    cursor: pointer;
+}
+._all ._Auto ._Know a:hover {
+    color: black;
+    background-color: rgb(255, 255, 255, 0.7);
+}
+._all ._Auto ._Community {
+    width: 225px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 0 36px 36px 0;
+    /* background-color: rgb(128, 128, 128, 0.7); */
+    text-align: center;
+    float: right;
+    cursor: pointer;
+}
+/* ._all ._Auto ._Community:hover {
+    background-color: rgb(0, 0, 0, 0.7);
+} */
+._all ._Auto ._Community a {
+    padding: 8px 72.5px 8px 72.5px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 0 36px 36px 0;
+    background-color: rgb(255, 255, 255, 0.7);
+    text-decoration: none;
+    color: black;
+    user-select: none;
+}
+._all ._Auto ._Community a:hover{
+    background-color: rgb(0, 0, 0, 0.7);
+    color: #fcfcfc;
+}
+
+
+</style>

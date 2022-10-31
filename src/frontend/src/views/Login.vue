@@ -91,7 +91,7 @@ function register() {
     width: 100%;
     min-height: 800px;
     min-width: 1200px;
-    background-image: url('@img/IT2.jpg');
+    background-size: cover;
 }
 
 </style>

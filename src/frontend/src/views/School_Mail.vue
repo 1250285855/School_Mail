@@ -3,10 +3,10 @@
 import { ref } from 'vue'
 import { isLogin } from '@/api/api.js'
 import router from '@/router/index.js'
-import Header from './Header.vue';
-import Body from './Body.vue';
-import Footer from './Footer.vue';
-import Header_tln from './Header_tln.vue';
+
+import Header from './components/Header.vue';
+import Welcome from './components/Welcome.vue';
+import Footer from './components/Footer.vue';
 
 const is_login = ref(false)
 
@@ -29,9 +29,8 @@ profile()
 
   <div id="app">
     
-    <!-- <Header id="header"></Header> -->
-    <!-- <Body id="body"></Body> -->
-    <Header_tln id="header1" :isLogin=is_login></Header_tln>
+    <Header id="header" :isLogin=is_login></Header>
+    <Welcome id="welcome"></Welcome>
     <Footer id="footer"></Footer>
   </div>
 
@@ -49,33 +48,19 @@ profile()
   min-height: 800px;
 }
 
-#header1 {
-    overflow: hidden;
-    height: 2233.63px;
-    height: 100%;
-    width: 100%;
-    min-width: 1200px;
-    background-image: url('@img/IT2.jpg');
-    background-color: red;
-    background-repeat: no-repeat;
-    background-size: 1480px 822px;
-    background-position: center top;
-}
-
 #header {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 100px;
-  background-color: rgb(149, 149, 149);
+  margin-bottom: -80px;
+  z-index: 100;
 }
 
-#body {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+#welcome {
+  min-height: 600px;
   width: 100%;
-  background-color: rgb(200, 200, 200);
+  min-width: 1200px;
+  background-image: url(@img/IT2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 </style>
