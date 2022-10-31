@@ -4,6 +4,17 @@ import router from '@/router'
 
 import { logout_request } from '@/api/api.js'
 
+const props = defineProps({
+    isLogin: {
+        type: Boolean,
+        default: false,
+    }
+})
+
+function login() {
+    router.push('/login')
+}
+
 function logout(){
 
     logout_request()
@@ -30,10 +41,10 @@ function logout(){
                     <a href="#">共创营地</a>
                 </div>
                 <div class="_logo_landing"></div>
-                <div class="_landing">
-                    <a href="#">欢迎登录</a>
+                <div v-if="!isLogin" class="_landing">
+                    <a @click="login">欢迎登录</a>
                 </div>
-                <input type="button" @click="logout" value="退出登录" />
+                <input v-if="isLogin" type="button" @click="logout" value="退出登录" />
             </div>
         </div>
         <div class="_Computer"></div>

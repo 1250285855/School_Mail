@@ -1,5 +1,6 @@
 <script setup>
 
+import { ref } from 'vue'
 import { isLogin } from '@/api/api.js'
 import router from '@/router/index.js'
 import Header from './Header.vue';
@@ -7,16 +8,18 @@ import Body from './Body.vue';
 import Footer from './Footer.vue';
 import Header_tln from './Header_tln.vue';
 
+const is_login = ref(false)
+
 // 判断是否已经登录了
 async function profile() {
   const value = await isLogin();
   if (value['status'] == true) {
+    is_login.value = true
     return true;
   } 
   // 没登录的话跳转到登录页面
   else {
-    // this.$router.push('/login');
-    router.push('/login');
+    // router.push('/login');
   }
 }
 profile()
@@ -28,8 +31,8 @@ profile()
     
     <!-- <Header id="header"></Header> -->
     <!-- <Body id="body"></Body> -->
+    <Header_tln id="header1" :isLogin=is_login></Header_tln>
     <Footer id="footer"></Footer>
-    <Header_tln id="header1"></Header_tln>
   </div>
 
 </template>
