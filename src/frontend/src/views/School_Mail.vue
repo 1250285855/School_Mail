@@ -34,8 +34,8 @@ profile()
   <div id="app">
     
     <!-- <Header id="header" :isLogin=isLogin></Header> -->
-    <!-- <Header_skip id="header" :isLogin=isLogin></Header_skip> -->
-    <Header_simple_1></Header_simple_1>
+    <Header_skip id="header" :isLogin=isLogin></Header_skip>
+    <!-- <Header_simple_1></Header_simple_1> -->
     <Transition name="fade">
       <News></News>
     </Transition>
