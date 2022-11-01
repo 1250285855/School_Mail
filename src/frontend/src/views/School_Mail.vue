@@ -8,7 +8,7 @@ import Header from './components/Header.vue';
 import News from './components/News.vue';
 import Welcome from './components/Welcome.vue';
 import Footer from './components/Footer.vue';
-
+import Activity from './components/Activity.vue';
 const is_login = ref(false)
 
 // 判断是否已经登录了
@@ -30,10 +30,11 @@ profile()
 
   <div id="app">
     
-    <Header id="header" :isLogin=is_login></Header>
+    <!-- <Header id="header" :isLogin=is_login></Header>
     <News id="news"></News>
     <Welcome id="welcome"></Welcome>
-    <Footer id="footer"></Footer>
+    <Footer id="footer"></Footer> -->
+    <Activity ></Activity>
   </div>
 
 </template>
