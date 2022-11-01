@@ -20,7 +20,13 @@ const options = ref({
         <div class="custom-wrapper">
         <SplideTrack>
             <SplideSlide class="slide">
-                <img src="../../assets/imgs/longBg/bg0.jpg" alt="">
+                <div class="slide_body" id="slide_1">
+                    <h1></h1>
+                    <h2></h2>
+                    <div id="button">
+                        
+                    </div>
+                </div>
             </SplideSlide>
             <SplideSlide class="slide">
                 <img src="../../assets/imgs/longBg/bg1.jpg" alt="">
@@ -72,4 +78,34 @@ const options = ref({
     width: 100%;
     height: 100%;
 }
+
+.slide_body {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.7);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide_body #button {
+    border-radius: 2px;
+    border: 1px solid #fff;
+}
+
+#slide_1 {
+    background-image: url('@img/longBg/bg0.jpg');
+}
+
+#slide_2 {
+    background-image: url('@img/longBg/bg1.jpg');
+}
+
+#slide_3 {
+    background-image: url('@img/longBg/bg2.jpg');
+}
+
 </style>
