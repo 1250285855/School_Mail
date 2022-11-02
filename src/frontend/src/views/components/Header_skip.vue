@@ -85,7 +85,7 @@ profile()
 #main_Logo {
     width: 100%;
     height: 150px;
-    background-color: rgb(0, 0, 0, 0.7);
+    background-color: rgba(20, 42, 49);
     position: relative;
     /* 父盒子：让子盒子垂直居中显示 */
     display: flex;
@@ -175,7 +175,7 @@ profile()
 }
 
 #main_login #register {
-    width: 100px;
+    width: 80px;
     height: 40px;
     border: 1px solid rgb(200, 200, 200);
     background-color: rgb(200, 200, 200);
@@ -190,8 +190,8 @@ profile()
 }
 
 #main_login #register:hover {
-    background-color: rgb(0, 0, 0, 0.7);
-    color: #fff;
+    background-color: rgba(20, 42, 49);
+    color: #fcfcfc;
 }
 
 .chinese {
@@ -202,23 +202,23 @@ profile()
     font-weight: 200;
     line-height: 80px;
     text-align: center;
-    color: #fcfcfc;
+    color: rgb(243,243,243);
 }
 .english {
     width: 600px;
     height: 40px;
     /* background-color: #fff; */
     font-size: 20px;
-    color: #fcfcfc;
+    color: #fdeac9;
     text-align: center;
     line-height: 10px;
 }
 .main_Navigation {
     width: 100%;
     height: 67.35px;
-    border-top: 3px solid #ff8500;
-    border-bottom: 2px solid #edeef0;
-    background-color: rgb(0, 0, 0, 0.7);
+    border-top: 3px solid #cbebf4;
+    border-bottom: 2px solid #fdeac9;
+    background-color:rgb(138, 202, 218);
 }
 .main_Navigation .main_Navigation1 {
     width: 1300px;
