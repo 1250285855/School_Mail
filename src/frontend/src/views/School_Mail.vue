@@ -4,12 +4,13 @@ import { ref } from 'vue'
 import { is_login } from '@/api/api.js'
 import router from '@/router/index.js'
 
-import Header from './components/Header.vue';
+import Header from './components/header/Header.vue';
 import News from './components/News.vue';
 import Welcome from './components/Welcome.vue';
 import PhotoWall from './components/PhotoWall.vue';
 import Footer from './components/Footer.vue';
-import Header_skip from './components/Header_skip.vue';
+import Header_skip from './components/header/Header_skip.vue';
+import Header_simple_1 from './components/header/Header_simple_1.vue';
 import Activity from './components/Activity.vue';
 const isLogin = ref(false)
 
@@ -34,13 +35,13 @@ profile()
     
     <!-- <Header id="header" :isLogin=isLogin></Header> -->
     <Header_skip id="header" :isLogin=isLogin></Header_skip>
+    <!-- <Header_simple_1></Header_simple_1> -->
     <Transition name="fade">
-      <News id="news"></News>
+      <News></News>
     </Transition>
-    <PhotoWall id="photoWall"></PhotoWall>
-    <Welcome id="welcome"></Welcome>
-    <Footer id="footer"></Footer>
-    <Activity ></Activity>
+    <PhotoWall></PhotoWall>
+    <Welcome></Welcome>
+    <Footer></Footer>
     
   </div>
 
@@ -58,31 +59,6 @@ profile()
   max-width: 1905px;
   min-height: 800px;
   background-color: black;
-}
-
-#header {
-  margin-bottom: -80px;
-  z-index: 100;
-}
-
-#news {
-  min-height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#photoWall {
-  height: 900px;
-}
-
-#welcome {
-  min-height: 600px;
-  width: 100%;
-  background-image: url(@img/IT2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 
 </style>

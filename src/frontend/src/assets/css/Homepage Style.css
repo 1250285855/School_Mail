@@ -4,7 +4,7 @@
 }
 body {
     overflow: hidden;
-    height: 2233.63px;
+    height: 822px;
     background-image: url(IT2.jpg);
     background-repeat: no-repeat;
     background-size: 1480px 822px;
@@ -12,7 +12,7 @@ body {
 }
 ._all {
     width: 100%;
-    height: 2233.63px;
+    height: 822px;
     /* background-color: pink; */
 }
 ._all ._title {
@@ -117,7 +117,7 @@ body {
     /* background-color: green; */
 }
 ._all ._GetIn a {
-    color: black;
+    color: rgb(0, 0, 0, 0.7);
     text-decoration: none;
 }
 ._all ._GetIn1 {
@@ -130,7 +130,7 @@ body {
     /* background-color: green; */
 }
 ._all ._GetIn1 a {
-    color: black;
+    color: rgb(0, 0, 0, 0.7);
     text-decoration: none;
 }
 ._all ._Auto {

@@ -15,24 +15,22 @@ const options = ref({
 </script>
 
 <template>
-
-<div>
-    <div id="main">
-        <div id="text"> 
-            <div id="title">篮球赛</div>
-            <div id="second_title">团日活动和外教一起打篮球</div>
-        </div>
-        <div id="photo_wall">
-            <Splide :options="options" :has-track="false">
-                <SplideTrack>
-                    <SplideSlide v-for="slide in slides" :key="slide.id">
-                        <img :src="slide.image">
-                    </SplideSlide>
-                </SplideTrack>
-                <div class="splide__arrows"></div>
-                <div class="splide__pagination"></div>
-            </Splide>
-        </div>
+<div></div>
+<div id="main">
+    <div id="text"> 
+        <div id="title">篮球赛</div>
+        <div id="second_title">团日活动和外教一起打篮球</div>
+    </div>
+    <div id="photo_wall">
+        <Splide :options="options" :has-track="false">
+            <SplideTrack>
+                <SplideSlide v-for="slide in slides" :key="slide.id">
+                    <img :src="slide.image">
+                </SplideSlide>
+            </SplideTrack>
+            <div class="splide__arrows"></div>
+            <div class="splide__pagination"></div>
+        </Splide>
     </div>
 </div>
 
@@ -43,7 +41,6 @@ const options = ref({
 #main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     height: 360px;
     background-color: aliceblue;

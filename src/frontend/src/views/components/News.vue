@@ -14,6 +14,7 @@ const options = ref({
 </script>
 
 <template>
+<div></div>
 <div id="main">
 
     <Splide id="splide" :has-track="false" :options="options">
@@ -63,7 +64,7 @@ const options = ref({
 
 .slide img {
     width: 100%;
-    height: 600px;
+    height: 800px;
     object-fit: cover;
 }
 

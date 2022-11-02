@@ -5,6 +5,7 @@ import router from '@/router'
 </script>
 
 <template>
+<div></div>
 <div id="main">
     <div class="_all"> 
         <div class="_Computer"></div>
@@ -32,21 +33,11 @@ import router from '@/router'
     padding: 0;
 }
 #main {
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    height: 100%;
+    min-height: 600px;
     width: 100%;
-    min-width: 1200px;
-    min-height: 800px;
     background-image: url(@img/IT2.jpg);
     background-repeat: no-repeat;
-    /* background-size: cover; */
-    /* -webkit-background-size: cover;
-    -o-background-size: cover;
-    z-index: -1000;
-    zoom: 1; */
+    background-size: cover;
     background-position: center;
 }
 ._all {

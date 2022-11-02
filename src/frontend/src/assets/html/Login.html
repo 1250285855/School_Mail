@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <link rel="stylesheet" href="../css/Login Style.css">
+    <div class="main">
+        <div class="main_Navigation">
+            <div class="Navigation_Logo"></div>
+            <div class="Navigation_Title">计科账号</div>
+            <h3>
+                <a href="#">用户协议</a> |
+                <a href="#">隐私政策</a> |
+                <a href="#">帮助中心</a>
+            </h3>
+        </div>
+        <div class="Body">
+            <div class="Body_Title">
+                <div class="a1">
+                    <a href="#">登录</a>
+                </div>
+                <div class="a2">
+                    <a href="#">注册</a>
+                </div>
+            </div>
+            <div class="Form">
+                <form>
+                    <div class="From_Username">
+                        <div class="Logo"></div>
+                        <input type="text" placeholder="邮箱\手机号码\计科ID" name="Username" class="Text">
+                        <!-- <label for="username">用户名</label> -->
+                        <!-- <input v-model="username" placeholder="用户名" /> -->
+                    </div>
+                    <div class="Form_Password">
+                        <div class="Logo1"></div>
+                        <input type="password" placeholder="密码" name="Passord" class="Password">
+                        <!-- <label for="password">密码</label>
+                        <input v-model="password" type="password" placeholder="密码" /> -->
+                    </div>
+                    <div class="Form_Login">
+                        <input @click="login" type="button" value="登录" name="登录" class="Login"/>
+                    </div>
+                    <div class="Form_Register"><input @click="register" type="button" value="注册" name="注册" class="Register"/></div>
+                    <!-- <label v-if="!isLogin" id="message">{{message}}</label>
+                    <label v-if="isLogin">您已经登录了</label> -->
+                    <div class="Form_End">
+                        <div class="Forget">
+                            <a href="#">忘记密码?</a>
+                        </div>
+                        <div class="Out">
+                            <div class="Out_Logo"></div>
+                            <div class="Out_Doc">
+                                <a href="#">退出登录</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="Bottom">闽江学院国际数字经济学院计算机科学与技术专业版权所有</div>
+    </div>
+</body>
+</html>
