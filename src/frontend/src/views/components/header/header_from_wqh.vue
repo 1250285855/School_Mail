@@ -56,7 +56,7 @@ profile()
             </div>
             <div id="main_login">
                 <div v-if="isLogin" id="profile">您好，{{username}}</div>
-                <div v-if="isLogin" id="logout" @click="logout">退出登录</div>
+                <div v-if="isLogin" id="nologout" @click="logout">退出登录</div>
                 <div v-if="!isLogin" id="login" @click="login">登录</div>
                 <div v-if="!isLogin" id="register" @click="register">注册</div>
             </div>
@@ -71,8 +71,8 @@ profile()
                         <a href="#">团日活动</a>
                         <a href="#">学生风采</a>
                         <a href="#">社区互动</a>
-                        <a href="#">共创营地</a>
-                    </div>
+                        <a href="#">共创营地</a> -->
+                     </div>
                 </div>
             </div>
         </div>

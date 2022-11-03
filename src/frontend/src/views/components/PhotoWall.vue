@@ -42,13 +42,13 @@ const options = ref({
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 360px;
+    height: 900px;
     background-color: aliceblue;
 
 }
 
 #text {
-    margin-top: 200px;
+    margin-top: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -70,7 +70,7 @@ const options = ref({
 
 #photo_wall {
     width: 800px;
-    height: 300px;
+    height: 900px;
 
 }
 
