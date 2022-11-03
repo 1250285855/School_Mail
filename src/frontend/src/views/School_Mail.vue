@@ -10,6 +10,7 @@ import Welcome from './components/Welcome.vue';
 import PhotoWall from './components/PhotoWall.vue';
 import Footer from './components/Footer.vue';
 import Header_skip from './components/header/Header_skip.vue';
+// import Header_from_wqh from './components/header/Header_from_wqh.vue'
 import Header_simple_1 from './components/header/Header_simple_1.vue';
 import Activity from './components/Activity.vue';
 const isLogin = ref(false)
@@ -36,6 +37,7 @@ profile()
     <!-- <Header id="header" :isLogin=isLogin></Header> -->
     <Header_skip id="header" :isLogin=isLogin></Header_skip>
     <!-- <Header_simple_1></Header_simple_1> -->
+    <!-- <Header_from_wqh></Header_from_wqh> -->
     <Transition name="fade">
       <News></News>
     </Transition>
