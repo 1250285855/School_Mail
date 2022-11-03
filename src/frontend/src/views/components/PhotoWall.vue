@@ -15,6 +15,7 @@ const options = ref({
 </script>
 
 <template>
+    
 <div></div>
 <div id="main">
     <div id="text"> 

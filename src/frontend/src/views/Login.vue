@@ -144,7 +144,7 @@ profile()
 } */
 .main {
     width: 100%;
-    height: 862px;
+    min-height: 900px;
     background-color: rgb(0, 0, 0, 0.9);
 }
 .main .main_Navigation {
