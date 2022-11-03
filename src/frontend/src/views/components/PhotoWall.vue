@@ -44,12 +44,13 @@ const options = ref({
     flex-direction: column;
     align-items: center;
     height: 900px;
-    min-height: 400px;
+    background-color: aliceblue;
+
 }
 
 #text {
+    margin-top: 80px;
     display: flex;
-    margin-top: 100px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -58,18 +59,20 @@ const options = ref({
 #title {
     font-size: 50px;
     font-weight: bold;
-    margin-bottom: 20px;
-    color:rgb(87, 185, 153)
+    margin-bottom: 5px;
+    color:rgb(20, 42, 49)
 }
 
 #second_title {
     font-size: 25px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    color:#794004;
 }
 
 #photo_wall {
     width: 800px;
-    height: 200px;
+    height: 900px;
+
 }
 
 .splide__arrows {
@@ -101,6 +104,7 @@ const options = ref({
     height: 600px;
     width: 100%;
     object-fit: contain;
+    color:rgb(111,124,126)
 }
 
 </style>
