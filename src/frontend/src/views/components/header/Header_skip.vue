@@ -47,6 +47,7 @@ profile()
 </script>
 
 <template>
+    <div></div>
         <div id="main_Logo">
             <div id="main_Logo_img"></div>
             <div id="main_Logo_doc">
@@ -130,7 +131,7 @@ profile()
     width: 600px;
     height: 40px;
     display: flex;
-    left:200px;
+    /* left:200px; */
 }
 
 #main_login #profile {
