@@ -189,7 +189,7 @@
 .main .Body .Form .Form_Login {
     width: 356px;
     height: 60px;
-    margin-top: 40px;
+    margin-top: 60px;
     /* background-color: #fff; */
 }
 .main .Body .Form .Form_Login .Login {
@@ -209,7 +209,7 @@
     height: 60px;
     margin-top: 20px;
 }
-.main .Body .Form .Form_Register .Register {
+/* .main .Body .Form .Form_Register .Register {
     width: 356px;
     height: 60px;
     background-color: #ff8500;
@@ -220,12 +220,12 @@
 }
 .main .Body .Form .Form_Register .Register:hover {
     background-color: rgb(255, 153, 18);
-}
+} */
 .main .Body .Form .Form_End {
     width: 356px;
     height: 36.71px;
     /* background-color: #fff; */
-    margin-top: 10px;
+    margin-top: 80px;
 }
 .main .Body .Form .Form_End .Forget {
     width: 85px;
@@ -253,7 +253,7 @@
 .main .Body .Form .Form_End .Out .Out_Logo {
     width: 36.71px;
     height: 36.71px;
-    background-image: url(../../images/退出登录.png);
+    background-image: url(../../images/注册.png);
     background-size: 25px 25px;
     background-position: center;
     background-repeat: no-repeat;
