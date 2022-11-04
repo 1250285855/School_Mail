@@ -4,7 +4,7 @@
 }
 .main {
     width: 100%;
-    height: 2864px;
+    height: 1110px;
     background-color: rgb(225, 225, 225, 0.9);
     /* background-color: pink; */
 }
@@ -131,7 +131,7 @@
 }
 .main .Y_All {
     width: 1200px;
-    height: 2450px;
+    height: 700px;
     /* background-color: pink; */
     margin: 20px auto;
 }
@@ -175,7 +175,7 @@ li {
 }
 .main .Y_All .Y_Doc {
     width: 940px;
-    height: 2450px;
+    height: 700px;
     /* border-radius: 20px 20px 20px 20px; */
     box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.3);
     background-color:  rgb(0, 0, 0, 0.7);
@@ -228,88 +228,33 @@ li {
     margin: 0;
     padding: 0;
     width: 940px;
-    height: 2390px;
+    height: 640px;
     /* background-color: #fff; */
 }
-.main .Y_All .Y_Doc .Y_Doc_Text p {
+.main .Y_All .Y_Doc .Y_Doc_Text .Text_Table {
+    margin-top: 140px;
+    margin-left: 20px;
+    width: 900px;
+    height: 400px;
+    /* background-color: #fff; */
+    text-align: center;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Text_Table table {
+    border: 1px solid rgb(225, 225, 225, 0.7);
+    font-size: 18px;
     color: #fcfcfc;
-    font-size: 20px;
+}
+#_width {
+    width: 250px;
+}
+#DOC {
     line-height: 1.5em;
+    font-size: 16px;
     text-align: justify;
 }
-.main .Y_All .Y_Doc .Y_Doc_Text ._Doc {
-    width: 900px;
-    height: 2300px;
-    float: left;
-    margin-left: 20px;
-    /* background-color: pink; */
-    margin-top: 20px;
-} 
-.main .Y_All .Y_Doc .Y_Doc_Text .Text_Title {
-    margin-top: 10px;
-    text-align: center;
-    line-height: 29px;
-}
-.main .Y_All .Y_Doc .Y_Doc_Text .Text_Title_English {
-    text-align: center;
-    margin-top: 10px;
-    line-height: 29px;
-}
-.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Guide_Title {
-    font-size: 18px;
-    text-indent: 42px;
-    /* margin-top: 30px; */
-}
-.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Guide {
-    font-size: 16px;
-    text-indent: 42px;
-}
-.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Guide_English {
-    font-size: 16px;
-    text-indent: 42px;
-    margin-top: 10px;
-}
-.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Strength_Title {
-    font-size: 18px;
-    text-indent: 42px;
-    margin-top: 20px;
-}
-.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Strength {
-    font-size: 16px;
-    text-indent: 42px;
-}
-.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Strength_English {
-    font-size: 16px;
-    text-indent: 42px;
-    margin-top: 10px;
-}
-.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Game_Title {
-    font-size: 18px;
-    text-indent: 42px;
-    margin-top: 20px;
-}
-.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Game {
-    font-size: 16px;
-    text-indent: 42px;
-}
-.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Game_English {
-    font-size: 16px;
-    text-indent: 42px;
-    margin-top: 10px;
-}
-.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Department_Title {
-    font-size: 18px;
-    text-indent: 42px;
-    margin-top: 20px;
-}
-.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Department {
-    font-size: 16px;
-    text-indent: 42px;
-} 
-.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Department_English {
-    font-size: 16px;
-    text-indent: 42px;
-    margin-top: 10px;
+.main .Y_All .Y_Doc .Y_Doc_Text .Text_Table table p {
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 ._US {
     width: 100%;
