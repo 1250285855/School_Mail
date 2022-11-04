@@ -4,7 +4,7 @@
 }
 .main {
     width: 100%;
-    height: 1211.34px;
+    height: 4100px;
     background-color: rgb(225, 225, 225, 0.9);
     /* background-color: pink; */
 }
@@ -131,8 +131,9 @@
 }
 .main .Y_All {
     width: 1200px;
-    height: 800px;
+    height: 3650px;
     /* background-color:  rgb(0, 0, 0, 0.7); */
+    /* background-color: #fff; */
     margin: 20px auto;
 }
 .main .Y_All .Y_Navigation {
@@ -175,7 +176,7 @@ li {
 }
 .main .Y_All .Y_Doc {
     width: 940px;
-    height: 800px;
+    height: 3650px;
     /* border-radius: 20px 20px 20px 20px; */
     box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.3);
     background-color:  rgb(0, 0, 0, 0.7);
@@ -225,18 +226,110 @@ li {
 }
 .main .Y_All .Y_Doc .Y_Doc_Text {
     width: 940px;
-    height: 500px;
+    height: 3650px;
     /* background-color: #fff; */
 }
-.main .Y_All .Y_Doc .Y_Doc_Text ._text {
-    text-align: center;
-    font-size: 60px;
+.main .Y_All .Y_Doc .Y_Doc_Text .picture1 {
+    width: 940px;
+    height: 375px;
+    /* background-color: #fff; */
+    margin-top: 10px;
+    background-image: url(../../images/专业风光/专业风光1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 500px 357px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .picture2 {
+    width: 940px;
+    height: 375px;
+    margin-bottom: 10px;
+    background-image: url(../../images/专业风光/专业风光2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 500px 357px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Doc {
+    width: 940px;
+    height: 20px;
+    font-size: 18px;
     color: #fcfcfc;
+    text-align: center;
+    line-height: 20px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .picture3 {
+    width: 940px;
+    height: 375px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-image: url(../../images/专业风光/专业风光3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 500px 357px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .picture4 {
+    width: 940px;
+    height: 375px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-image: url(../../images/专业风光/专业风光4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 500px 357px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .picture5 {
+    width: 940px;
+    height: 375px;
+    /* margin-bottom: 10px; */
+    margin-top: 10px;
+    background-image: url(../../images/专业风光/专业风光5.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 500px 357px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .picture6 {
+    width: 940px;
+    height: 375px;
+    /* margin-bottom: 10px;
+    margin-top: 10px; */
+    background-image: url(../../images/专业风光/专业风光6.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 500px 357px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .picture7 {
+    width: 940px;
+    height: 375px;
+    margin-bottom: 10px;
+    /* margin-top: 10px; */
+    background-image: url(../../images/专业风光/专业风光7.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 500px 357px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .picture8 {
+    width: 940px;
+    height: 375px;
+    /* margin-bottom: 10px; */
+    margin-top: 10px;
+    background-image: url(../../images/专业风光/专业风光8.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 500px 357px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .picture9 {
+    width: 940px;
+    height: 375px;
+    margin-bottom: 10px;
+    /* margin-top: 10px; */
+    background-image: url(../../images/专业风光/专业风光9.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 500px 357px;
 }
 ._US {
     width: 100%;
     height: 150px;
-    margin-top: 20px;
+    margin-top: 56px;
     /* height: 100vh; */
     background-color: rgb(0, 0, 0, 0.3);
     /* background-color: pink; */
