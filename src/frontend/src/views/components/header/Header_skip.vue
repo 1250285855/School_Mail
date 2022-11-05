@@ -131,7 +131,7 @@ profile()
     width: 600px;
     height: 40px;
     display: flex;
-    /* left:200px; */
+    left:200px;
 }
 
 #main_login #profile {
