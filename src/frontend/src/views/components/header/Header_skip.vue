@@ -49,7 +49,7 @@ profile()
 <template>
     <div></div>
         <div id="main_Logo">
-            <div id="main_Logo_img"></div>
+            <div id="main_Logo_img" @click="$emit('cd_page',0)"></div>
             <div id="main_Logo_doc">
                 <div class="chinese"> 计 算 机 科 学 与 技 术</div>
                 <div class="english">Computer Science and Technology of MinJiang University</div>
@@ -65,13 +65,13 @@ profile()
             <div class="main_Navigation1">
                 <div class="Navigation_Logo">
                     <div class="Navigation">
-                        <a href="#">专业概况</a>
-                        <a href="#">关于我们</a>
-                        <a href="#">班级荣誉</a>
-                        <a href="#">团日活动</a>
-                        <a href="#">学生风采</a>
-                        <a href="#">社区互动</a>
-                        <a href="#">共创营地</a>
+                        <a @click="$emit('cd_page',1)">专业概况</a>
+                        <a @click="$emit('cd_page',2)">关于我们</a>
+                        <a @click="$emit('cd_page',3)">班级荣誉</a>
+                        <a @click="$emit('cd_page',4)">团日活动</a>
+                        <a @click="$emit('cd_page',5)">学生风采</a>
+                        <a @click="$emit('cd_page',6)">社区互动</a>
+                        <a @click="$emit('cd_page',7)">共创营地</a>
                     </div>
                 </div>
             </div>
@@ -128,10 +128,10 @@ profile()
 }
 
 #main_login {
-    width: 600px;
+    width: 400px;
     height: 40px;
     display: flex;
-    left:200px;
+    margin-left:200px;
 }
 
 #main_login #profile {
