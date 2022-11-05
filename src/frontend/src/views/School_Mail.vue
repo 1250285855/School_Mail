@@ -2,48 +2,28 @@
 
 import { ref } from 'vue'
 import { is_login } from '@/api/api.js'
+import { homePageComponentsList } from '@/views/components/index.js'
+
 import router from '@/router/index.js'
 
-import Header from './components/header/Header.vue';
-import News from './components/News.vue';
-import Welcome from './components/Welcome.vue';
-import PhotoWall from './components/PhotoWall.vue';
-import Footer from './components/Footer.vue';
-import Header_skip from './components/header/Header_skip.vue';
-// import Header_from_wqh from './components/header/Header_from_wqh.vue'
-import Header_simple_1 from './components/header/Header_simple_1.vue';
-import Activity from './components/Activity.vue';
-const isLogin = ref(false)
 
-// 判断是否已经登录了
-async function profile() {
-  const value = await is_login();
-  if (value['status'] == true) {
-    isLogin.value = true
-    return true;
-  } 
-  // 没登录的话跳转到登录页面
-  else {
-    // router.push('/login');
-  }
-}
-profile()
+import Header_skip from './components/header/Header_skip.vue';
+
+const isOpen = ref(0)
+
 </script>
 
 <template>
 
   <div id="app">
     
-    <!-- <Header id="header" :isLogin=isLogin></Header> -->
-    <Header_skip id="header" :isLogin=isLogin></Header_skip>
-    <!-- <Header_simple_1></Header_simple_1> -->
-    <!-- <Header_from_wqh></Header_from_wqh> -->
-    <Transition name="fade">
-      <News></News>
-    </Transition>
-    <PhotoWall></PhotoWall>
-    <Welcome></Welcome>
-    <Footer></Footer>
+    <Header_skip @cd_page="(value) => isOpen = value"></Header_skip>
+
+    <div v-for="components in homePageComponentsList">
+      <div v-if="isOpen === components.id" v-for="component in components.components">
+        <component :is="component"></component>
+      </div>
+    </div>
     
   </div>
 
