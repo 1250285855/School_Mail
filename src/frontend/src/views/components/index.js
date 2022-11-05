@@ -12,7 +12,6 @@ import { ref } from 'vue'
 import News from '@/views/components/news.vue'
 import PhotoWall from '@/views/components/photoWall.vue'
 import Welcome from '@/views/components/welcome.vue'
-import Footer from '@/views/components/footer.vue'
 
 export const homePageComponentsList = ref([
   {
@@ -22,7 +21,6 @@ export const homePageComponentsList = ref([
       News,
       PhotoWall,
       Welcome,
-      Footer
     }
   },
   {

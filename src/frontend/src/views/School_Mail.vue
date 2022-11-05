@@ -6,8 +6,8 @@ import { homePageComponentsList } from '@/views/components/index.js'
 
 import router from '@/router/index.js'
 
-
 import Header_skip from './components/header/Header_skip.vue';
+import Footer from '@/views/components/footer.vue'
 
 const isOpen = ref(0)
 
@@ -25,6 +25,8 @@ const isOpen = ref(0)
       </div>
     </div>
     
+    <Footer></Footer>
+
   </div>
 
 </template>
