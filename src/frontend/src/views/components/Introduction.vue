@@ -1,5 +1,5 @@
 <script setup>
-// import router from '@router'
+// import router from '@/router'
 
 // function login() {
 //     router.push('/login')
@@ -9,29 +9,6 @@
 
 <template>
     <div class="main">
-        <div id="main_Logo">
-            <div id="main_Logo_img"></div>
-            <div id="main_Logo_doc">
-                <div class="chinese"> 计 算 机 科 学 与 技 术 专 业</div>
-                <div class="english">Computer Science and Technology of MinJiang University</div>
-            </div>
-            <div id="main_Logo_login_img"></div>
-            <div id="main_Logo_login_doc"><a @click="login">欢迎登录</a></div>
-        </div>
-        <div class="main_Navigation">
-            <div class="main_Navigation1">
-                <div class="Navigation_Logo">
-                    <div class="Navigation">
-                        <a href="#">专业概况</a>
-                        <a href="#">班级荣誉</a>
-                        <a href="#">学生风采</a>
-                        <a href="#">社区互动</a>
-                        <a href="#">共创营地</a>
-                        <a href="#">关于我们</a>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="Y_All">
             <div class="Y_Navigation">
                 <h3 class="Y_Navigation_Title">专业概况</h3>
@@ -120,30 +97,11 @@
                 </div>
             </div>
         </div>
-        <div class="_US">
-            <div class="_US_Logo"></div>
-            <div class="_US_Doc">
-                <div class="_link">
-                    <a href="#">闽江学院</a> |
-                    <a href="#">闽江学院国际数字经济学院</a> |
-                    <a href="#">校函</a> |
-                    <a href="#">国际学院计算机科学与技术</a> |
-                    <a href="#">国际学院计科官网隐私政策</a> |
-                    <a href="#">国际学院计科官网用户协议</a> |
-                    <a href="#">问题反馈</a> |
-                </div>
-                <div class="_my">
-                    违法和不良信息举报电话:137-7450-2836 |
-                    <a href="#">知识产权侵权投诉</a> |
-                    本网站所有数据、资料,除特殊说明,均出自于我院专业实验室                     
-                </div>
-            </div>
-        </div>
     </div>
 </template>
 
 <style scoped>
-* {
+*{
     margin: 0;
     padding: 0;
 }
@@ -152,127 +110,6 @@
     height: 2864px;
     background-color: rgb(225, 225, 225, 0.9);
     /* background-color: pink; */
-}
-#main_Logo {
-    width: 100%;
-    height: 150px;
-    background-color: rgb(0, 0, 0, 0.7);
-    position: relative;
-    /* 父盒子：让子盒子垂直居中显示 */
-}
-#main_Logo_img {
-    width: 240px;
-    height: 120px;
-    /* background-color: green; */
-    /* margin-top: 15px; */
-    /* margin-bottom: auto; */
-    position: absolute;
-    top: 50%;
-    margin-top: -60px;
-    margin-left: 100px;
-    /* 让盒子垂直居中显示 */
-    margin-right: 0;
-    background-image: url(@img/IDEC_CE_Logo_With_Name.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 240px 120px;
-    /* float: left; */
-}
-#main_Logo_doc {
-    width: 600px;
-    height: 120px;
-    /* background-color: green; */
-    position: absolute;
-    top: 50%;
-    margin-top: -60px;
-    margin-left: 350px;
-    /* float: left; */
-}
-#main_Logo_login_img {
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    top: 50%;
-    margin-top: -30px;
-    margin-left: 1150px;
-    /* background-color: pink; */
-    background-image: url(@img/登录.png);
-    background-size: 40px 40px;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-#main_Logo_login_doc {
-    width: 100px;
-    height: 60px;
-    position: absolute;
-    top: 50%;
-    margin-top: -30px;
-    margin-left: 1210px;
-    text-align: center;
-    line-height: 60px;
-}
-#main_Logo_login_doc a {
-    color: #fcfcfc;
-    text-decoration: none;
-    font-size: 18px;
-    
-}
-#main_Logo_login_doc a:hover {
-    color: #ff8500;
-}
-.chinese {
-    width: 600px;
-    height: 80px;
-    /* background-color: pink; */
-    font-size: 38px;
-    font-weight: 200;
-    line-height: 80px;
-    color: #fcfcfc;
-}
-.english {
-    width: 600px;
-    height: 40px;
-    /* background-color: #fff; */
-    font-size: 20px;
-    color: #fcfcfc;
-    line-height: 10px;
-}
-.main_Navigation {
-    width: 100%;
-    height: 67.35px;
-    border-top: 3px solid #ff8500;
-    border-bottom: 2px solid #edeef0;
-    background-color: rgb(0, 0, 0, 0.7);
-}
-.main_Navigation .main_Navigation1 {
-    width: 1300px;
-    height: 67.35px;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-}
-.main_Navigation .main_Navigation1 .Navigation {
-    width: 1300px;
-    height: 67.35px;
-    line-height: 67.35px;
-    margin: 0 auto;
-    /* background-color: green; */
-    text-align: center;
-    /* float: left; */
-}
-.main_Navigation .main_Navigation1 .Navigation a {
-    font-size: 18px;
-    height: 67.35px;
-    padding: 0 40px;
-    color: #fcfcfc;
-    text-decoration: none;
-    display: inline-block;
-}
-.main_Navigation .main_Navigation1 .Navigation a:hover {
-    background-color: #eee;
-    color: black;
 }
 .main .Y_All {
     width: 1200px;
@@ -455,61 +292,5 @@ li {
     font-size: 16px;
     text-indent: 42px;
     margin-top: 10px;
-}
-._US {
-    width: 100%;
-    height: 150px;
-    margin-top: 20px;
-    /* height: 100vh; */
-    background-color: rgb(0, 0, 0, 0.3);
-    /* background-color: pink; */
-    /* position: absolute; */
-    /* bottom: 0; */
-}
-.main ._US ._US_Logo {
-    width: 150px;
-    height: 75px;
-    margin-left: 250px;
-    /* background-color: #fff; */
-    background-image: url(@img/IDEC_CE_Logo_With_Name.png);
-    background-size: 150px 75px;
-    background-repeat: no-repeat;
-    float: left;
-}
-.main ._US ._US_Doc {
-    width: 700px;
-    height: 150px;
-    /* background-color: #fff; */
-    float: left;
-}
-.main ._US ._US_Doc ._link {
-    width: 700px;
-    height: 75px;
-    color: #fcfcfc;
-    /* line-height: 50px; */
-    /* background-color: green; */
-}
-.main ._US ._US_Doc ._link a {
-    font-size: 13px;
-    color: #fcfcfc;
-    text-decoration: none;
-}
-.main ._US ._US_Doc ._link a:hover {
-    color: #ff8500;
-}
-.main ._US ._US_Doc ._my {
-    width: 700px;
-    height: 75px;
-    /* background-color: pink; */
-    font-size: 13px;
-    color: #fcfcfc;
-}
-.main ._US ._US_Doc ._my a {
-    font-size: 13px;
-    color: #fcfcfc;
-    text-decoration: none;
-}
-.main ._US ._US_Doc ._my a:hover {
-    color: #ff8500;
 }
 </style>

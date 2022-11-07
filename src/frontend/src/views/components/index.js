@@ -9,9 +9,13 @@ homePageComponentsList是用来存放需要展示在home page页面中的所有�
 
 import { ref } from 'vue'
 
-import News from '@/views/components/news.vue'
-import PhotoWall from '@/views/components/photoWall.vue'
-import Welcome from '@/views/components/welcome.vue'
+import News from './news.vue'
+import PhotoWall from './photoWall.vue'
+import Welcome from './welcome.vue'
+
+import Introduction from './Introduction.vue'
+import ClassView from './ClassView.vue'
+import Teachers from './Teachers.vue'
 
 export const homePageComponentsList = ref([
   {
@@ -27,6 +31,7 @@ export const homePageComponentsList = ref([
     id: 1,
     name: "专业概况",
     components: {
+      Introduction,
     }
   },
   {

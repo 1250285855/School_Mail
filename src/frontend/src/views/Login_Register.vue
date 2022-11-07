@@ -1,72 +1,71 @@
+<script setup>
+	import { isReactive } from 'vue';
+	import { ref } from 'vue';
 
-<script  src="@js/Login2.0 JS.js" setup>
+	const isActive = ref(true)
+
+	const styleVar = ref({
+		/* COLORS */
+		/* 强制规定颜色代码 */
+		"--white": "#e9e9e9",
+		"--gray": "#333",
+		// "--blue": "#0367a6",
+		"--lightblue": "#008997",
+		"--orange": "#ff8500",
+
+		/* RADII */
+		"--button-radius": "0.7rem",
+
+		/* SIZES */
+		"--max-width": "758px",
+		"--max-height": "420px",
+	})
 
 </script>   
 
 
 <template>
-<div class="container right-panel-active">
+<div id="main" :style=styleVar>
+	<div class="container" :class="{ rightPanelActive: isActive}">
 			
-			<div class="container__form container--signup">
-				<form action="#" class="form" id="form1">
-					<h2 class="form__title">登录</h2>
-					<input type="text" placeholder="User" class="input" name="登录用户名"/>
-					<input type="email" placeholder="Email" class="input" name="登录邮箱"/>
-					<input type="password" placeholder="Password" class="input" name="登录密码"/>
-					<button class="btn">登录</button>
-				</form>
-			</div>
-
-			
-			<div class="container__form container--signin">
-				<form action="#" class="form" id="form2">
-					<h2 class="form__title">注册</h2>
-					<input type="email" placeholder="Email" class="input" name="注册邮箱"/>
-					<input type="password" placeholder="Password" class="input" name="注册密码"/>
-                    <input type="password" placeholder="Confirm password" class="input" name="确认注册密码"/>
-					<a href="#" class="link">忘记密码?</a>
-					<button class="btn">注册</button>
-				</form>
-			</div>
-
-			
-			<div class="container__overlay">
-				<div class="overlay">
-					<div class="overlay__panel overlay--left">
-						<button class="btn" id="signIn">注册</button>
-					</div>
-					<div class="overlay__panel overlay--right">
-						<button class="btn" id="signUp">登录</button>
-					</div>
+		<div class="container__form container--signup">
+			<form action="#" class="form" id="form1">
+				<h2 class="form__title">登录</h2>
+				<input type="text" placeholder="User" class="input" name="登录用户名"/>
+				<input type="email" placeholder="Email" class="input" name="登录邮箱"/>
+				<input type="password" placeholder="Password" class="input" name="登录密码"/>
+				<button class="btn">登录</button>
+			</form>
+		</div>
+		
+		<div class="container__form container--signin">
+			<form action="#" class="form" id="form2">
+				<h2 class="form__title">注册</h2>
+				<input type="email" placeholder="Email" class="input" name="注册邮箱"/>
+				<input type="password" placeholder="Password" class="input" name="注册密码"/>
+				<input type="password" placeholder="Confirm password" class="input" name="确认注册密码"/>
+				<a href="#" class="link">忘记密码?</a>
+				<button class="btn">注册</button>
+			</form>
+		</div>
+		
+		<div class="container__overlay">
+			<div class="overlay">
+				<div class="overlay__panel overlay--left">
+					<button @click="isActive=false" class="btn" id="signIn">注册</button>
+				</div>
+				<div class="overlay__panel overlay--right">
+					<button @click="isActive=true" class="btn" id="signUp">登录</button>
 				</div>
 			</div>
 		</div>
+	</div>
+</div>
 
 </template>
 
 <style scoped>
-:root {
-	/* COLORS */
-    /* 强制规定颜色代码 */
-	--white: #e9e9e9;
-	--gray: #333;
-	--blue: #0367a6;
-	--lightblue: #008997;
-    --orange : #ff8500;
-
-	/* RADII */
-	--button-radius: 0.7rem;
-
-	/* SIZES */
-	--max-width: 758px;
-	--max-height: 420px;
-
-	font-size: 16px;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-body {
+#main {
 	align-items: center;
 	background-color: var(--white);
 	background: url("@img/bg/background_Login.jpg");
@@ -76,7 +75,15 @@ body {
 	background-size: cover;
 	display: grid;
 	height: 100vh;
+	font-size: 16px;
+	height: 100%;
+	width: 100%;
+	min-width: 1200px;
+	max-width: 1905px;
+	min-height: 800px;
 	place-items: center;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .form__title {
@@ -121,7 +128,7 @@ body {
     color: var(--orange);
 }
 
-.container.right-panel-active .container--signin {
+.container.rightPanelActive .container--signin {
 	transform: translateX(100%);
 }
 
@@ -132,7 +139,7 @@ body {
 	z-index: 1;
 }
 
-.container.right-panel-active .container--signup {
+.container.rightPanelActive .container--signup {
 	-webkit-animation: show 0.6s;
 	        animation: show 0.6s;
 	opacity: 1;
@@ -151,13 +158,14 @@ body {
 	z-index: 100;
 }
 
-.container.right-panel-active .container__overlay {
+.container.rightPanelActive .container__overlay {
 	transform: translateX(-100%);
 }
 
 .overlay {
-	background-color: var(--lightblue);
+	/* background-color: var(--lightblue); */
 	background: url("@img/bg/background_Login.jpg");
+	opacity: 0.95;
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -170,7 +178,7 @@ body {
 	width: 200%;
 }
 
-.container.right-panel-active .overlay {
+.container.rightPanelActive .overlay {
 	transform: translateX(50%);
 }
 
@@ -192,7 +200,7 @@ body {
 	transform: translateX(-20%);
 }
 
-.container.right-panel-active .overlay--left {
+.container.rightPanelActive .overlay--left {
 	transform: translateX(0);
 }
 
@@ -201,7 +209,7 @@ body {
 	transform: translateX(0);
 }
 
-.container.right-panel-active .overlay--right {
+.container.rightPanelActive .overlay--right {
 	transform: translateX(20%);
 }
 

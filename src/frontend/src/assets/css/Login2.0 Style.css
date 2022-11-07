@@ -22,7 +22,7 @@
 body {
 	align-items: center;
 	background-color: var(--white);
-	background: url("../../images/background_Login.jpg");
+	background: url("../imgs/bg/background_Login.jpg");
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;

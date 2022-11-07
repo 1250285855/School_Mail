@@ -39,7 +39,7 @@ async function register () {
 }
 
 function login(){
-    router.push('login')
+    router.push('/login')
 }
 
 async function userList(){
