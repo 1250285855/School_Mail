@@ -1,37 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>专业简介</title>
-</head>
-<body>
-    <link rel="stylesheet" href="../css/Professional Profile_Introduction Style.css">
+<script setup>
+// import router from '@/router'
+
+// function login() {
+//     router.push('/login')
+// }
+
+</script>
+
+<template>
     <div class="main">
-        <div id="main_Logo">
-            <div id="main_Logo_img"></div>
-            <div id="main_Logo_doc">
-                <div class="chinese"> 计 算 机 科 学 与 技 术 专 业</div>
-                <div class="english">Computer Science and Technology of MinJiang University</div>
-            </div>
-            <div id="main_Logo_login_img"></div>
-            <div id="main_Logo_login_doc"><a href="#">欢迎登录</a></div>
-        </div>
-        <div class="main_Navigation">
-            <div class="main_Navigation1">
-                <div class="Navigation_Logo">
-                    <div class="Navigation">
-                        <a href="#">专业概况</a>
-                        <a href="#">班级荣誉</a>
-                        <a href="#">学生风采</a>
-                        <a href="#">社区互动</a>
-                        <a href="#">共创营地</a>
-                        <a href="#">关于我们</a>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="Y_All">
             <div class="Y_Navigation">
                 <h3 class="Y_Navigation_Title">专业概况</h3>
@@ -120,25 +97,200 @@
                 </div>
             </div>
         </div>
-        <div class="_US">
-            <div class="_US_Logo"></div>
-            <div class="_US_Doc">
-                <div class="_link">
-                    <a href="#">闽江学院</a> |
-                    <a href="#">闽江学院国际数字经济学院</a> |
-                    <a href="#">校函</a> |
-                    <a href="#">国际学院计算机科学与技术</a> |
-                    <a href="#">国际学院计科官网隐私政策</a> |
-                    <a href="#">国际学院计科官网用户协议</a> |
-                    <a href="#">问题反馈</a> |
-                </div>
-                <div class="_my">
-                    违法和不良信息举报电话:137-7450-2836 |
-                    <a href="#">知识产权侵权投诉</a> |
-                    本网站所有数据、资料,除特殊说明,均出自于我院专业实验室                     
-                </div>
-            </div>
-        </div>
     </div>
-</body>
-</html>
+</template>
+
+<style scoped>
+*{
+    margin: 0;
+    padding: 0;
+}
+.main {
+    width: 100%;
+    height: 2864px;
+    background-color: rgb(225, 225, 225, 0.9);
+    /* background-color: pink; */
+}
+.main .Y_All {
+    width: 1200px;
+    height: 2450px;
+    /* background-color: pink; */
+    margin: 20px auto;
+}
+.main .Y_All .Y_Navigation {
+    width: 240px;
+    height: 222px;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.3);
+    background-color:  rgb(0, 0, 0, 0.7);
+    position: fixed;
+    float: left;
+}
+.main .Y_All .Y_Navigation h3 {
+    /* width: 240px; */
+    height: 50px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 50px;
+    padding-left: 25px;
+    /* background-color: #ff8500; */
+    border-bottom: 2px solid #ff8500;
+    color: #fcfcfc;
+}
+li {
+    list-style: none;
+}
+.main .Y_All .Y_Navigation ul li {
+    height: 43px;
+    line-height: 43px;
+    padding-left: 20px;
+    font-weight: 200;
+}
+.main .Y_All .Y_Navigation ul li a {
+    font-size: 18px;
+    color: #fcfcfc;
+    text-decoration: none;
+}
+.main .Y_All .Y_Navigation ul li a:hover {
+    color: #ff8500;
+    text-decoration: underline;
+}
+.main .Y_All .Y_Doc {
+    width: 940px;
+    height: 2450px;
+    /* border-radius: 20px 20px 20px 20px; */
+    box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.3);
+    background-color:  rgb(0, 0, 0, 0.7);
+    /* background-color: green; */
+    float: right;
+}
+.main .Y_All .Y_Doc .Y_Doc_Navigation {
+    width: 940px;
+    height: 48px;
+    /* border-radius: 20px 20px 0px 0px; */
+    /* background-color: pink; */
+}
+.main .Y_All .Y_Doc .Y_Doc_Navigation h4 {
+    width: 120px;
+    height: 48px;
+    font-size: 20px;
+    line-height: 48px;
+    padding: 0 20px;
+    font-weight: 400;
+    text-align: center;
+    color: #ff8500;
+    border-bottom: 3px solid rgb(225, 225, 225, 0.5);
+    float: left;
+}
+.main .Y_All .Y_Doc .Y_Doc_Navigation .empty {
+    width: 820px;
+    height: 48px;
+    /* background-color: pink; */
+    border-bottom: 1px solid rgb(225, 225, 225, 0.5);
+    float: left;
+}
+.main .Y_All .Y_Doc .Y_Doc_Navigation .empty h3 {
+    width: 215px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+    color: rgb(225, 225, 225, 0.5);
+    float: right;
+}
+.main .Y_All .Y_Doc .Y_Doc_Navigation .empty h3 a {
+    color: rgb(225, 225, 225, 0.5);
+    text-decoration: none;
+}
+.main .Y_All .Y_Doc .Y_Doc_Navigation .empty h3 a:hover {
+    color: #ff8500;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text {
+    margin: 0;
+    padding: 0;
+    width: 940px;
+    height: 2390px;
+    /* background-color: #fff; */
+}
+.main .Y_All .Y_Doc .Y_Doc_Text p {
+    color: #fcfcfc;
+    font-size: 20px;
+    line-height: 1.5em;
+    text-align: justify;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text ._Doc {
+    width: 900px;
+    height: 2300px;
+    float: left;
+    margin-left: 20px;
+    /* background-color: pink; */
+    margin-top: 20px;
+} 
+.main .Y_All .Y_Doc .Y_Doc_Text .Text_Title {
+    margin-top: 10px;
+    text-align: center;
+    line-height: 29px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Text_Title_English {
+    text-align: center;
+    margin-top: 10px;
+    line-height: 29px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Guide_Title {
+    font-size: 18px;
+    text-indent: 42px;
+    /* margin-top: 30px; */
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Guide {
+    font-size: 16px;
+    text-indent: 42px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Guide_English {
+    font-size: 16px;
+    text-indent: 42px;
+    margin-top: 10px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Strength_Title {
+    font-size: 18px;
+    text-indent: 42px;
+    margin-top: 20px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Strength {
+    font-size: 16px;
+    text-indent: 42px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Strength_English {
+    font-size: 16px;
+    text-indent: 42px;
+    margin-top: 10px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Game_Title {
+    font-size: 18px;
+    text-indent: 42px;
+    margin-top: 20px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Game {
+    font-size: 16px;
+    text-indent: 42px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Game_English {
+    font-size: 16px;
+    text-indent: 42px;
+    margin-top: 10px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Department_Title {
+    font-size: 18px;
+    text-indent: 42px;
+    margin-top: 20px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Department {
+    font-size: 16px;
+    text-indent: 42px;
+} 
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Department_English {
+    font-size: 16px;
+    text-indent: 42px;
+    margin-top: 10px;
+}
+</style>
