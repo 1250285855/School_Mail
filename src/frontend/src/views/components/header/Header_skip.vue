@@ -58,7 +58,7 @@ profile()
                 <div v-if="isLogin" id="profile">您好，{{username}}</div>
                 <div v-if="isLogin" id="logout" @click="logout">退出登录</div>
                 <div v-if="!isLogin" id="login" @click="login">登录</div>
-                <div v-if="!isLogin" id="register" @click="register">注册</div>
+                <!-- <div v-if="!isLogin" id="register" @click="register">注册</div> -->
             </div>
         </div>
         <div class="main_Navigation">
@@ -112,6 +112,7 @@ profile()
     background-size: 240px 120px;
     right: 50px;
     /* float: left; */
+    cursor: pointer;
 }
 #main_Logo_doc {
     height: 120px;
@@ -246,6 +247,7 @@ profile()
     color: #fcfcfc;
     text-decoration: none;
     display: inline-block;
+    cursor: pointer;
 }
 .main_Navigation .main_Navigation1 .Navigation a:hover {
     background-color: #eee;
