@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>专业简介</title>
-</head>
-<body>
-    <link rel="stylesheet" href="../css/Professional Profile_Introduction Style.css">
+<script setup>
+// import router from '@router'
+
+// function login() {
+//     router.push('/login')
+// }
+
+</script>
+
+<template>
     <div class="main">
         <div id="main_Logo">
             <div id="main_Logo_img"></div>
@@ -16,7 +16,7 @@
                 <div class="english">Computer Science and Technology of MinJiang University</div>
             </div>
             <div id="main_Logo_login_img"></div>
-            <div id="main_Logo_login_doc"><a href="#">欢迎登录</a></div>
+            <div id="main_Logo_login_doc"><a @click="login">欢迎登录</a></div>
         </div>
         <div class="main_Navigation">
             <div class="main_Navigation1">
@@ -140,5 +140,376 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+</template>
+
+<style scoped>
+* {
+    margin: 0;
+    padding: 0;
+}
+.main {
+    width: 100%;
+    height: 2864px;
+    background-color: rgb(225, 225, 225, 0.9);
+    /* background-color: pink; */
+}
+#main_Logo {
+    width: 100%;
+    height: 150px;
+    background-color: rgb(0, 0, 0, 0.7);
+    position: relative;
+    /* 父盒子：让子盒子垂直居中显示 */
+}
+#main_Logo_img {
+    width: 240px;
+    height: 120px;
+    /* background-color: green; */
+    /* margin-top: 15px; */
+    /* margin-bottom: auto; */
+    position: absolute;
+    top: 50%;
+    margin-top: -60px;
+    margin-left: 100px;
+    /* 让盒子垂直居中显示 */
+    margin-right: 0;
+    background-image: url(@img/IDEC_CE_Logo_With_Name.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 240px 120px;
+    /* float: left; */
+}
+#main_Logo_doc {
+    width: 600px;
+    height: 120px;
+    /* background-color: green; */
+    position: absolute;
+    top: 50%;
+    margin-top: -60px;
+    margin-left: 350px;
+    /* float: left; */
+}
+#main_Logo_login_img {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    margin-left: 1150px;
+    /* background-color: pink; */
+    background-image: url(@img/登录.png);
+    background-size: 40px 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#main_Logo_login_doc {
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    margin-left: 1210px;
+    text-align: center;
+    line-height: 60px;
+}
+#main_Logo_login_doc a {
+    color: #fcfcfc;
+    text-decoration: none;
+    font-size: 18px;
+    
+}
+#main_Logo_login_doc a:hover {
+    color: #ff8500;
+}
+.chinese {
+    width: 600px;
+    height: 80px;
+    /* background-color: pink; */
+    font-size: 38px;
+    font-weight: 200;
+    line-height: 80px;
+    color: #fcfcfc;
+}
+.english {
+    width: 600px;
+    height: 40px;
+    /* background-color: #fff; */
+    font-size: 20px;
+    color: #fcfcfc;
+    line-height: 10px;
+}
+.main_Navigation {
+    width: 100%;
+    height: 67.35px;
+    border-top: 3px solid #ff8500;
+    border-bottom: 2px solid #edeef0;
+    background-color: rgb(0, 0, 0, 0.7);
+}
+.main_Navigation .main_Navigation1 {
+    width: 1300px;
+    height: 67.35px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.main_Navigation .main_Navigation1 .Navigation {
+    width: 1300px;
+    height: 67.35px;
+    line-height: 67.35px;
+    margin: 0 auto;
+    /* background-color: green; */
+    text-align: center;
+    /* float: left; */
+}
+.main_Navigation .main_Navigation1 .Navigation a {
+    font-size: 18px;
+    height: 67.35px;
+    padding: 0 40px;
+    color: #fcfcfc;
+    text-decoration: none;
+    display: inline-block;
+}
+.main_Navigation .main_Navigation1 .Navigation a:hover {
+    background-color: #eee;
+    color: black;
+}
+.main .Y_All {
+    width: 1200px;
+    height: 2450px;
+    /* background-color: pink; */
+    margin: 20px auto;
+}
+.main .Y_All .Y_Navigation {
+    width: 240px;
+    height: 222px;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.3);
+    background-color:  rgb(0, 0, 0, 0.7);
+    position: fixed;
+    float: left;
+}
+.main .Y_All .Y_Navigation h3 {
+    /* width: 240px; */
+    height: 50px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 50px;
+    padding-left: 25px;
+    /* background-color: #ff8500; */
+    border-bottom: 2px solid #ff8500;
+    color: #fcfcfc;
+}
+li {
+    list-style: none;
+}
+.main .Y_All .Y_Navigation ul li {
+    height: 43px;
+    line-height: 43px;
+    padding-left: 20px;
+    font-weight: 200;
+}
+.main .Y_All .Y_Navigation ul li a {
+    font-size: 18px;
+    color: #fcfcfc;
+    text-decoration: none;
+}
+.main .Y_All .Y_Navigation ul li a:hover {
+    color: #ff8500;
+    text-decoration: underline;
+}
+.main .Y_All .Y_Doc {
+    width: 940px;
+    height: 2450px;
+    /* border-radius: 20px 20px 20px 20px; */
+    box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.3);
+    background-color:  rgb(0, 0, 0, 0.7);
+    /* background-color: green; */
+    float: right;
+}
+.main .Y_All .Y_Doc .Y_Doc_Navigation {
+    width: 940px;
+    height: 48px;
+    /* border-radius: 20px 20px 0px 0px; */
+    /* background-color: pink; */
+}
+.main .Y_All .Y_Doc .Y_Doc_Navigation h4 {
+    width: 120px;
+    height: 48px;
+    font-size: 20px;
+    line-height: 48px;
+    padding: 0 20px;
+    font-weight: 400;
+    text-align: center;
+    color: #ff8500;
+    border-bottom: 3px solid rgb(225, 225, 225, 0.5);
+    float: left;
+}
+.main .Y_All .Y_Doc .Y_Doc_Navigation .empty {
+    width: 820px;
+    height: 48px;
+    /* background-color: pink; */
+    border-bottom: 1px solid rgb(225, 225, 225, 0.5);
+    float: left;
+}
+.main .Y_All .Y_Doc .Y_Doc_Navigation .empty h3 {
+    width: 215px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+    color: rgb(225, 225, 225, 0.5);
+    float: right;
+}
+.main .Y_All .Y_Doc .Y_Doc_Navigation .empty h3 a {
+    color: rgb(225, 225, 225, 0.5);
+    text-decoration: none;
+}
+.main .Y_All .Y_Doc .Y_Doc_Navigation .empty h3 a:hover {
+    color: #ff8500;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text {
+    margin: 0;
+    padding: 0;
+    width: 940px;
+    height: 2390px;
+    /* background-color: #fff; */
+}
+.main .Y_All .Y_Doc .Y_Doc_Text p {
+    color: #fcfcfc;
+    font-size: 20px;
+    line-height: 1.5em;
+    text-align: justify;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text ._Doc {
+    width: 900px;
+    height: 2300px;
+    float: left;
+    margin-left: 20px;
+    /* background-color: pink; */
+    margin-top: 20px;
+} 
+.main .Y_All .Y_Doc .Y_Doc_Text .Text_Title {
+    margin-top: 10px;
+    text-align: center;
+    line-height: 29px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Text_Title_English {
+    text-align: center;
+    margin-top: 10px;
+    line-height: 29px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Guide_Title {
+    font-size: 18px;
+    text-indent: 42px;
+    /* margin-top: 30px; */
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Guide {
+    font-size: 16px;
+    text-indent: 42px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Guide_English {
+    font-size: 16px;
+    text-indent: 42px;
+    margin-top: 10px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Strength_Title {
+    font-size: 18px;
+    text-indent: 42px;
+    margin-top: 20px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Strength {
+    font-size: 16px;
+    text-indent: 42px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Strength_English {
+    font-size: 16px;
+    text-indent: 42px;
+    margin-top: 10px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Game_Title {
+    font-size: 18px;
+    text-indent: 42px;
+    margin-top: 20px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Game {
+    font-size: 16px;
+    text-indent: 42px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Game_English {
+    font-size: 16px;
+    text-indent: 42px;
+    margin-top: 10px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Department_Title {
+    font-size: 18px;
+    text-indent: 42px;
+    margin-top: 20px;
+}
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Department {
+    font-size: 16px;
+    text-indent: 42px;
+} 
+.main .Y_All .Y_Doc .Y_Doc_Text .Professional_Department_English {
+    font-size: 16px;
+    text-indent: 42px;
+    margin-top: 10px;
+}
+._US {
+    width: 100%;
+    height: 150px;
+    margin-top: 20px;
+    /* height: 100vh; */
+    background-color: rgb(0, 0, 0, 0.3);
+    /* background-color: pink; */
+    /* position: absolute; */
+    /* bottom: 0; */
+}
+.main ._US ._US_Logo {
+    width: 150px;
+    height: 75px;
+    margin-left: 250px;
+    /* background-color: #fff; */
+    background-image: url(@img/IDEC_CE_Logo_With_Name.png);
+    background-size: 150px 75px;
+    background-repeat: no-repeat;
+    float: left;
+}
+.main ._US ._US_Doc {
+    width: 700px;
+    height: 150px;
+    /* background-color: #fff; */
+    float: left;
+}
+.main ._US ._US_Doc ._link {
+    width: 700px;
+    height: 75px;
+    color: #fcfcfc;
+    /* line-height: 50px; */
+    /* background-color: green; */
+}
+.main ._US ._US_Doc ._link a {
+    font-size: 13px;
+    color: #fcfcfc;
+    text-decoration: none;
+}
+.main ._US ._US_Doc ._link a:hover {
+    color: #ff8500;
+}
+.main ._US ._US_Doc ._my {
+    width: 700px;
+    height: 75px;
+    /* background-color: pink; */
+    font-size: 13px;
+    color: #fcfcfc;
+}
+.main ._US ._US_Doc ._my a {
+    font-size: 13px;
+    color: #fcfcfc;
+    text-decoration: none;
+}
+.main ._US ._US_Doc ._my a:hover {
+    color: #ff8500;
+}
+</style>
