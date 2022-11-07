@@ -102,7 +102,7 @@ import router from '@/router'
     background-color: rgb(0, 0, 0, 0);
 }
 ._all ._Auto {
-    width: 450px;
+    /* width: 450px; */
     height: 40px;
     margin-top: 50px;
     margin-bottom: 0;
@@ -111,7 +111,7 @@ import router from '@/router'
     /* background-color: green; */
 }
 ._all ._Auto ._Know {
-    width: 225px;
+    width: 50%;
     height: 40px;
     line-height: 40px;
     border-radius: 36px 0 0 36px;
@@ -123,7 +123,8 @@ import router from '@/router'
     background-color: rgb(255, 255, 255, 0.7);
 } */
 ._all ._Auto ._Know a {
-    padding: 8px 72.5px 8px 72.5px;
+    
+    padding: 8px 72px 8px 72px;
     height: 40px;
     font-size: 20px;
     border-radius: 36px 0 0 36px;
@@ -138,7 +139,7 @@ import router from '@/router'
     background-color: rgb(255, 255, 255, 0.7);
 }
 ._all ._Auto ._Community {
-    width: 225px;
+    width: 50%;
     height: 40px;
     line-height: 40px;
     border-radius: 0 36px 36px 0;
@@ -151,7 +152,7 @@ import router from '@/router'
     background-color: rgb(0, 0, 0, 0.7);
 } */
 ._all ._Auto ._Community a {
-    padding: 8px 72.5px 8px 72.5px;
+    padding: 8px 72px 8px 72px;
     height: 40px;
     font-size: 20px;
     border-radius: 0 36px 36px 0;

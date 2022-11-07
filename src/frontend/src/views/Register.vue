@@ -132,7 +132,6 @@ async function userList(){
 }
 .main {
     width: 100%;
-    height: 862px;
     background-color: rgb(0, 0, 0, 0.9);
 }
 .main .main_Navigation {
@@ -376,6 +375,8 @@ async function userList(){
     font-size: 18px;
     color: #fcfcfc;
     border-radius: 7px;
+    border: none;
+    cursor: pointer;
 }
 .Buttom1:hover {
     background-color: rgb(255, 153, 18);
@@ -392,6 +393,8 @@ async function userList(){
     font-size: 18px;
     color: #fcfcfc;
     border-radius: 7px;
+    border: none;
+    cursor: pointer;
 }
 .Buttom2:hover {
     background-color: rgb(255, 153, 18);
@@ -408,6 +411,8 @@ async function userList(){
     font-size: 18px;
     color: #fcfcfc;
     border-radius: 7px;
+    border: none;
+    cursor: pointer;
 }
 .Buttom3:hover {
     background-color: rgb(255, 153, 18);
@@ -419,7 +424,7 @@ async function userList(){
     margin-top: 10px;
 }
 .main .Register_Body .Register_Form .Form_End .Havebeen {
-    width: 85px;
+    width: 90px;
     height: 36.71px;
     float: left;
     line-height: 36.71px;
@@ -470,11 +475,12 @@ async function userList(){
     line-height: 30px;
     font-size: 15px;
     font-weight: 200;
+    margin-top: 280px;
     background-color: rgb(0, 0, 0, 0);
     color: #bbbbbb;
     text-align: center;
     /* background-color: #fff; */
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
 }
 

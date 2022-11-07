@@ -49,14 +49,14 @@ profile()
 <template>
     <div></div>
         <div id="main_Logo">
-            <div id="main_Logo_img" @click="$emit('cd_page',0)"></div>
+            <div id="main_Logo_img"></div>
             <div id="main_Logo_doc">
                 <div class="chinese"> 计 算 机 科 学 与 技 术</div>
                 <div class="english">Computer Science and Technology of MinJiang University</div>
             </div>
             <div id="main_login">
                 <div v-if="isLogin" id="profile">您好，{{username}}</div>
-                <div v-if="isLogin" id="logout" @click="logout">退出登录</div>
+                <div v-if="isLogin" id="nologout" @click="logout">退出登录</div>
                 <div v-if="!isLogin" id="login" @click="login">登录</div>
                 <div v-if="!isLogin" id="register" @click="register">注册</div>
             </div>
@@ -65,14 +65,14 @@ profile()
             <div class="main_Navigation1">
                 <div class="Navigation_Logo">
                     <div class="Navigation">
-                        <a @click="$emit('cd_page',1)">专业概况</a>
-                        <a @click="$emit('cd_page',2)">关于我们</a>
-                        <a @click="$emit('cd_page',3)">班级荣誉</a>
-                        <a @click="$emit('cd_page',4)">团日活动</a>
-                        <a @click="$emit('cd_page',5)">学生风采</a>
-                        <a @click="$emit('cd_page',6)">社区互动</a>
-                        <a @click="$emit('cd_page',7)">共创营地</a>
-                    </div>
+                        <a href="#">专业概况</a>
+                        <a href="#">关于我们</a>
+                        <a href="#">班级荣誉</a>
+                        <a href="#">团日活动</a>
+                        <a href="#">学生风采</a>
+                        <a href="#">社区互动</a>
+                        <a href="#">共创营地</a> -->
+                     </div>
                 </div>
             </div>
         </div>
@@ -128,10 +128,10 @@ profile()
 }
 
 #main_login {
-    width: 400px;
+    width: 600px;
     height: 40px;
     display: flex;
-    margin-left:200px;
+    left:200px;
 }
 
 #main_login #profile {
