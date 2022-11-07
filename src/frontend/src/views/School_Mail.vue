@@ -11,6 +11,12 @@ import PhotoWall from './components/PhotoWall.vue';
 import Footer from './components/Footer.vue';
 import Header_skip from './components/header/Header_skip.vue';
 import Header_simple_1 from './components/header/Header_simple_1.vue';
+import Register from './Register.vue';
+// import Login_Register from './Login_Register.vue'
+import Introduction from './Professional Profile_Introduction.vue'
+import Leader from './Professional Profile_Leader.vue';
+import View from './Professional Profile_View.vue'
+
 
 const isLogin = ref(false)
 
@@ -34,14 +40,19 @@ profile()
   <div id="app">
     
     <!-- <Header id="header" :isLogin=isLogin></Header> -->
-    <Header_skip id="header" :isLogin=isLogin></Header_skip>
+    <!-- <Header_skip id="header" :isLogin=isLogin></Header_skip> -->
     <!-- <Header_simple_1></Header_simple_1> -->
-    <Transition name="fade">
-      <News></News>
-    </Transition>
-    <PhotoWall></PhotoWall>
-    <Welcome></Welcome>
-    <Footer></Footer>
+    <!-- <Transition name="fade">
+    <News></News>
+    </Transition> -->
+    <!-- <PhotoWall></PhotoWall> -->
+    <!-- <Welcome></Welcome> -->
+    <!-- <Footer></Footer> -->
+    <!-- <Register></Register> -->
+    <!-- <Login_Register></Login_Register> -->
+    <!-- <Introduction></Introduction> -->
+    <!-- <Leader></Leader> -->
+    <View></View>
     
   </div>
 
