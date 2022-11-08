@@ -86,12 +86,15 @@
     /* height: 1110px; */
     background-color: rgb(225, 225, 225, 0.9);
     /* background-color: pink; */
+    display: flex;
+    justify-content: center;
 }
 .main .Y_All {
     width: 1200px;
     height: 800px;
+    margin-bottom: 100px;
     /* background-color: pink; */
-    margin: 20px auto;
+    /* margin: 20px auto; */
 }
 .main .Y_All .Y_Navigation {
     width: 240px;
@@ -144,11 +147,12 @@ li {
 .main .Y_All .Y_Doc .Y_Doc_Navigation {
     width: 940px;
     height: 48px;
+    display: flex;
+    justify-content: space-between;
     /* border-radius: 20px 20px 0px 0px; */
     /* background-color: pink; */
 }
 .main .Y_All .Y_Doc .Y_Doc_Navigation h4 {
-    width: 120px;
     height: 48px;
     font-size: 20px;
     line-height: 48px;
@@ -160,7 +164,7 @@ li {
     float: left;
 }
 .main .Y_All .Y_Doc .Y_Doc_Navigation .empty {
-    width: 820px;
+    /* width: 820px; */
     height: 48px;
     /* background-color: pink; */
     /* border-bottom: 1px solid rgb(225, 225, 225, 0.5); */
