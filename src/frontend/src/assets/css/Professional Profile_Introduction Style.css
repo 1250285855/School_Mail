@@ -11,7 +11,7 @@
 #main_Logo {
     width: 100%;
     height: 150px;
-    background-color: rgb(20, 42, 49);
+    background-color: #0f505e;
     position: relative;
     /* 父盒子：让子盒子垂直居中显示 */
 }
@@ -95,9 +95,9 @@
 .main_Navigation {
     width: 100%;
     height: 67.35px;
-    border-top: 3px solid #6bb9ce;
+    border-top: 3px solid #cfccc7;
     border-bottom: 2px solid #fdeac9;
-    background-color: rgb(138, 202, 218);
+    background-color:rgb(138, 202, 218);
 }
 .main_Navigation .main_Navigation1 {
     width: 1300px;
@@ -178,7 +178,7 @@ li {
     height: 2450px;
     /* border-radius: 20px 20px 20px 20px; */
     box-shadow: 5px 5px 5px 5px rgb(14, 16, 17);
-    background-color:  rgb(47, 65, 86);
+    background-color: rgb(47, 65, 86);
     /* background-color: green; */
     float: right;
 }
@@ -222,7 +222,7 @@ li {
     text-decoration: none;
 }
 .main .Y_All .Y_Doc .Y_Doc_Navigation .empty h3 a:hover {
-    color: #ff8500;
+    color: rgb(81, 67, 90);
 }
 .main .Y_All .Y_Doc .Y_Doc_Text {
     margin: 0;
@@ -350,7 +350,7 @@ li {
     text-decoration: none;
 }
 .main ._US ._US_Doc ._link a:hover {
-    color: #ff8500;
+    color: rgb(81, 67, 90);
 }
 .main ._US ._US_Doc ._my {
     width: 700px;

@@ -21,13 +21,7 @@ export default defineConfig({
     cors: true,
     proxy: {
       '/api': {
-<<<<<<< HEAD
         target: 'http://jyuav.net:8000',
-=======
-        target: 'http://127.0.0.1:8000',
-        // Relase version
-        // target: 'http://jyuav.net:8080',
->>>>>>> 2159024f4b11994623544bf0bf5d34ef0c7c5d50
       },
     },
   },
