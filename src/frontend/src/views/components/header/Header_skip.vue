@@ -72,13 +72,13 @@ profile()
             <div class="main_Navigation1">
                 <div class="Navigation_Logo">
                     <div class="Navigation">
+                        <a @click="openLabel(0)" :class="{labelHover: isOpen == 0}">首页</a>
                         <a @click="openLabel(1)" :class="{labelHover: isOpen==1}">专业概况</a>
-                        <a @click="openLabel(2)" :class="{labelHover: isOpen==2}">关于我们</a>
-                        <a @click="openLabel(3)" :class="{labelHover: isOpen==3}">班级荣誉</a>
-                        <a @click="openLabel(4)" :class="{labelHover: isOpen==4}">团日活动</a>
+                        <a @click="openLabel(3)" :class="{labelHover: isOpen==3}">班级风光</a>
                         <a @click="openLabel(5)" :class="{labelHover: isOpen==5}">学生风采</a>
-                        <a @click="openLabel(6)" :class="{labelHover: isOpen==6}">社区互动</a>
-                        <a @click="openLabel(7)" :class="{labelHover: isOpen==7}">共创营地</a>
+                        <!-- <a @click="openLabel(6)" :class="{labelHover: isOpen==6}">社区互动</a> -->
+                        <!-- <a @click="openLabel(7)" :class="{labelHover: isOpen==7}">共创营地</a> -->
+                        <a @click="openLabel(2)" :class="{labelHover: isOpen==2}">关于我们</a>
                     </div>
                 </div>
             </div>
