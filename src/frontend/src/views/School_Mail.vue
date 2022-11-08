@@ -8,6 +8,8 @@ import router from '@/router/index.js'
 
 import Header_skip from './components/header/Header_skip.vue';
 import Footer from '@/views/components/footer.vue'
+import Introduction from '@/views/components/introduction.vue';
+import AboutUs from '@/views/components/AboutUs.vue'
 
 const isOpen = ref(0)
 
@@ -26,6 +28,8 @@ const isOpen = ref(0)
     </div>
     
     <Footer></Footer>
+    <!-- <Introduction></Introduction> -->
+    <!-- <AboutUs></AboutUs> -->
 
   </div>
 
