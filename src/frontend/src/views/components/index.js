@@ -17,6 +17,11 @@ import Introduction from './Introduction.vue'
 import ClassView from './ClassView.vue'
 import Teachers from './Teachers.vue'
 
+import AboutUs from '@/views/components/AboutUs.vue'
+
+import Introduction1 from './专业导读.vue'
+import Introduction2 from './专业优势.vue'
+
 export const homePageComponentsList = ref([
   {
     id: 0,
@@ -31,6 +36,8 @@ export const homePageComponentsList = ref([
     id: 1,
     name: "专业概况",
     components: {
+      Introduction1,
+      Introduction2,
       Introduction,
     }
   },
@@ -38,6 +45,7 @@ export const homePageComponentsList = ref([
     id: 2,
     name: "关于我们",
     components: {
+      AboutUs,
     }
   },
   {
