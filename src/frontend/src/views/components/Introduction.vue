@@ -26,6 +26,7 @@
                         <h3>当前位置 | <a href="#">专业概况</a> | <a href="#">专业简介</a></h3>
                     </div>
                 </div>
+                <div class="Y_Doc_Line"></div>
                 <div class="Y_Doc_Text">
                     <p class="Text_Title">
                         <strong>计算机科学与技术专业简介</strong>
@@ -107,19 +108,20 @@
 }
 .main {
     width: 100%;
-    height: 2864px;
     background-color: rgb(225, 225, 225, 0.9);
     /* background-color: pink; */
+    display: flex;
+    justify-content: center;
 }
 .main .Y_All {
     width: 1200px;
     height: 2450px;
     /* background-color: pink; */
-    margin: 20px auto;
+    /* margin: 20px auto; */
 }
 .main .Y_All .Y_Navigation {
     width: 240px;
-    height: 222px;
+    /* height: 222px; */
     border-radius: 20px 20px 20px 20px;
     box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.3);
     background-color:  rgb(0, 0, 0, 0.7);
@@ -157,7 +159,7 @@ li {
 }
 .main .Y_All .Y_Doc {
     width: 940px;
-    height: 2450px;
+    /* height: 2450px; */
     /* border-radius: 20px 20px 20px 20px; */
     box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.3);
     background-color:  rgb(0, 0, 0, 0.7);
@@ -171,7 +173,7 @@ li {
     /* background-color: pink; */
 }
 .main .Y_All .Y_Doc .Y_Doc_Navigation h4 {
-    width: 120px;
+    /* width: 120px; */
     height: 48px;
     font-size: 20px;
     line-height: 48px;
@@ -183,11 +185,11 @@ li {
     float: left;
 }
 .main .Y_All .Y_Doc .Y_Doc_Navigation .empty {
-    width: 820px;
+    /* width: 820px; */
     height: 48px;
     /* background-color: pink; */
-    border-bottom: 1px solid rgb(225, 225, 225, 0.5);
-    float: left;
+    /* border-bottom: 1px solid rgb(225, 225, 225, 0.5); */
+    float: right;
 }
 .main .Y_All .Y_Doc .Y_Doc_Navigation .empty h3 {
     width: 215px;
@@ -206,11 +208,16 @@ li {
 .main .Y_All .Y_Doc .Y_Doc_Navigation .empty h3 a:hover {
     color: #ff8500;
 }
+.main .Y_All .Y_Doc .Y_Doc_Line {
+    width: 100%;
+    height: 1px;
+    background-color: rgb(225, 225, 225, 0.5);
+}
 .main .Y_All .Y_Doc .Y_Doc_Text {
     margin: 0;
     padding: 0;
     width: 940px;
-    height: 2390px;
+    /* height: 2390px; */
     /* background-color: #fff; */
 }
 .main .Y_All .Y_Doc .Y_Doc_Text p {
@@ -221,7 +228,8 @@ li {
 }
 .main .Y_All .Y_Doc .Y_Doc_Text ._Doc {
     width: 900px;
-    height: 2300px;
+    /* height: 2300px; */
+    margin-bottom: 50px;
     float: left;
     margin-left: 20px;
     /* background-color: pink; */

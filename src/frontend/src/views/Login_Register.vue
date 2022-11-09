@@ -1,61 +1,139 @@
 <script setup>
-	import { isReactive } from 'vue';
-	import { ref } from 'vue';
 
-	const isActive = ref(true)
+import { isReactive } from 'vue';
+import { ref } from 'vue';
 
-	const styleVar = ref({
-		/* COLORS */
-		/* 强制规定颜色代码 */
-		"--white": "#e9e9e9",
-		"--gray": "#333",
-		// "--blue": "#0367a6",
-		"--lightblue": "#008997",
-		"--orange": "#ff8500",
+import router from '@/router';
 
-		/* RADII */
-		"--button-radius": "0.7rem",
+const isActive = ref(false)
+const loginMessage = ref("")
+const registerMessage = ref("")
 
-		/* SIZES */
-		"--max-width": "758px",
-		"--max-height": "420px",
-	})
+const styleVar = ref({
+	/* COLORS */
+	/* 强制规定颜色代码 */
+	"--white": "#e9e9e9",
+	"--gray": "#333",
+	// "--blue": "#0367a6",
+	"--lightblue": "#008997",
+	"--orange": "#ff8500",
+
+	/* RADII */
+	"--button-radius": "0.7rem",
+
+	/* SIZES */
+	"--max-width": "758px",
+	"--max-height": "420px",
+})
+
+function goHome() {
+	router.push('/')
+	router.push('/')
+}
+
+async function login() {
+
+	if (username.value == '') {
+		message.value = '请填写用户名'
+		return
+	}
+	if (password.value == '') {
+		message.value = '请填写密码'
+		return
+	}
+
+	var data = {
+		username: username.value,
+		password: password.value,
+	}
+
+	var value = await login_request(data)
+
+	if (value['status'] == true) {
+		router.push('/')
+	}
+
+	message.value = value['data']
+
+	}
+
+async function register () {  
+
+	if (username.value == '' || password.value == '' || checkPassword.value == '' || email.value == '') {
+		message.value = '请填写完整信息'
+		return
+	}
+
+	var data = {
+		username: username.value,
+		password: password.value,
+		email: email.value
+	}
+
+	var value = await register_request(data)
+
+	message.value = value['data']
+
+}
+
+async function profile() {
+	const value = await is_login();
+
+	if (value['status'] == true) {
+		message.value = '您已经登录了'
+	} 
+	// 没登录的话跳转到登录页面
+	else {
+	// router.push('/login');
+	}
+}
+profile()
 
 </script>   
 
 
 <template>
 <div id="main" :style=styleVar>
+
+	<div class="logo">
+		<img @click="goHome" src="@img/IDEC_CE_Logo_With_Name.png" alt="logo">
+	</div>
+
 	<div class="container" :class="{ rightPanelActive: isActive}">
-			
+
 		<div class="container__form container--signup">
-			<form action="#" class="form" id="form1">
-				<h2 class="form__title">登录</h2>
-				<input type="text" placeholder="User" class="input" name="登录用户名"/>
-				<input type="email" placeholder="Email" class="input" name="登录邮箱"/>
-				<input type="password" placeholder="Password" class="input" name="登录密码"/>
-				<button class="btn">登录</button>
-			</form>
+			<div class="form" id="form1">
+				<h2 class="form__title">注册</h2>
+				<input type="text" placeholder="用户名" class="input" name="注册用户名"/>				
+				<input type="password" placeholder="密码" class="input" name="注册密码"/>
+				<input type="email" placeholder="邮箱" class="input" name="注册邮箱"/>
+				<div class="message">
+					{{loginMessage}}
+				</div>
+				<button @click="login" class="btn">注册</button>
+			</div>
 		</div>
 		
 		<div class="container__form container--signin">
-			<form action="#" class="form" id="form2">
-				<h2 class="form__title">注册</h2>
-				<input type="email" placeholder="Email" class="input" name="注册邮箱"/>
-				<input type="password" placeholder="Password" class="input" name="注册密码"/>
-				<input type="password" placeholder="Confirm password" class="input" name="确认注册密码"/>
-				<a href="#" class="link">忘记密码?</a>
-				<button class="btn">注册</button>
-			</form>
+			<div class="form" id="form2">
+				<h2 class="form__title">登录</h2>
+				<input type="email" placeholder="用户名" class="input" name="注册邮箱"/>
+				<input type="password" placeholder="密码" class="input" name="注册密码"/>
+				<div class="message">
+					{{registerMessage}}
+				</div>
+				<a @click="forget" href="#" class="link">忘记密码?</a>
+				<button @click="register" class="btn">登录</button>
+			</div>
 		</div>
 		
 		<div class="container__overlay">
 			<div class="overlay">
 				<div class="overlay__panel overlay--left">
-					<button @click="isActive=false" class="btn" id="signIn">注册</button>
+					<button @click="isActive=false" class="btn" id="signIn">登录</button>
 				</div>
 				<div class="overlay__panel overlay--right">
-					<button @click="isActive=true" class="btn" id="signUp">登录</button>
+					<button @click="isActive=true" class="btn" id="signUp">注册</button>
 				</div>
 			</div>
 		</div>
@@ -66,6 +144,9 @@
 
 <style scoped>
 #main {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
 	align-items: center;
 	background-color: var(--white);
 	background: url("@img/bg/background_Login.jpg");
@@ -73,7 +154,6 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	display: grid;
 	height: 100vh;
 	font-size: 16px;
 	height: 100%;
@@ -84,6 +164,19 @@
 	place-items: center;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
 		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.logo {
+	height: 120px;
+	margin-top: -140px;
+	margin-bottom: 20px;
+	
+}
+
+.logo img {
+	height: 100%;
+	object-fit: contain;
+	cursor: pointer;
 }
 
 .form__title {
@@ -252,12 +345,19 @@
 	text-align: center;
 }
 
+.message {
+	height: 20px;
+}
+
 .input {
 	background-color: #fff;
 	border: none;
 	padding: 0.9rem 0.9rem;
 	margin: 0.5rem 0;
 	width: 100%;
+	border-radius: 20px;
+	font-size: 14px;
+	outline: none;
 }
 
 @-webkit-keyframes show {

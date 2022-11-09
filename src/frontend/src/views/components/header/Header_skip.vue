@@ -12,6 +12,8 @@ const props = defineProps({
 })
 
 const username = ref('')
+const emit = defineEmits('cd_page')
+const isOpen = ref(0)
 
 function login() {
     router.push('/login')
@@ -28,6 +30,11 @@ function logout() {
     router.push('/')
     router.go(0)
 
+}
+
+function openLabel(labelId) {
+    isOpen.value = labelId
+    emit('cd_page', labelId)
 }
 
 // 判断是否已经登录了
@@ -49,7 +56,7 @@ profile()
 <template>
     <div></div>
         <div id="main_Logo">
-            <div id="main_Logo_img" @click="$emit('cd_page',0)"></div>
+            <div id="main_Logo_img" @click="openLabel(0)"></div>
             <div id="main_Logo_doc">
                 <div class="chinese"> 计 算 机 科 学 与 技 术</div>
                 <div class="english">Computer Science and Technology of MinJiang University</div>
@@ -58,20 +65,20 @@ profile()
                 <div v-if="isLogin" id="profile">您好，{{username}}</div>
                 <div v-if="isLogin" id="logout" @click="logout">退出登录</div>
                 <div v-if="!isLogin" id="login" @click="login">登录</div>
-                <div v-if="!isLogin" id="register" @click="register">注册</div>
+                <!-- <div v-if="!isLogin" id="register" @click="register">注册</div> -->
             </div>
         </div>
         <div class="main_Navigation">
             <div class="main_Navigation1">
                 <div class="Navigation_Logo">
                     <div class="Navigation">
-                        <a @click="$emit('cd_page',1)">专业概况</a>
-                        <a @click="$emit('cd_page',2)">关于我们</a>
-                        <a @click="$emit('cd_page',3)">班级荣誉</a>
-                        <a @click="$emit('cd_page',4)">团日活动</a>
-                        <a @click="$emit('cd_page',5)">学生风采</a>
-                        <a @click="$emit('cd_page',6)">社区互动</a>
-                        <a @click="$emit('cd_page',7)">共创营地</a>
+                        <a @click="openLabel(0)" :class="{labelHover: isOpen == 0}">首页</a>
+                        <a @click="openLabel(1)" :class="{labelHover: isOpen==1}">专业概况</a>
+                        <a @click="openLabel(3)" :class="{labelHover: isOpen==3}">班级风光</a>
+                        <a @click="openLabel(5)" :class="{labelHover: isOpen==5}">学生风采</a>
+                        <!-- <a @click="openLabel(6)" :class="{labelHover: isOpen==6}">社区互动</a> -->
+                        <!-- <a @click="openLabel(7)" :class="{labelHover: isOpen==7}">共创营地</a> -->
+                        <a @click="openLabel(2)" :class="{labelHover: isOpen==2}">关于我们</a>
                     </div>
                 </div>
             </div>
@@ -112,6 +119,7 @@ profile()
     background-size: 240px 120px;
     right: 50px;
     /* float: left; */
+    cursor: pointer;
 }
 #main_Logo_doc {
     height: 120px;
@@ -243,11 +251,16 @@ profile()
     font-size: 18px;
     height: 67.35px;
     padding: 0 40px;
-    color: #fcfcfc;
+    /* color: #fcfcfc; */
     text-decoration: none;
     display: inline-block;
+    cursor: pointer;
 }
 .main_Navigation .main_Navigation1 .Navigation a:hover {
+    background-color: #eee;
+    color: black;
+}
+.labelHover {
     background-color: #eee;
     color: black;
 }
