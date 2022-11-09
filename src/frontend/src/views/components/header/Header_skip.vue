@@ -211,14 +211,14 @@ profile()
     font-weight: 200;
     line-height: 80px;
     text-align: center;
-    color: rgb(243,243,243);
+    color: rgb(248, 248, 248);
 }
 .english {
     width: 600px;
     height: 40px;
     /* background-color: #fff; */
     font-size: 20px;
-    color: #fdeac9;
+    color: rgb(227, 225, 210);
     text-align: center;
     line-height: 10px;
 }
