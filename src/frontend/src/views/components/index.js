@@ -23,6 +23,8 @@ import AboutUs1 from './关于我们.vue'
 import Introduction1 from './专业导读.vue'
 import Introduction2 from './专业优势.vue'
 
+import Safety from './瓶瓶安安.vue'
+
 export const homePageComponentsList = ref([
   {
     id: 0,
@@ -52,14 +54,16 @@ export const homePageComponentsList = ref([
   },
   {
     id: 3,
-    name: "班级荣誉",
+    name: "班级风光",
     components: {
+      Safety,
     }
   },
   {
     id: 4,
     name: "学生风采",
     components: {
+      Safety,
     }
   },
   {
