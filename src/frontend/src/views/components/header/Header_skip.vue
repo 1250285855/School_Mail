@@ -2,6 +2,7 @@
 
 import { ref } from 'vue'
 import { is_login, logout_request } from '@/api/api.js'
+import { baseColor } from '@/assets/js/color';
 import router from '@/router'
 
 const props = defineProps({
@@ -68,11 +69,11 @@ profile()
                 <!-- <div v-if="!isLogin" id="register" @click="register">注册</div> -->
             </div>
         </div>
-        <div class="main_Navigation">
+        <div class="main_Navigation" :style="baseColor">
             <div class="main_Navigation1">
                 <div class="Navigation_Logo">
                     <div class="Navigation">
-                        <a @click="openLabel(0)" :class="{labelHover: isOpen == 0}">首页</a>
+                        <a @click="openLabel(0)" :class="{labelHover: isOpen==0}">首页</a>
                         <a @click="openLabel(1)" :class="{labelHover: isOpen==1}">专业概况</a>
                         <a @click="openLabel(3)" :class="{labelHover: isOpen==3}">班级风光</a>
                         <a @click="openLabel(5)" :class="{labelHover: isOpen==5}">学生风采</a>
@@ -227,7 +228,8 @@ profile()
     height: 67.35px;
     border-top: 3px solid #cbebf4;
     border-bottom: 2px solid #fdeac9;
-    background-color:rgb(138, 202, 218);
+    /* background-color:rgb(138, 202, 218); */
+    background-color: var(--blue);
 }
 .main_Navigation .main_Navigation1 {
     width: 1300px;

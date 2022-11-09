@@ -6,11 +6,14 @@ import { slides } from '@img/basketball_game/slides.js'
 
 import {Splide, SplideSlide, SplideTrack} from '@splidejs/vue-splide'
 import '@splidejs/splide/dist/css/themes/splide-default.min.css'
+import 'animate.css'
 
 const options = ref({
     rewind: true,
     autoplay: true,
 })
+
+const Test = ref(false)
 
 </script>
 
@@ -19,7 +22,10 @@ const options = ref({
 <div></div>
 <div id="main">
     <div id="text"> 
-        <div id="title">篮球赛</div>
+        <Transition enter-active-class="animate__animated animate__infinite">
+            <div id="title" v-if="Test">篮球赛</div>
+        </Transition>
+        <button @click="Test=!Test"></button>
         <div id="second_title">团日活动和外教一起打篮球</div>
     </div>
     <div id="photo_wall">

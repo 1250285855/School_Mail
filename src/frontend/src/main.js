@@ -4,6 +4,7 @@ import router from './router'
 import App from './App.vue'
 
 import './assets/main.css'
+import 'animate.css'
 
 // 校函App
 const app = createApp(App)

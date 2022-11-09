@@ -56,24 +56,23 @@ export const homePageComponentsList = ref([
     id: 3,
     name: "班级风光",
     components: {
-      Safety,
     }
   },
   {
-    id: 4,
+    id: 5,
     name: "学生风采",
     components: {
       Safety,
     }
   },
   {
-    id: 5,
+    id: 6,
     name: "社区互动",
     components: {
     }
   },
   {
-    id:6,
+    id:7,
     name: "共创营地",
     components: {
     }
