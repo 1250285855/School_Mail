@@ -6,7 +6,7 @@
 
 <div></div>
 <div id="main">
-    <div id="text">
+    <div class="animate__animated animate__fadeIn" id="text">
         <div id="title">
             <h1>计算机科学与技术专业</h1>
             <h2>Introduction to Computer Science and Technology</h2>
@@ -16,7 +16,7 @@
             <p style="margin-top:20px;">通俗地说，我们要学习信息如何在计算机中进行表示和处理，如何通过算法和程序解决我们日常生活中的各种问题，还将学习这些方法在本学科前沿领域如人工智能、嵌入式系统、信息安全、云计算等的应用案例。我们的课程将带领同学们一步步走进丰富多彩的计算机世界，让你从“计算机小白”成长为一名有着扎实理论基础和一定实践经验的计算机工程师。</p>
         </div>
     </div>
-    <div id="image">
+    <div class="animate__animated animate__fadeInRight"  id="image">
 
     </div>
 </div>
