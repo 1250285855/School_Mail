@@ -5,16 +5,17 @@ import { is_login, logout_request } from '@/api/api.js'
 import { baseColor } from '@/assets/js/color';
 import router from '@/router'
 
-const props = defineProps({
-    isLogin: {
-        type: Boolean,
-        default: false,
-    }
-})
+// const props = defineProps({
+//     isLogin: {
+//         type: Boolean,
+//         default: false,
+//     }
+// })
 
 const username = ref('')
 const emit = defineEmits('cd_page')
 const isOpen = ref(0)
+const isLogin = ref(false)
 
 function login() {
     router.push('/login')
@@ -42,12 +43,14 @@ function openLabel(labelId) {
 async function profile() {
   const value = await is_login();
   if (value['status'] == true) {
+    isLogin.value = true
     console.log(value['data'])
     username.value = value['data']
     return value['data']
   } 
   // 没登录的话跳转到登录页面
   else {
+    isLogin.value = false
     // router.push('/login');
   }
 }
