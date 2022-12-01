@@ -49,7 +49,7 @@
     height: 500px;
     background-color: rgba(20, 42, 49);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .main .Box {
     width: 200px;
@@ -83,12 +83,12 @@
     margin-top: 20px;
 }
 #Text {
-    color: rgb(192, 192, 192);
+    color: rgb(0, 0, 0);
     margin: 10px 15px;
     text-align: justify;
 }
 #Text1 {
-    color: rgb(192, 192, 192);
+    color: rgb(0, 0, 0);
     margin-top: 10px;
     margin-right: 10px;
     text-align: justify;

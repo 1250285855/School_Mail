@@ -15,7 +15,7 @@ const options = ref({
 
 <template>
 <div></div>
-<div id="main">
+<div class="animate__animated animate__fadeIn" id="main">
 
     <Splide id="splide" :has-track="false" :options="options">
         <div class="custom-wrapper">

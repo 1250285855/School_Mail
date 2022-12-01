@@ -2,7 +2,7 @@
 
 import { ref } from 'vue'
 import { slides } from '@img/basketball_game/slides.js'
-
+import { useIntersectionObserver } from '@vueuse/core'
 
 import {Splide, SplideSlide, SplideTrack} from '@splidejs/vue-splide'
 import '@splidejs/splide/dist/css/themes/splide-default.min.css'
@@ -12,17 +12,34 @@ const options = ref({
     autoplay: true,
 })
 
+const Text = ref(null)
+const Photo = ref(null)
+
+const { stop }= useIntersectionObserver(
+  
+    Text,
+    ([{ isIntersecting }], observerElement) => {
+        if (isIntersecting) {
+            Text.value.classList.add('animate__animated', 'animate__fadeInUp')
+            Photo.value.classList.add('animate__animated', 'animate__fadeInUp')
+        }
+    },
+    {
+        threshold: 0,
+    },
+)
+
 </script>
 
 <template>
     
 <div></div>
 <div id="main">
-    <div id="text"> 
+    <div id="text" ref="Text"> 
         <div id="title">篮球赛</div>
         <div id="second_title">团日活动和外教一起打篮球</div>
     </div>
-    <div id="photo_wall">
+    <div id="photo_wall" ref="Photo">
         <Splide :options="options" :has-track="false">
             <SplideTrack>
                 <SplideSlide v-for="slide in slides" :key="slide.id">
@@ -46,6 +63,10 @@ const options = ref({
     height: 900px;
     background-color: aliceblue;
 
+}
+
+.animate__animated .animate__fadeInUp {
+    animation-delay: 1s;
 }
 
 #text {

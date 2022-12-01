@@ -1,13 +1,34 @@
 <script setup>
 
+import { ref } from 'vue'
+
 import router from '@/router'
+
+import { useIntersectionObserver } from '@vueuse/core'
+
+const Main = ref(null)
+const Value = ref(null)
+
+const { stop }= useIntersectionObserver(
+  
+    Main,
+    ([{ isIntersecting }], observerElement) => {
+        if (isIntersecting) {
+            Main.value.classList.add('animate__animated', 'animate__fadeIn')
+            Value.value.classList.add('animate__animated', 'animate__fadeInUp')
+        }
+    },
+    {
+        threshold: 0,
+    },
+)
 
 </script>
 
 <template>
 <div></div>
-<div id="main">
-    <div class="_all"> 
+<div id="main" ref="Main">
+    <div class="_all" ref="Value"> 
         <div class="_Computer"></div>
         <div class="_GetIn">
             <a>Computer Engineering</a>
@@ -165,6 +186,5 @@ import router from '@/router'
     background-color: rgb(0, 0, 0, 0.7);
     color: #fcfcfc;
 }
-
 
 </style>

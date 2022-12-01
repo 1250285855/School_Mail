@@ -19,6 +19,7 @@ import Teachers from './Teachers.vue'
 
 import AboutUs from '@/views/components/AboutUs.vue'
 import AboutUs1 from './关于我们.vue'
+import AboutUs2 from './高德地图.vue'
 
 import Introduction1 from './专业导读.vue'
 import Introduction2 from './专业优势.vue'
@@ -42,7 +43,6 @@ export const homePageComponentsList = ref([
     components: {
       Introduction1,
       Introduction2,
-      Introduction,
     }
   },
   {
@@ -50,7 +50,7 @@ export const homePageComponentsList = ref([
     name: "关于我们",
     components: {
       AboutUs1,
-      AboutUs,
+      AboutUs2,
     }
   },
   {

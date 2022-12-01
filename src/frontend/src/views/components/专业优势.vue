@@ -90,6 +90,7 @@
     margin-right: 40px;
     text-align: center;
     text-indent: justify;
+    color: black;
 }
 
 </style>

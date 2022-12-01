@@ -1,7 +1,5 @@
 import axios from 'axios'
 
-axios.baseURL = "127.0.0.1:8000"
-
 export async function get(url, params = {}) {
 
   let value;

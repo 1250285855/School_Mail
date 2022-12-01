@@ -1,13 +1,27 @@
 <script setup>
 
-import { isReactive } from 'vue';
 import { ref } from 'vue';
+
+import { login_request, is_login, register_request, account_list } from '@/api/api.js'
 
 import router from '@/router';
 
 const isActive = ref(false)
+
+const loginUsername = ref('')
+const loginPassword = ref('')
 const loginMessage = ref("")
+
+const registerUsername = ref('')
+const registerPassword = ref('')
+const registerEmail = ref('')
 const registerMessage = ref("")
+
+const isLoginUsernameError = ref(false)
+const isLoginPasswordError = ref(false)
+const isRegisterUsernameError = ref(false)
+const isRegisterPasswordError = ref(false)
+const isRegisterEmailError = ref(false)
 
 const styleVar = ref({
 	/* COLORS */
@@ -33,18 +47,22 @@ function goHome() {
 
 async function login() {
 
-	if (username.value == '') {
-		message.value = '请填写用户名'
+	if (loginUsername.value == '') {
+		loginMessage.value = "请填写用户名"
+		isLoginUsernameError.value = true
 		return
 	}
-	if (password.value == '') {
-		message.value = '请填写密码'
+	isLoginUsernameError.value = false
+	if (loginPassword.value == '') {
+		loginMessage.value = '请填写密码'
+		isLoginPasswordError.value = true
 		return
 	}
+	isLoginPasswordError.value = false
 
 	var data = {
-		username: username.value,
-		password: password.value,
+		username: loginUsername.value,
+		password: loginPassword.value,
 	}
 
 	var value = await login_request(data)
@@ -53,26 +71,39 @@ async function login() {
 		router.push('/')
 	}
 
-	message.value = value['data']
+	loginMessage.value = value['data']
 
 	}
 
 async function register () {  
 
-	if (username.value == '' || password.value == '' || checkPassword.value == '' || email.value == '') {
-		message.value = '请填写完整信息'
+	if (registerUsername.value == '') {
+		registerMessage.value = '请填写用户名'
+		isRegisterUsernameError.value = true
 		return
 	}
-
+	isRegisterUsernameError.value = false
+	if (registerPassword.value == '') {
+		registerMessage.value = '请填写密码'
+		isRegisterPasswordError.value = true
+		return
+	}
+	isRegisterPasswordError.value = false
+	if (registerEmail.value == '') {
+		registerMessage.value = '请填写邮箱'
+		isRegisterEmailError.value = true
+		return
+	}
+	isRegisterEmailError.value = false
 	var data = {
-		username: username.value,
-		password: password.value,
-		email: email.value
+		username: registerUsername.value,
+		password: registerPassword.value,
+		email: registerEmail.value
 	}
 
 	var value = await register_request(data)
 
-	message.value = value['data']
+	registerMessage.value = value['data']
 
 }
 
@@ -80,7 +111,7 @@ async function profile() {
 	const value = await is_login();
 
 	if (value['status'] == true) {
-		message.value = '您已经登录了'
+		loginMessage.value = '您已经登录了'
 	} 
 	// 没登录的话跳转到登录页面
 	else {
@@ -104,26 +135,26 @@ profile()
 		<div class="container__form container--signup">
 			<div class="form" id="form1">
 				<h2 class="form__title">注册</h2>
-				<input type="text" placeholder="用户名" class="input" name="注册用户名"/>				
-				<input type="password" placeholder="密码" class="input" name="注册密码"/>
-				<input type="email" placeholder="邮箱" class="input" name="注册邮箱"/>
+				<input v-model="registerUsername" type="text" placeholder="用户名" class="input" :class="{'input_error': isRegisterUsernameError}" name="注册用户名"/>				
+				<input v-model="registerPassword" type="password" placeholder="密码" class="input" :class="{'input_error': isRegisterPasswordError}" name="注册密码"/>
+				<input v-model="registerEmail" type="email" placeholder="邮箱" class="input" :class="{'input_error': isRegisterEmailError}" name="注册邮箱"/>
 				<div class="message">
-					{{loginMessage}}
+					{{registerMessage}}
 				</div>
-				<button @click="login" class="btn">注册</button>
+				<button @click="register" class="btn">注册</button>
 			</div>
 		</div>
 		
 		<div class="container__form container--signin">
 			<div class="form" id="form2">
 				<h2 class="form__title">登录</h2>
-				<input type="email" placeholder="用户名" class="input" name="注册邮箱"/>
-				<input type="password" placeholder="密码" class="input" name="注册密码"/>
+				<input v-model="loginUsername" type="text" placeholder="用户名" class="input" :class="{'input_error': isLoginUsernameError}" name="登录用户名"/>
+				<input v-model="loginPassword" type="password" placeholder="密码" class="input" :class="{'input_error': isLoginPasswordError}" name="登录密码"/>
 				<div class="message">
-					{{registerMessage}}
+					{{loginMessage}}
 				</div>
 				<a @click="forget" href="#" class="link">忘记密码?</a>
-				<button @click="register" class="btn">登录</button>
+				<button @click="login" class="btn">登录</button>
 			</div>
 		</div>
 		
@@ -183,6 +214,7 @@ profile()
 	font-weight: 300;
 	margin: 0;
 	margin-bottom: 1.25rem;
+	color: var(--gray);
 }
 
 .link {
@@ -346,6 +378,7 @@ profile()
 }
 
 .message {
+	color: var(--gray);
 	height: 20px;
 }
 
@@ -358,6 +391,10 @@ profile()
 	border-radius: 20px;
 	font-size: 14px;
 	outline: none;
+}
+
+.input_error {
+	border: 1px solid red;
 }
 
 @-webkit-keyframes show {
