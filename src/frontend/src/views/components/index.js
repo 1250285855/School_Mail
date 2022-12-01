@@ -25,6 +25,7 @@ import Introduction2 from './专业优势.vue'
 
 import Safety from './瓶瓶安安.vue'
 
+import View from './班级风光.vue'
 export const homePageComponentsList = ref([
   {
     id: 0,
@@ -56,6 +57,7 @@ export const homePageComponentsList = ref([
     id: 3,
     name: "班级风光",
     components: {
+      View,
     }
   },
   {
