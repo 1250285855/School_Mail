@@ -43,7 +43,9 @@
 <style scoped>
 .main {
     height: 700px;
-    background-image: linear-gradient(to left bottom, #6bd17b, #60d696, #5bdbae, #5fdec3, #6ce1d5, #6ae5d9, #68e8dc, #65ece0, #51f1d5, #47f5c5, #4df9b0, #5ffb97);
+    /* background-image: linear-gradient(to left bottom, #6bd17b, #60d696, #5bdbae, #5fdec3, #6ce1d5, #6ae5d9, #68e8dc, #65ece0, #51f1d5, #47f5c5, #4df9b0, #5ffb97); */
+    /* background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%); */
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
     /* background-color: pink; */
     display: flex;
     justify-content: space-between;
