@@ -38,6 +38,32 @@
                 </div>
             </div>
         </div>
+        <div class="Box3">
+            <div class="card" id="card1">
+                <p class="title3">团日活动-篮球赛</p>
+                <div class="doc">
+                    <p>这是一场计算机科学与技术专业与电子商务专业的友谊赛，但特别的是我们邀请来了我们学院的外国教授。大家因为对篮球的热爱聚到了一起，秉承着“友谊第一，比赛第二”的原则为大家献上了一场精彩而富有竞技性的比赛。</p>
+                </div>
+            </div>
+            <div class="card" id="card2">
+                <p class="title3">团日活动-制作口罩</p>
+                <div class="doc">
+                    <p>在新冠疫情的大背景下口罩早已成为每个人形影不离的“时尚单品”，如今在生活中也出现了许多独具一格的口罩样式，所以我们举办这次活动。在保证实用性的前提下让大家制作自己的创意口罩。</p>
+                </div>
+            </div>
+            <div class="card" id="card3">
+                <p class="title3">团日活动-红色剧本杀</p>
+                <div class="doc">
+                    <p>21级计科专业的同学们跟随红色潮流,创新团日活动形式，选择了最近流行的红色剧本杀来举办本次活动。此次选取的剧本改编自真实的历史事件，讲述的是解放战争期间，中共地下党为解放天津作出不懈努力和牺牲的故事。参与的同学们穿越历史时空，走进峥嵘岁月，通过沉浸式演绎自己的角色来感受那一段先烈们的艰辛岁月，致敬革命先辈，汲取奋进力量。</p>
+                </div>
+            </div>
+            <div class="card" id="card4">
+                <p class="title3">团日活动-晨跑</p>
+                <div class="doc">
+                    <p>在“请党放心,强国有我”主题团日活动中,21计科班级的同学们抖擞精神,展示积极向上、气宇轩昂的精神面貌举办了本次的晨跑活动。团支书领头高举班旗迎风奔跑，后面的同学们人手一面五星红旗组成整齐的方阵紧随其后，在清晨的致远田径场形成了一道动人的风景线。</p>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -178,5 +204,87 @@
     font-size: 18px;
     margin-top: 30px;
     color: #808000;
+}
+.main .Box3 {
+    height: 600px;
+    width: 100%;
+    background-color: rgba(20, 42, 49);
+    display: flex;
+    justify-content: space-around;
+}
+.main .Box3 .card {
+    width: 250px;
+    height: 410px;
+    margin-top: 110px;
+    border: 1.5px solid rgb(138, 202, 218);
+    background-color: aliceblue;
+}
+.main .Box3 .card .doc {
+    width: 220px;
+    margin-left: 15px;
+    margin-top: 10px;
+    text-align: justify;
+    font-size: 16px;
+    color: black;
+    margin-top: 10px;
+    text-indent: 2em;
+}
+.main .Box3 .card .title3 {
+    text-align: center;
+    font-size: 20px;
+    color: rgb(138, 202, 218);
+    margin-top: 25px;
+}
+#card1 {
+    animation-duration: 2s;
+    animation-name: transform1;
+}
+@keyframes transform1 {
+    from {
+        margin-top: 100%;
+        height: 410px;
+    }
+    to {
+        height: 410px;
+    }
+}
+#card2 {
+    animation-duration: 2.5s;
+    animation-name: transform2;
+}
+@keyframes transform2 {
+    from {
+        margin-top: 100%;
+        height: 410px;
+    }
+    to {
+        height: 410px;
+    }
+}
+#card3 {
+    animation-duration: 3s;
+    animation-name: transform3;
+}
+@keyframes transform3 {
+    from {
+        margin-top: 100%;
+        height: 410px;
+    }
+    to {
+        height: 410px;
+    }
+}
+#card4 {
+    animation-duration: 3.5s;
+    animation-name: transform4;
+}
+@keyframes transform4 {
+    from {
+        margin-top: 100%;
+        height: 410px;
+    }
+    to {
+        height: 410px;
+    }
 }
 </style>
