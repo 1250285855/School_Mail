@@ -36,6 +36,7 @@
             <p id="Text1">
                 该项目主要打造智能资源回收器及辅助回收的智能资源回收平台，目的在于助力国家解决垃圾回收的痛点，缓解垃圾处理后端压力。用户可通过自主进行资源回收获得一定的积分在智能资源回收平台上兑换商品优惠券，以此来激励大众自主进行资源回收。
             </p>
+            <div id="occupy"></div>
         </div>
     </div>
 </template>
@@ -45,7 +46,8 @@
     height: 700px;
     /* background-image: linear-gradient(to left bottom, #6bd17b, #60d696, #5bdbae, #5fdec3, #6ce1d5, #6ae5d9, #68e8dc, #65ece0, #51f1d5, #47f5c5, #4df9b0, #5ffb97); */
     /* background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%); */
-    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    /* background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%); */
+    background-color: rgba(20, 42, 49);
     /* background-color: pink; */
     display: flex;
     justify-content: space-between;
@@ -58,11 +60,24 @@
     margin-left: 100px;
     border: 2px solid #fdeac9;
     margin-top: 50px;
+    animation-duration: 2s;
+    animation-name: slidein1;
 }
 .main .Box2 {
     width: 450px;
     height: 300px;
     margin-top: 180px;
+    animation-duration: 2s;
+    animation-name: slidein;
+}
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 450px;
+    }
+    to {
+        width: 450px;
+    }
 }
 .main .Box3 {
     width: 300px;
@@ -72,6 +87,22 @@
     margin-top: 150px;
     margin-right: 100px;
     border: 2px solid #fdeac9;
+    animation-duration: 2s;
+    animation-name: slidein1;
+}
+@keyframes slidein1 {
+    from {
+        margin-left: 100%;
+        width: 300px;
+    }
+    to {
+        width: 300px;
+    }
+}
+#occupy {
+    height: 200px;
+    width: 300px;
+    /* background-color: #6b8e23; */
 }
 #Title {
     /* 深藏青色 */
@@ -113,5 +144,17 @@
     margin-left: 3px;
     background-repeat: no-repeat;
     background-position: center;
+
+    border-style: solid;
+    display: block;
+    -webkit-transition: width 2s, height 2s, -webkit-transform 2s;
+    transition: width 2s, height 2s, transform 2s;
+}
+#Photo:hover {
+    width: 390px;
+    height: 293px;
+    background-size: 390px 293px;
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
 }
 </style>
