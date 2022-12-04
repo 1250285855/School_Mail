@@ -4,6 +4,16 @@
 
 <template>
     <div class="main">
+        <div class="Box0">
+            <div class="Box0_Photo">
+                <div class="front"></div>
+                <div class="brack"></div>
+                <div class="left"></div>
+                <div class="right"></div>
+                <div class="top"></div>
+                <div class="bottom"></div>
+            </div>
+        </div>
         <div class="Box1">
             <div class="Text">
                 <div class="title">
@@ -68,6 +78,77 @@
 </template>
 
 <style scoped>
+.Box0 {
+    background-color: #F5FFFA;
+    height: 600px;
+    -moz-user-select:none; 
+    -webkit-user-select:none; 
+    -ms-user-select:none; 
+    -khtml-user-select:none; 
+    user-select:none; 
+    display: flex;
+    justify-content: center;
+}
+.Box0 .Box0_Photo {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin-top: 100px;
+    /* background-color: pink; */
+    /*保留子元素3D动画效果*/
+    transform-style:preserve-3d;
+    /*俯角预览效果预设，方便查看3D效果*/
+    transform:rotate3d(1,1,0,-30deg);
+    /*定义动画执行时间*/
+    transition:transform 5s;
+}
+.Box0 .Box0_Photo>div {
+    position:absolute;
+    width: 400px;
+    height: 400px;
+    line-height: 100px;
+    text-align: center;
+    /*设置透明度*/
+    opacity: 0.9;
+}
+.front {
+    /* background-color: red; */
+    background-image: url(@img/专业实践/专业实践.jpg);
+    background-size: 400px 400px;
+    transform:translateZ(200px);
+}
+.brack {
+    /* background-color: green; */
+    background-image: url(@img/basketball_game/bg0.jpeg);
+    background-size: 400px 400px;
+    transform:translateZ(-200px);
+}
+.left {
+    /* background-color: blue; */
+    background-image: url(@img/军训.jpg);
+    background-size: 400px 400px;
+    transform:translateX(-200px) rotateY(-90deg);
+}
+.right {
+    /* background-color: cyan; */
+    background-image: url(@img/专业实践/专业实践5.jpg);
+    background-size: 400px 400px;
+    transform:translateX(200px) rotateY(90deg);
+}
+.top {
+    /* background-color: pink; */
+    background-image: url(@img/专业风光/专业风光2.jpg);
+    background-size: 400px 400px;
+    transform:translateY(-200px) rotateX(90deg);
+}
+.bottom {
+    /* background-color: purple; */
+    background-image: url(@img/专业风光/专业风光1.jpg);
+    background-size: 400px 400px;
+    transform:translateY(200px) rotateX(-90deg);
+}.Box0_Photo:active{
+    transform:rotate3d(1,1,0,360deg) rotate3d(0,1,1,360deg);
+}
 .main .Box1 {
     height: 700px;
     background-color: rgba(20, 42, 49);
@@ -121,7 +202,7 @@
     margin-top: 76px;
     border-radius: 15px;
     /* background-color: aliceblue; */
-    background-image: url(@img/专业实践.jpg);
+    background-image: url(@img/专业实践/专业实践.jpg);
     background-size: 650px 500px;
     background-position: center;
     background-repeat: no-repeat;
@@ -287,4 +368,8 @@
         height: 410px;
     }
 }
+/* .main .Box4 {
+    height: 100px;
+    background-color: rgba(20, 42, 49);
+} */
 </style>
