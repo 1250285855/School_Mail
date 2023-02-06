@@ -21,6 +21,18 @@ const routes = [
         component: () => import('@/views/Register.vue'),
     },
     {
+        path: '/footprint',
+        name: 'Footprint',
+        keepAlive: false,
+        component: () => import('@/views/FootPrintWall.vue')
+    },
+    {
+        path: '/printcanvas',
+        name: 'PrintCanvas',
+        keepAlive: false,
+        component: () => import('@/views/PrintCanvas.vue')
+    },
+    {
         path: '/404',
         name: '404',
         keepAlive: false,
