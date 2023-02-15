@@ -40,7 +40,7 @@ const routes = [
     },
     {
         path: '/study',
-        name: '/study',
+        name: 'study',
         keepAlive: false,
         component: () => import('@/views/Study.vue')
     },

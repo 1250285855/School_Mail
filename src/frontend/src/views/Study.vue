@@ -1,41 +1,27 @@
-<script>
+<script setup>
+
+import jquery from 'jquery';
+
+import Header_study from '@/views/components/header/Header_study.vue';
+import Footer from '@/views/components/footer.vue'
+
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  console.log(`the component is now mounted.`)
+  jquery('.course li').click(function () {
+    jquery(this).addClass('active').siblings().removeClass('active');
+  })
+})
 
 </script>
 
 <template>
+    <!-- <div id="main"> -->
+    
    <div class="all">
-        <!-- Header -->
-        <div class="header">
-            <div class="w">
-                <!-- Logo -->
-            <a href="javascript:;">
-                <img src="@img/IDEC_CE_Logo.png" alt=""     class="fl">
-                <h4 class="fl
-             ">计算机科学与技术云课</h4>
-            </a>
-            <!-- Nav -->
-            <div class="nav fl">
-                <ul>
-                    <li>
-                        <a href="javascript:;">云课学习</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">云课论坛</a>
-                    </li>
-                    <li>
-                        <input type="search" name="" id=""  placeholder="请输入您想要查找的内容">
-                    </li>
-                </ul>
-            </div>
-            <!-- Login -->
-            <div class="login fr">
-                <a href="javascript:;">
-                    <h4 class="fl">登录/注册</h4>
-                    <img src="@img/会员注册登录管理.png" alt="" class="fl">
-                </a>
-            </div>
-            </div>
-        </div>
+    <!-- Header -->
+    <Header_study></Header_study>
         <!-- Main -->
         <div class="main">
             <!-- TitleFirst -->
@@ -96,10 +82,18 @@
                 </ul>
             </div>
         </div>
+        <Footer></Footer>
     </div>
+    
+<!-- </div> -->
 </template>
 
 <style scoped>
+#main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 .fl {
     float: left;
 }
@@ -186,6 +180,8 @@ body {
     width: 100%;
     height: 100%;
     background-color: #fff;
+    display: flex;
+    flex-direction: column;
 }
 .header {
     height: 50px;
@@ -232,6 +228,7 @@ body {
 .main {
     margin: 50px auto;
     width: 1600px;
+    margin-bottom: 200px;
     /* height: 80px;
     background-color: pink; */
 }
@@ -288,5 +285,8 @@ body {
     padding-top: 45px;
     font-size: 18px;
     color: #000;
+}
+.active {
+    background-color: red;
 }
 </style>

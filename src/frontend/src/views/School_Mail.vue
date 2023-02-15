@@ -18,7 +18,7 @@ const isOpen = ref(0)
   <div id="app">
     
     <Header_skip @cd_page="(value) => isOpen = value"></Header_skip>
-
+    
     <div v-for="components in homePageComponentsList">
       <div v-if="isOpen === components.id" v-for="component in components.components">
         <component :is="component"></component>
