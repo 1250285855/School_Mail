@@ -39,6 +39,12 @@ const routes = [
         component: () => import('@/views/NotFound.vue')
     },
     {
+        path: '/study',
+        name: '/study',
+        keepAlive: false,
+        component: () => import('@/views/Study.vue')
+    },
+    {
         path: '/:catchAll(.*)',
         redirect: '/404',
     }
