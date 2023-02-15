@@ -1,5 +1,5 @@
 <script setup>
-
+    
 </script>
 
 <template>
@@ -297,7 +297,7 @@
     width: 250px;
     height: 410px;
     margin-top: 110px;
-    border: 1.5px solid rgb(138, 202, 218);
+    border: 1.5008px solid rgb(138, 202, 218);
     background-color: aliceblue;
 }
 .main .Box3 .card .doc {
