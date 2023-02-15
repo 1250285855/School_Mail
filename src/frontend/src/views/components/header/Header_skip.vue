@@ -82,6 +82,7 @@ profile()
                         <a @click="openLabel(5)" :class="{labelHover: isOpen==5}">学生风采</a>
                         <!-- <a @click="openLabel(6)" :class="{labelHover: isOpen==6}">社区互动</a> -->
                         <!-- <a @click="openLabel(7)" :class="{labelHover: isOpen==7}">共创营地</a> -->
+                        <a @click="openLabel(8)">学习资源</a>
                         <a @click="openLabel(2)" :class="{labelHover: isOpen==2}">关于我们</a>
                     </div>
                 </div>
