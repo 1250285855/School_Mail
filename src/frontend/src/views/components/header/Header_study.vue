@@ -3,7 +3,6 @@
 </script>
 
 <template>
-<div></div>
 
 <div id='main'>
     <div class="header">
@@ -17,20 +16,20 @@
         <!-- Nav -->
         <div class="nav fl">
             <ul>
-                <li>
+                <li class="nav_study">
                     <a href="javascript:;">云课学习</a>
                 </li>
-                <li>
+                <li class="nav_study">
                     <a href="javascript:;">云课论坛</a>
                 </li>
-                <li>
+                <li class="nav_input">
                     <input type="search" name="" id=""  placeholder="请输入您想要查找的内容">
                 </li>
             </ul>
         </div>
         <!-- Login -->
         <div class="login fr">
-            <a href="javascript:;">
+            <a href="javascript:;" class="btn">
                 <h4 class="fl">登录/注册</h4>
                 <img src="@img/会员注册登录管理.png" alt="" class="fl">
             </a>
@@ -43,12 +42,6 @@
 
 <style scoped>
 .fl {
-    float: left;
-}
-.fr {
-    float: right;
-}
-fl {
     float: left;
 }
 .fr {
@@ -154,10 +147,14 @@ body {
 }
 .nav ul li {
     float: left;
-    margin-top: 10px;
-    /* line-height: 50px; */
     font-size: 18px;
     padding: 0 15px;
+}
+.nav_study {
+    margin-top: 10px;
+}
+.nav_input {
+    margin-top: 8px;
 }
 .nav ul li input {
     padding: 0 10px;
