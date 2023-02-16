@@ -1,6 +1,6 @@
 <script setup>
 
-import jquery from 'jquery';
+import $ from 'jquery';
 
 import Header_study from '@/views/components/header/Header_study.vue';
 import Footer from '@/views/components/footer.vue'
@@ -8,9 +8,11 @@ import Footer from '@/views/components/footer.vue'
 import { onMounted } from 'vue'
 
 onMounted(() => {
-  console.log(`the component is now mounted.`)
-  jquery('.course li').click(function () {
-    jquery(this).addClass('active').siblings().removeClass('active');
+  $(".titlefirst, .titlesecond, .course").slideDown("slow");
+//   $(".titlesecond").slideDown("slow");
+
+  $(".course ul li").click(function() {
+    $(".title, .course").fadeOut();
   })
 })
 
@@ -24,10 +26,13 @@ onMounted(() => {
     <Header_study></Header_study>
         <!-- Main -->
         <div class="main">
-            <!-- TitleFirst -->
-            <h1 class="titlefirst">欢迎开启计算机学习之旅</h1>
-            <!-- TitleSecond -->
-            <h1 class="titlesecond">请选择想要学习的科目</h1>
+            <!-- Title -->
+            <div class="title">
+                <!-- TitleFirst -->
+                <h1 class="titlefirst">欢迎开启计算机学习之旅</h1>
+                <!-- TitleSecond -->
+                <h1 class="titlesecond">请选择想要学习的科目</h1>
+            </div>
             <!-- Course -->
             <div class="course">
                 <ul>
@@ -228,21 +233,27 @@ body {
 .main {
     margin: 50px auto;
     width: 1600px;
-    margin-bottom: 200px;
-    /* height: 80px;
-    background-color: pink; */
+    height: 734px;
+}
+.title {
+    width: 100%;
+    height: 173px;
 }
 .titlefirst {
+    display: none;
     text-align: center;
     font-size: 60px;
     color: #000;
 }
+
 .titlesecond {
+    display: none;
     text-align: center;
     font-size: 48px;
     color: #000;
 }
 .course {
+    display: none;
     margin-top: 30px;
     width: 100%;
 }
@@ -263,6 +274,9 @@ body {
 .course ul li:hover {
     transform: translate(10px, -10px);
 }
+/* .course ul li:active {
+    transform: scale(2, 2);
+} */
 .course ul li a {
     position: relative;
     display: block;
@@ -271,6 +285,9 @@ body {
     border-radius: 15px;
     background-color: #ccc;
 }
+/* .course ul li a:checked {
+    transform: scale(2, 2);
+} */
 .course ul li a img {
     position: absolute;
     left: 50%;
