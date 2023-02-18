@@ -1,5 +1,7 @@
 <script setup>
 
+import { ref } from 'vue'
+import { getImgUrl } from '@/assets/js'
 import $ from 'jquery';
 
 import Header_study from '@/views/components/header/Header_study.vue';
@@ -29,6 +31,49 @@ onMounted(() => {
   })
 })
 
+const class_name = ref([
+    {
+        id: 0,
+        name: "C/C++编程原理",
+        img: getImgUrl("c++语言.png"), 
+    },
+    {
+        id: 1,
+        name: "高等数学",
+        img: getImgUrl("/数学.png"),
+    },
+    {
+        id: 2,
+        name: "线性代数",
+        img: getImgUrl("/线性代数.png"),
+    },
+    {
+        id: 3,
+        name: "数据结构",
+        img: getImgUrl("/数据结构.png"),
+    },
+    {
+        id: 4,
+        name: "数字系统",
+        img: getImgUrl("/网络系统.png"),
+    },
+    {
+        id: 5,
+        name: "计算机科学写作",
+        img: getImgUrl("/计算机写作.png"),
+    },
+    {
+        id: 6,
+        name: "电路与电子",
+        img: getImgUrl("/电路.png"),
+    },
+    {
+        id: 7,
+        name: "离散结构",
+        img: getImgUrl("/离散.png"),
+    },
+])
+
 </script>
 
 <template>
@@ -49,52 +94,10 @@ onMounted(() => {
             <!-- Course -->
             <div class="course">
                 <ul>
-                    <li>
+                    <li v-for="item in class_name" :key="item.id">
                         <a href="javascript:;">
-                            <img src="@img/c++语言.png" alt="">
-                            <h4>C/C++编程原理</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <img src="@img/数学.png" alt="">
-                            <h4>高等数学</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <img src="@img/线性代数.png" alt="">
-                            <h4>线性代数</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <img src="@img/数据结构.png" alt="">
-                            <h4>数据结构</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <img src="@img/网络系统.png" alt="">
-                            <h4>数字系统</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <img src="@img/计算机写作.png" alt="">
-                            <h4>计算机科学写作</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <img src="@img/电路.png" alt="">
-                            <h4>电路与电子</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <img src="@img/离散.png" alt="">
-                            <h4>离散结构</h4>
+                            <img :src="item.img" alt="">
+                            <h4>{{item.name}}</h4>
                         </a>
                     </li>
                 </ul>
