@@ -29,6 +29,18 @@ onMounted(() => {
     $(".clanguage").css("display", "none");
     $(".main").fadeIn("slow");
   })
+
+  $(".download_nav_btn1").click(function() {
+    $(".download_file").fadeOut("slow");
+    $(".download_file").css("display", "none");
+    $(".download_information").fadeIn("slow");
+  })
+
+  $(".download_nav_btn2").click(function() {
+    $(".download_information").fadeOut("slow");
+    $(".download_information").css("display", "none");
+    $(".download_file").fadeIn("slow");
+  })
 })
 
 const class_name = ref([
@@ -105,7 +117,8 @@ const class_name = ref([
         </div>
         <!-- Clanguage -->
         <div class="clanguage">
-            <!-- header -->
+            <div class="window">
+                    <!-- header -->
             <div class="clanguage_header">
                 <!-- logo -->
                 <a href="javascript:;" class="fl title_btn">
@@ -123,7 +136,7 @@ const class_name = ref([
                     </div>
                 </a>
             </div>
-            <!-- Main -->
+            <!-- main -->
             <div class="cmain">
                 <!-- Teacher -->
                 <div class="teacher fl">
@@ -136,8 +149,8 @@ const class_name = ref([
                 <div class="download">
                     <div class="download_nav">
                         <ul>
-                            <li><a href="javascript:;">课程简介</a></li>
-                            <li><a href="javascript:;">课程文件</a></li>
+                            <li><a href="javascript:;" class="download_nav_btn1">课程简介</a></li>
+                            <li><a href="javascript:;" class="download_nav_btn2">课程文件</a></li>
                         </ul>
                     </div>
                     <div class="download_file">
@@ -189,7 +202,18 @@ const class_name = ref([
                             </li>
                         </ul>
                     </div>
+                    <div class="download_information">
+                        <div class="text fl">
+                            <p>
+                                C语言是一门面向过程的计算机编程语言，与C++、C#、Java等面向对象编程语言有所不同。C语言的设计目标是提供一种能以简易的方式编译、处理低级存储器、仅产生少量的机器码以及不需要任何运行环境支持便能运行的编程语言。C语言描述问题比汇编语言迅速、工作量小、可读性好、易于调试、修改和移植，而代码质量与汇编语言相当。C语言一般只比汇编语言代码生成的目标程序效率低10%-20%。因此，C语言可以编写系统软件。当前阶段，在编程领域中，C语言的运用非常之多，它兼顾了高级语言和汇编语言的优点，相较于其它编程语言具有较大优势。计算机系统设计以及应用程序编写是C语言应用的两大领域。同时，C语言的普适较强，在许多计算机操作系统中都能够得到适用，且效率显著。C语言拥有经过了漫长发展历史的完整的理论体系，在编程语言中具有举足轻重的地位。
+                            </p>
+                        </div>
+                        <div class="picture fl">
+                            <img src="@img/c语言课程简介.png" alt="">
+                        </div>
+                    </div>
                 </div>
+            </div>
             </div>
         </div>
         <!-- Footer -->
@@ -381,9 +405,6 @@ body {
 .course ul li:hover {
     transform: translate(10px, -10px);
 }
-/* .course ul li:active {
-    transform: scale(2, 2);
-} */
 .course ul li a {
     position: relative;
     display: block;
@@ -392,9 +413,6 @@ body {
     border-radius: 15px;
     background-color: #ccc;
 }
-/* .course ul li a:checked {
-    transform: scale(2, 2);
-} */
 .course ul li a img {
     position: absolute;
     left: 50%;
@@ -416,7 +434,15 @@ body {
     width: 1600px;
     height: 734px;
     border-radius: 15px;
-    background-color: #ccc;
+    background-image: url("@img/编程.png");
+    background-size: 1600px 743px;
+    background-position: center;
+}
+.window {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
 }
 .clanguage_header {
     width: 100%;
@@ -482,7 +508,7 @@ body {
     margin-top: 6px;
     margin-left: 50px;
     font-size: 30px;
-    color: #000;
+    color: #fff;
 }
 .download {
     float: left;
@@ -501,6 +527,15 @@ body {
     padding: 0 20px;
     font-size: 18px;
 }
+.download_nav ul li a {
+    color: #fff;
+}
+.download_nav ul li a:hover {
+    color: #c81623;
+}
+.download_file{
+    display: none;
+}
 .download_file ul li {
     width: 100%;
     height: 70px;
@@ -508,10 +543,10 @@ body {
     margin: 20px 0;
     font-size: 24px;
     line-height: 70px;
-    background-color: #fff;
+    background-color: #ccc;
 }
 .download_file ul li:hover {
-    border: 2px solid rgba(42, 130, 228, 98%);
+    border: 2px solid #ff6700;
 }
 .filename {
     padding-left: 15px;
@@ -521,7 +556,31 @@ body {
     padding: 0 15px;
     color: rgba(42, 130, 228, 98%);
 }
-.none {
-    display: none;
+.download_information {
+    position: relative;
+    /* display: none; */
+}
+.text {
+    width: 700px;
+    height: 400px;
+    margin: 30px 20px;
+}
+.text p {
+    font-size: 18px;
+    text-align: justify;
+    color: #fff;
+}
+.picture {
+    position: absolute;
+    overflow: hidden;
+    left: 750px;
+    top: 30px;
+    width: 450px;
+    height: 300px;
+    border-radius: 15px;
+}
+.picture img {
+    width: 450px;
+    height: 300px;
 }
 </style>
