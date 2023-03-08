@@ -1,47 +1,27 @@
 <script setup>
-
 import { ref } from 'vue'
 import { getImgUrl } from '@/assets/js'
 import $ from 'jquery';
 
-import Header_study from '@/views/components/header/Header_study.vue';
-import Footer from '@/views/components/footer.vue'
+import {studyPageComponentsList} from '@/views/components/studycomponents/index.js'
 
+import Header_study from '@/views/components/header/Header_study.vue';
+import Footer from '@/views/components/footer.vue';
 import { onMounted } from 'vue'
 
+const isOpen = ref(null)
+const isClicked = ref(false)
+// const show = ref(true)
+
 onMounted(() => {
-  $(".titlefirst, .titlesecond, .course").fadeIn("slow");
-
-  $(".course ul li").click(function() {
-    $(".main").fadeOut("slow");
-    $(".main").css("display", "none");
-    $(".clanguage").fadeIn("slow");
-  })
-
-  $(".title_btn").click(function() {
-    $(".clanguage").fadeOut("slow");
-    $(".clanguage").css("display", "none");
-    $(".main").fadeIn("slow");
-  })
-
-  $(".shutdown").click(function() {
-    $(".clanguage").fadeOut("slow");
-    $(".clanguage").css("display", "none");
-    $(".main").fadeIn("slow");
-  })
-
-  $(".download_nav_btn1").click(function() {
-    $(".download_file").fadeOut("slow");
-    $(".download_file").css("display", "none");
-    $(".download_information").fadeIn("slow");
-  })
-
-  $(".download_nav_btn2").click(function() {
-    $(".download_information").fadeOut("slow");
-    $(".download_information").css("display", "none");
-    $(".download_file").fadeIn("slow");
-  })
+    $(".titlefirst, .titlesecond, .course").fadeIn("slow");
 })
+
+function childShow(id) {
+    isOpen.value = id
+    console.log(isOpen.value)
+    isClicked.value = true
+}
 
 const class_name = ref([
     {
@@ -89,13 +69,11 @@ const class_name = ref([
 </script>
 
 <template>
-    <!-- <div id="main"> -->
-    
    <div class="all">
         <!-- Header -->
         <Header_study></Header_study>
         <!-- Main -->
-        <div class="main">
+        <div class="main" v-if="!isClicked">
             <!-- Title -->
             <div class="title">
                 <!-- TitleFirst -->
@@ -106,7 +84,7 @@ const class_name = ref([
             <!-- Course -->
             <div class="course">
                 <ul>
-                    <li v-for="item in class_name" :key="item.id">
+                    <li v-for="item in class_name" :key="item.id" @click="childShow(item.id)">
                         <a href="javascript:;">
                             <img :src="item.img" alt="">
                             <h4>{{item.name}}</h4>
@@ -115,119 +93,29 @@ const class_name = ref([
                 </ul>
             </div>
         </div>
-        <!-- Clanguage -->
-        <div class="clanguage">
-            <div class="window">
-                    <!-- header -->
-            <div class="clanguage_header">
-                <!-- logo -->
-                <a href="javascript:;" class="fl title_btn">
-                    <div class="clogo fl">
-                        <img src="@img/c++语言.png" alt="">
-                    </div>
-                    <div class="ctitle fl">
-                        <h4>C/C++编程语言</h4>
-                        <h5>CYP.CSE120M.S2022</h5>
-                    </div>
-                </a>
-                <a href="javascript:;" class="fr">
-                    <div class="shutdown">
-                        <img src="@img/叉叉.png" alt="">
-                    </div>
-                </a>
-            </div>
-            <!-- main -->
-            <div class="cmain">
-                <!-- Teacher -->
-                <div class="teacher fl">
-                    <div class="information">
-                        <img src="@img/个人信息.png" alt="" class="fl">
-                        <h3>汪涛</h3>
-                    </div>
-                </div>
-                <!-- Download -->
-                <div class="download">
-                    <div class="download_nav">
-                        <ul>
-                            <li><a href="javascript:;" class="download_nav_btn1">课程简介</a></li>
-                            <li><a href="javascript:;" class="download_nav_btn2">课程文件</a></li>
-                        </ul>
-                    </div>
-                    <div class="download_file">
-                        <ul>
-                            <li>
-                                <div class="filename fl">
-                                    文件名称
-                                </div>
-                                <div class="download_btn fr">
-                                    <a href="javascript:;">下载</a>
-                                    <a href="javascript:;">详情</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="filename fl">
-                                    文件名称
-                                </div>
-                                <div class="download_btn fr">
-                                    <a href="javascript:;">下载</a>
-                                    <a href="javascript:;">详情</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="filename fl">
-                                    文件名称
-                                </div>
-                                <div class="download_btn fr">
-                                    <a href="javascript:;">下载</a>
-                                    <a href="javascript:;">详情</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="filename fl">
-                                    文件名称
-                                </div>
-                                <div class="download_btn fr">
-                                    <a href="javascript:;">下载</a>
-                                    <a href="javascript:;">详情</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="filename fl">
-                                    文件名称
-                                </div>
-                                <div class="download_btn fr">
-                                    <a href="javascript:;">下载</a>
-                                    <a href="javascript:;">详情</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="download_information">
-                        <div class="text fl">
-                            <p>
-                                C语言是一门面向过程的计算机编程语言，与C++、C#、Java等面向对象编程语言有所不同。C语言的设计目标是提供一种能以简易的方式编译、处理低级存储器、仅产生少量的机器码以及不需要任何运行环境支持便能运行的编程语言。C语言描述问题比汇编语言迅速、工作量小、可读性好、易于调试、修改和移植，而代码质量与汇编语言相当。C语言一般只比汇编语言代码生成的目标程序效率低10%-20%。因此，C语言可以编写系统软件。当前阶段，在编程领域中，C语言的运用非常之多，它兼顾了高级语言和汇编语言的优点，相较于其它编程语言具有较大优势。计算机系统设计以及应用程序编写是C语言应用的两大领域。同时，C语言的普适较强，在许多计算机操作系统中都能够得到适用，且效率显著。C语言拥有经过了漫长发展历史的完整的理论体系，在编程语言中具有举足轻重的地位。
-                            </p>
-                        </div>
-                        <div class="picture fl">
-                            <img src="@img/c语言课程简介.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
+        
+        <div v-for="studycomponents in studyPageComponentsList" :key="studycomponents.id" v-if="isClicked">
+            <div v-if="isOpen === studycomponents.id" >
+                    <component @Clicked="(value) => isClicked = false" class="course-detail" :is="studycomponents.components"></component>
             </div>
         </div>
-        <!-- Footer -->
         <Footer></Footer>
     </div>
-    
-<!-- </div> -->
 </template>
 
 <style scoped>
-#main {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
 }
 .fl {
     float: left;
@@ -371,20 +259,20 @@ body {
     height: 173px;
 }
 .titlefirst {
-    display: none;
+    /* display: none; */
     text-align: center;
     font-size: 60px;
     color: #000;
 }
 
 .titlesecond {
-    display: none;
+    /* display: none; */
     text-align: center;
     font-size: 48px;
     color: #000;
 }
 .course {
-    display: none;
+    /* display: none; */
     margin-top: 30px;
     width: 100%;
 }
@@ -427,160 +315,5 @@ body {
     padding-top: 45px;
     font-size: 18px;
     color: #000;
-}
-.clanguage {
-    display: none;
-    margin: 50px auto;
-    width: 1600px;
-    height: 734px;
-    border-radius: 15px;
-    background-image: url("@img/编程.png");
-    background-size: 1600px 743px;
-    background-position: center;
-}
-.window {
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    backdrop-filter: blur(5px);
-}
-.clanguage_header {
-    width: 100%;
-    height: 70px;
-    border-radius: 15px 15px 0 0;
-    border-bottom: 1px solid #a6a6a6;
-}
-.clogo {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    border-radius: 15px;
-    margin-left: 15px;
-    margin-top: 5px;
-    background-color: #fff;
-}
-.clogo img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-}
-.ctitle {
-    margin-left: 10px;
-}
-.ctitle h4 {
-    padding-top: 7px;
-    font-size: 20px;
-}
-.ctitle h5 {
-    font-size: 14px;
-}
-.shutdown {
-    width: 40px;
-    height: 40px;
-    margin: 17px;
-}
-.shutdown img {
-    width: 38px;
-    height: 38px;
-}
-.cmain {
-    width: 1550px;
-    height: 650px;
-    margin: 0 auto;
-}
-.teacher {
-    height: 100%;
-    width: 300px;
-    border-right: 1px solid #a6a6a6;
-}
-.information {
-    margin-top: 20px;
-}
-.information img {
-    width: 60px;
-    height: 60px;
-}
-.information h3 {
-    float: left;
-    margin-top: 6px;
-    margin-left: 50px;
-    font-size: 30px;
-    color: #fff;
-}
-.download {
-    float: left;
-    width: 1210px;
-    height: 100%;
-    margin-left: 20px;
-}
-.download_nav {
-    width: 100%;
-    height: 50px;
-    border-bottom: 1px solid #a6a6a6;
-}
-.download_nav ul li {
-    float: left;
-    line-height: 50px;
-    padding: 0 20px;
-    font-size: 18px;
-}
-.download_nav ul li a {
-    color: #fff;
-}
-.download_nav ul li a:hover {
-    color: #c81623;
-}
-.download_file{
-    display: none;
-}
-.download_file ul li {
-    width: 100%;
-    height: 70px;
-    border-radius: 15px;
-    margin: 20px 0;
-    font-size: 24px;
-    line-height: 70px;
-    background-color: #ccc;
-}
-.download_file ul li:hover {
-    border: 2px solid #ff6700;
-}
-.filename {
-    padding-left: 15px;
-    color: #000;
-}
-.download_btn a {
-    padding: 0 15px;
-    color: rgba(42, 130, 228, 98%);
-}
-.download_information {
-    position: relative;
-    /* display: none; */
-}
-.text {
-    width: 700px;
-    height: 400px;
-    margin: 30px 20px;
-}
-.text p {
-    font-size: 18px;
-    text-align: justify;
-    color: #fff;
-}
-.picture {
-    position: absolute;
-    overflow: hidden;
-    left: 750px;
-    top: 30px;
-    width: 450px;
-    height: 300px;
-    border-radius: 15px;
-}
-.picture img {
-    width: 450px;
-    height: 300px;
 }
 </style>

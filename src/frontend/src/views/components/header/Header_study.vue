@@ -1,5 +1,28 @@
 <script setup>
+import $ from 'jquery';
+import { onMounted } from 'vue'
 
+function loginOpen() {
+    $(".btn").show("fast");
+}
+
+function loginClose() {
+    $(".btn").hide("fast");
+}
+
+function colorTsf_red() {
+    $(".nav_forum a").css("color", "red");
+    $(".nav_study a").css("color", "black");
+}
+
+function colorTsf_black() {
+    $(".nav_study a").css("color", "red");
+    $(".nav_forum a").css("color", "black");
+}
+
+onMounted(() => {
+
+})
 </script>
 
 <template>
@@ -9,7 +32,7 @@
         <div class="w">
             <!-- Logo -->
         <a href="javascript:;">
-            <img src="@img/IDEC_CE_Logo.png" alt=""     class="fl">
+            <img src="@img/IDEC_CE_Logo.png" alt="" class="fl">
             <h4 class="fl
             ">计算机科学与技术云课</h4>
         </a>
@@ -17,10 +40,10 @@
         <div class="nav fl">
             <ul>
                 <li class="nav_study">
-                    <a href="javascript:;">云课学习</a>
+                    <a href="javascript:;" @click="colorTsf_black" style="color: red">云课学习</a>
                 </li>
-                <li class="nav_study">
-                    <a href="javascript:;">云课论坛</a>
+                <li class="nav_forum">
+                    <a href="javascript:;" @click="colorTsf_red">云课论坛</a>
                 </li>
                 <li class="nav_input">
                     <input type="search" name="" id=""  placeholder="请输入您想要查找的内容">
@@ -28,11 +51,13 @@
             </ul>
         </div>
         <!-- Login -->
-        <div class="login fr">
-            <a href="javascript:;" class="btn">
-                <h4 class="fl">登录/注册</h4>
-                <img src="@img/会员注册登录管理.png" alt="" class="fl">
-            </a>
+        <div class="login fr" @mouseleave="loginClose">
+            <div class="btn fl">
+                <a href="javascript:;">
+                    登录/注册
+                </a>
+            </div>
+            <img src="@img/会员注册登录管理.png" alt="" class="fr login_btn" @mouseover="loginOpen">
         </div>
         </div>
     </div>
@@ -150,8 +175,15 @@ body {
     font-size: 18px;
     padding: 0 15px;
 }
-.nav_study {
+.nav_study,
+.nav_forum {
     margin-top: 10px;
+}
+.nav_study a {
+    color: #000;
+}
+.nav_forum a {
+    color: #000;
 }
 .nav_input {
     margin-top: 8px;
@@ -164,14 +196,29 @@ body {
     border: 1px solid #000;
 }
 .login {
-    margin-right: 10px;
-}
-.login a h4 {
-    font-size: 16px;
-}
-.login a img {
     margin-top: 10px;
+    margin-right: 10px;
+    /* width: 106px;
+    height: 30px; */
+    border-radius: 10px;
+    background-color: #ccc;
+}
+.btn {
+    display: none;
+    width: 70px;
+    height: 30px;
+}
+.login a {
+    float: left;
+    display: block;
+    line-height: 30px;
+    text-align: center;
+    padding-left: 4px;
+}
+.login_btn {
     width: 30px;
     height: 30px;
+    border-radius: 10px;
+    background-color: #ccc;
 }
 </style>
