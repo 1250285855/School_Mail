@@ -20,9 +20,12 @@ export default defineConfig({
     port: 3000,
     open: false,
     cors: true,
+    
     proxy: {
       '/api': {
-        target: 'https://ideccs.com:8000',
+        target: 'https://www.ideccs.com:8000',
+        // vite对于proxy的封装和vuecli不一样，需要额外增加secure: false绕过https的安全验证才能请求到https的地址
+        secure: false,
       },
     },
   },
