@@ -36,7 +36,7 @@ export const homePageComponentsList = ref([
     name: "主页",
     components: {
       // News,
-      FootprintWall,
+      // FootprintWall,
       PhotoWall,
       Welcome,
     }

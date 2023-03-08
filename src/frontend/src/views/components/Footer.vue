@@ -17,10 +17,8 @@
                     <a href="#">问题反馈</a> |
                 </div>
             </div>
-            <div class="_my">
-                违法和不良信息举报电话:137-7450-2836
-                <br><a href="#">知识产权侵权投诉</a>
-                <br>本网站所有数据、资料,除特殊说明,均出自于我院专业实验室                     
+            <div class="_my"> 
+                <a href="https://beian.miit.gov.cn/#/Integrated/index">闽ICP备2023002176号</a>
             </div>
         </div>
     </div>
@@ -72,7 +70,7 @@
 }
 ._all ._US ._my {
     /* width: 700px; */
-    height: 75px;
+    height: 100%;
     /* background-color: pink; */
     font-size: 13px;
     color: #fcfcfc;
