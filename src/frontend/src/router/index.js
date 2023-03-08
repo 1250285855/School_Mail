@@ -45,6 +45,12 @@ const routes = [
         component: () => import('@/views/Study.vue')
     },
     {
+        path: '/canvas',
+        name: 'canvas',
+        keepAlive: false,
+        component: () => import('@/views/components/canvas.vue')
+    },
+    {
         path: '/:catchAll(.*)',
         redirect: '/404',
     }

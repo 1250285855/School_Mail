@@ -73,31 +73,36 @@ const class_name = ref([
         <!-- Header -->
         <Header_study></Header_study>
         <!-- Main -->
-        <div class="main" v-if="!isClicked">
-            <!-- Title -->
-            <div class="title">
-                <!-- TitleFirst -->
-                <h1 class="titlefirst">欢迎开启计算机学习之旅</h1>
-                <!-- TitleSecond -->
-                <h1 class="titlesecond">请选择想要学习的科目</h1>
+        <div class="second-all">
+            <Transition name="fade">
+            <div class="main" v-if="!isClicked">
+                <!-- Title -->
+                <div class="title">
+                    <!-- TitleFirst -->
+                    <h1 class="titlefirst">欢迎开启计算机学习之旅</h1>
+                    <!-- TitleSecond -->
+                    <h1 class="titlesecond">请选择想要学习的科目</h1>
+                </div>
+                <!-- Course -->
+                <div class="course">
+                    <ul>
+                        <li v-for="item in class_name" :key="item.id" @click="childShow(item.id)">
+                            <a href="javascript:;">
+                                <img :src="item.img" alt="">
+                                <h4>{{item.name}}</h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <!-- Course -->
-            <div class="course">
-                <ul>
-                    <li v-for="item in class_name" :key="item.id" @click="childShow(item.id)">
-                        <a href="javascript:;">
-                            <img :src="item.img" alt="">
-                            <h4>{{item.name}}</h4>
-                        </a>
-                    </li>
-                </ul>
+            <div class="second-main" v-else-if="isClicked">
+                <div v-for="studycomponents in studyPageComponentsList" :key="studycomponents.id" >
+                    <div v-if="isOpen === studycomponents.id" >
+                        <component @Clicked="(value) => isClicked = false" class="course-detail" :is="studycomponents.components"></component>
+                    </div>
+                </div>
             </div>
-        </div>
-        
-        <div v-for="studycomponents in studyPageComponentsList" :key="studycomponents.id" v-if="isClicked">
-            <div v-if="isOpen === studycomponents.id" >
-                    <component @Clicked="(value) => isClicked = false" class="course-detail" :is="studycomponents.components"></component>
-            </div>
+            </Transition>
         </div>
         <Footer></Footer>
     </div>
@@ -206,6 +211,13 @@ body {
     display: flex;
     flex-direction: column;
 }
+.second-all {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
 .header {
     height: 50px;
     /* background-color: pink; */
@@ -251,8 +263,10 @@ body {
 .main {
     /* display: none; */
     margin: 50px auto;
-    width: 1600px;
-    height: 734px;
+    position: absolute;
+}
+.second-main {
+    position: absolute;
 }
 .title {
     width: 100%;
@@ -315,5 +329,15 @@ body {
     padding-top: 45px;
     font-size: 18px;
     color: #000;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
