@@ -30,7 +30,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: resolve('./dist'),
+    outDir: resolve('./ideccs'),
     minify: false,
   },
 })

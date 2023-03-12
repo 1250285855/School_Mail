@@ -9,19 +9,19 @@ import { useIntersectionObserver } from '@vueuse/core'
 const Main = ref(null)
 const Value = ref(null)
 
-const { stop }= useIntersectionObserver(
+// const { stop }= useIntersectionObserver(
   
-    Main,
-    ([{ isIntersecting }], observerElement) => {
-        if (isIntersecting) {
-            Main.value.classList.add('animate__animated', 'animate__fadeIn')
-            Value.value.classList.add('animate__animated', 'animate__fadeInUp')
-        }
-    },
-    {
-        threshold: 0,
-    },
-)
+//     Main,
+//     ([{ isIntersecting }], observerElement) => {
+//         if (isIntersecting) {
+//             Main.value.classList.add('animate__animated', 'animate__fadeIn')
+//             Value.value.classList.add('animate__animated', 'animate__fadeInUp')
+//         }
+//     },
+//     {
+//         threshold: 0,
+//     },
+// )
 
 </script>
 
