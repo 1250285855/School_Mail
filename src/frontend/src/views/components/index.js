@@ -29,7 +29,6 @@ import Safety from './瓶瓶安安.vue'
 
 import View from './班级风光.vue'
 
-import Study from './学习资源.vue'
 export const homePageComponentsList = ref([
   {
     id: 0,
@@ -81,13 +80,6 @@ export const homePageComponentsList = ref([
     id:7,
     name: "共创营地",
     components: {
-    }
-  },
-  {
-    id:8,
-    name: "学习资源",
-    components: {
-      Study
     }
   }
 ])

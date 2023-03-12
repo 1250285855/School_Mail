@@ -1,57 +1,29 @@
 <script setup>
-import $ from 'jquery';
 import {ref} from 'vue';
+import {clanguageDownload} from './downloadComponents/index.js';
+
 const emit = defineEmits('Clicked')
+const isShow = ref(null)
+
+const nav_name = ref([
+    {
+        id: 0,
+        name: '课程简介'
+    },
+    {
+        id: 1,
+        name: '课程文件'
+    }
+])
 
 function close() {
     emit('Clicked')
 }
 
-function navOpen() {
-    $(".download_information").fadeIn("slow");
-    $(".download_nav_btn1").css("color", "red");
-    $(".download_nav_btn2").css("color", "white");
-    $(".download_file").css("display", "none");
+function downloadShow(id) {
+    isShow.value = id
 }
 
-function fileOpen() {
-    $(".download_file").fadeIn("slow");
-    $(".download_nav_btn2").css("color", "red");
-    $(".download_nav_btn1").css("color", "white");
-    $(".download_information").css("display", "none");
-}
-const fileDownload = ref([
-    {
-        id: 0,
-        filename: "文件名称1",
-        download: '下载',
-        information: '详情'
-    },
-    {
-        id: 1,
-        filename: "文件名称2",
-        download: '下载',
-        information: '详情'
-    },
-    {
-        id: 2,
-        filename: "文件名称3",
-        download: '下载',
-        information: '详情'
-    },
-    {
-        id: 3,
-        filename: "文件名称4",
-        download: '下载',
-        information: '详情'
-    },
-    {
-        id: 4,
-        filename: "文件名称5",
-        download: '下载',
-        information: '详情'
-    }
-])
 </script>
 
 <template>
@@ -88,32 +60,17 @@ const fileDownload = ref([
                     <div class="download">
                         <div class="download_nav">
                             <ul>
-                                <li><a href="javascript:;" class="download_nav_btn1" @click="navOpen" style="color: red;">课程简介</a></li>
-                                <li><a href="javascript:;" class="download_nav_btn2" @click="fileOpen">课程文件</a></li>
-                            </ul>
-                        </div>
-                        <div class="download_file">
-                            <ul>
-                                <li v-for="item in fileDownload" :key="item.id">
-                                    <div class="filename fl">
-                                        {{ item.filename }}
-                                    </div>
-                                    <div class="download_btn fr">
-                                        <a href="javascript:;">{{ item.download }}</a>
-                                        <a href="javascript:;">{{ item.information }}</a>
-                                    </div>
+                                <li v-for="nav in nav_name" :key="nav.id">
+                                    <a @click="downloadShow(nav.id)" style="cursor: pointer;">{{ nav.name }}</a>
                                 </li>
                             </ul>
                         </div>
-                        <div class="download_information">
-                            <div class="text fl">
-                                <p>
-                                    C语言是一门面向过程的计算机编程语言，与C++、C#、Java等面向对象编程语言有所不同。C语言的设计目标是提供一种能以简易的方式编译、处理低级存储器、仅产生少量的机器码以及不需要任何运行环境支持便能运行的编程语言。C语言描述问题比汇编语言迅速、工作量小、可读性好、易于调试、修改和移植，而代码质量与汇编语言相当。C语言一般只比汇编语言代码生成的目标程序效率低10%-20%。因此，C语言可以编写系统软件。当前阶段，在编程领域中，C语言的运用非常之多，它兼顾了高级语言和汇编语言的优点，相较于其它编程语言具有较大优势。计算机系统设计以及应用程序编写是C语言应用的两大领域。同时，C语言的普适较强，在许多计算机操作系统中都能够得到适用，且效率显著。C语言拥有经过了漫长发展历史的完整的理论体系，在编程语言中具有举足轻重的地位。
-                                </p>
-                            </div>
-                            <div class="picture fl">
-                                <img src="@img/c语言课程简介.png" alt="">
-                            </div>
+                        <div v-for="dldcomponents in clanguageDownload" :key="dldcomponents.id">
+                            <Transition name="slide-up">
+                                <div v-if="isShow === dldcomponents.id">
+                                    <component :is="dldcomponents.components"></component>
+                                </div>
+                            </Transition>
                         </div>
                     </div>
                 </div>
@@ -122,6 +79,20 @@ const fileDownload = ref([
 </template>
 
 <style scoped>
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.25s ease-out;
+}
+
+.slide-up-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(-30px);
+}
 .fl {
     float: left;
 }
@@ -228,7 +199,6 @@ body {
     backdrop-filter: blur(5px);
     /* Safari 浏览器毛玻璃 */
     -webkit-backdrop-filter: blur(5px);
-    
 }
 .clanguage_header {
     width: 100%;
@@ -318,55 +288,5 @@ body {
 }
 .download_nav ul li a:hover {
     color: #c81623;
-}
-.download_file{
-    display: none;
-}
-.download_file ul li {
-    width: 100%;
-    height: 70px;
-    border-radius: 15px;
-    margin: 20px 0;
-    font-size: 24px;
-    line-height: 70px;
-    background-color: #ccc;
-}
-.download_file ul li:hover {
-    border: 2px solid #ff6700;
-}
-.filename {
-    padding-left: 15px;
-    color: #000;
-}
-.download_btn a {
-    padding: 0 15px;
-    color: rgba(42, 130, 228, 98%);
-}
-.download_information {
-    position: relative;
-    /* display: none; */
-}
-.text {
-    width: 700px;
-    height: 400px;
-    margin: 30px 20px;
-}
-.text p {
-    font-size: 18px;
-    text-align: justify;
-    color: #fff;
-}
-.picture {
-    position: absolute;
-    overflow: hidden;
-    left: 750px;
-    top: 30px;
-    width: 450px;
-    height: 300px;
-    border-radius: 15px;
-}
-.picture img {
-    width: 450px;
-    height: 300px;
 }
 </style>

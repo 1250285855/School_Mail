@@ -25,6 +25,10 @@ function register() {
     router.push('/register')
 }
 
+function openStudy() {
+    router.push('/study')
+}
+
 function logout() {
     
     logout_request()
@@ -58,7 +62,7 @@ profile()
 </script>
 
 <template>
-    <div></div>
+    <div>
         <div id="main_Logo">
             <div id="main_Logo_img" @click="openLabel(0)"></div>
             <div id="main_Logo_doc">
@@ -82,12 +86,13 @@ profile()
                         <a @click="openLabel(5)" :class="{labelHover: isOpen==5}">学生风采</a>
                         <!-- <a @click="openLabel(6)" :class="{labelHover: isOpen==6}">社区互动</a> -->
                         <!-- <a @click="openLabel(7)" :class="{labelHover: isOpen==7}">共创营地</a> -->
-                        <a @click="openLabel(8)">学习资源</a>
+                        <a @click="openStudy">学习资源</a>
                         <a @click="openLabel(2)" :class="{labelHover: isOpen==2}">关于我们</a>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </template>
 
 <style scoped>

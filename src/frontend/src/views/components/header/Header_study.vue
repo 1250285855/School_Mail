@@ -20,6 +20,10 @@ function colorTsf_black() {
     $(".nav_forum a").css("color", "black");
 }
 
+function textApper() {
+    
+}
+
 onMounted(() => {
 
 })
@@ -46,7 +50,7 @@ onMounted(() => {
                     <a href="javascript:;" @click="colorTsf_red">云课论坛</a>
                 </li>
                 <li class="nav_input">
-                    <input type="search" name="" id=""  placeholder="请输入您想要查找的内容">
+                    <input type="search" name="" id=""  value="请输入您想要查找的内容" @blur="textDisapper" @focus="textApper">
                 </li>
             </ul>
         </div>
