@@ -27,11 +27,6 @@ const class_name = ref([
         name: "C/C++编程原理",
         img: getImgUrl("/c++语言.png"),
     },
-    // {
-    //     id: 8,
-    //     name: "C/C++编程原理",
-    //     img: getImgUrl("c++语言.png"), 
-    // },
     {
         id: 1,
         name: "高等数学",
@@ -89,7 +84,7 @@ const class_name = ref([
                     <!-- Course -->
                     <div class="course">
                         <ul>
-                            <li v-for="item in class_name" :key="item.id" @click="childShow(item.id)" :courseId="item.id">
+                            <li v-for="item in class_name" :key="item.id" @click="childShow(item.id)">
                                 <a href="javascript:;">
                                     <img :src="item.img" alt="">
                                     <h4>{{item.name}}</h4>
@@ -101,7 +96,7 @@ const class_name = ref([
                 <div class="second-main" v-else-if="isClicked">
                     <div v-for="studycomponents in studyPageComponentsList" :key="studycomponents.id" >
                         <div v-if="isOpen === studycomponents.id" >
-                            <component @Clicked="() => isClicked = false" class="course-detail" :is="studycomponents.components"></component>
+                            <component @Clicked="() => isClicked = false" class="course-detail" :is="studycomponents.components" :courseId=isOpen></component>
                         </div>
                     </div>
                 </div>

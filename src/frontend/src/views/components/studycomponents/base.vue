@@ -38,11 +38,11 @@ function downloadShow(id) {
                     <!-- logo -->
                     <a href="javascript:;" class="fl title_btn" @click="close">
                         <div class="clogo fl">
-                            <img src={{ studyPageComponentsList[0].backgroundImage }} alt="">
+                            <img :src=studyPageComponentsList[courseId].backgroundImage alt="">
                         </div>
                         <div class="ctitle fl">
-                            <h4>{{studyPageComponentsList[0].name}}</h4>
-                            <h5>{{studyPageComponentsList[0].classId}}</h5>
+                            <h4>{{studyPageComponentsList[courseId].name}}</h4>
+                            <h5>{{studyPageComponentsList[courseId].classId}}</h5>
                         </div>
                     </a>
                     <a href="javascript:;" class="fr">
@@ -57,24 +57,39 @@ function downloadShow(id) {
                     <div class="teacher fl">
                         <div class="information">
                             <img src="@img/个人信息.png" alt="" class="fl">
-                            <h3>{{studyPageComponentsList[0].teacher}}</h3>
+                            <h3>{{studyPageComponentsList[courseId].teacher}}</h3>
                         </div>
                     </div>
                     <!-- Download -->
                     <div class="download">
                         <div class="download_nav">
                             <ul>
-                                <li v-for="nav in nav_name" :key="nav.id">
-                                    <a @click="downloadShow(nav.id)" style="cursor: pointer;">{{ nav.name }}</a>
+                                <li><a href="javascript:;" class="download_nav_btn1" @click="navOpen" style="color: red;">课程简介</a></li>
+                                <li><a href="javascript:;" class="download_nav_btn2" @click="fileOpen">课程文件</a></li>
+                            </ul>
+                        </div>
+                        <div class="download_file">
+                            <ul>
+                                <li v-for="item in fileDownload" :key="item.id">
+                                    <div class="filename fl">
+                                        {{ item.filename }}
+                                    </div>
+                                    <div class="download_btn fr">
+                                        <a href="javascript:;">{{ item.download }}</a>
+                                        <a href="javascript:;">{{ item.information }}</a>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
-                        <div v-for="dldcomponents in clanguageDownload" :key="dldcomponents.id">
-                            <Transition name="slide-up">
-                                <div v-if="isShow === dldcomponents.id">
-                                    <component :is="dldcomponents.components"></component>
-                                </div>
-                            </Transition>
+                        <div class="download_information">
+                            <div class="text fl">
+                                <p>
+                                    {{ studyPageComponentsList[courseId].classIntroduction }}
+                                </p>
+                            </div>
+                            <div class="picture fl">
+                                <img src="@img/c语言课程简介.png" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -83,20 +98,6 @@ function downloadShow(id) {
 </template>
 
 <style scoped>
-.slide-up-enter-active,
-.slide-up-leave-active {
-  transition: all 0.25s ease-out;
-}
-
-.slide-up-enter-from {
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-.slide-up-leave-to {
-  opacity: 0;
-  transform: translateY(-30px);
-}
 .fl {
     float: left;
 }
@@ -199,9 +200,7 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 15px;
-    /* Chrome 浏览器毛玻璃 */
     backdrop-filter: blur(5px);
-    /* Safari 浏览器毛玻璃 */
     -webkit-backdrop-filter: blur(5px);
 }
 .clanguage_header {
@@ -292,5 +291,55 @@ body {
 }
 .download_nav ul li a:hover {
     color: #c81623;
+}
+.download_file{
+    display: none;
+}
+.download_file ul li {
+    width: 100%;
+    height: 70px;
+    border-radius: 15px;
+    margin: 20px 0;
+    font-size: 24px;
+    line-height: 70px;
+    background-color: #ccc;
+}
+.download_file ul li:hover {
+    border: 2px solid #ff6700;
+}
+.filename {
+    padding-left: 15px;
+    color: #000;
+}
+.download_btn a {
+    padding: 0 15px;
+    color: rgba(42, 130, 228, 98%);
+}
+.download_information {
+    position: relative;
+    /* display: none; */
+}
+.text {
+    width: 700px;
+    height: 400px;
+    margin: 30px 20px;
+}
+.text p {
+    font-size: 18px;
+    text-align: justify;
+    color: #fff;
+}
+.picture {
+    position: absolute;
+    overflow: hidden;
+    left: 750px;
+    top: 30px;
+    width: 450px;
+    height: 300px;
+    border-radius: 15px;
+}
+.picture img {
+    width: 450px;
+    height: 300px;
 }
 </style>
