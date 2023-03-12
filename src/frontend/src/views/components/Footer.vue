@@ -18,7 +18,9 @@
                 </div>
             </div>
             <div class="_my"> 
-                <a href="https://beian.miit.gov.cn/#/Integrated/index">闽ICP备2023002176号</a>
+                <div class="police">
+                    <a href="https://beian.miit.gov.cn/#/Integrated/index">闽ICP备2023002176号</a>
+                </div>
             </div>
         </div>
     </div>
@@ -28,11 +30,10 @@
 ._all ._US {
     width: 100%;
     background-color: rgb(0, 0, 0, 0.3);
-    /* position: fixed; */
     display: flex;
     justify-content: space-around;
     bottom: 0;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 ._all ._US ._US_Logo {
     width: 150px;
@@ -57,8 +58,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* line-height: 50px; */
-    /* background-color: green; */
 }
 ._all ._US ._US_Doc ._link a {
     font-size: 13px;
@@ -69,9 +68,7 @@
     color: rgb(255, 255, 255, 0.7);
 }
 ._all ._US ._my {
-    /* width: 700px; */
     height: 100%;
-    /* background-color: pink; */
     font-size: 13px;
     color: #fcfcfc;
     float:right;
@@ -84,5 +81,8 @@
 }
 ._all ._US ._my a:hover {
     color: rgb(255, 255, 255, 0.7);
+}
+.police {
+    margin-top: 30px;
 }
 </style>

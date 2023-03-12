@@ -11,7 +11,6 @@ import { onMounted } from 'vue'
 
 const isOpen = ref(null)
 const isClicked = ref(false)
-// const show = ref(true)
 
 onMounted(() => {
     $(".titlefirst, .titlesecond, .course").fadeIn("slow");
@@ -19,7 +18,6 @@ onMounted(() => {
 
 function childShow(id) {
     isOpen.value = id
-    console.log(isOpen.value)
     isClicked.value = true
 }
 
@@ -75,33 +73,33 @@ const class_name = ref([
         <!-- Main -->
         <div class="second-all">
             <Transition name="fade">
-            <div class="main" v-if="!isClicked">
-                <!-- Title -->
-                <div class="title">
-                    <!-- TitleFirst -->
-                    <h1 class="titlefirst">欢迎开启计算机学习之旅</h1>
-                    <!-- TitleSecond -->
-                    <h1 class="titlesecond">请选择想要学习的科目</h1>
-                </div>
-                <!-- Course -->
-                <div class="course">
-                    <ul>
-                        <li v-for="item in class_name" :key="item.id" @click="childShow(item.id)">
-                            <a href="javascript:;">
-                                <img :src="item.img" alt="">
-                                <h4>{{item.name}}</h4>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="second-main" v-else-if="isClicked">
-                <div v-for="studycomponents in studyPageComponentsList" :key="studycomponents.id" >
-                    <div v-if="isOpen === studycomponents.id" >
-                        <component @Clicked="(value) => isClicked = false" class="course-detail" :is="studycomponents.components"></component>
+                <div class="main" v-if="!isClicked">
+                    <!-- Title -->
+                    <div class="title">
+                        <!-- TitleFirst -->
+                        <h1 class="titlefirst">欢迎开启计算机学习之旅</h1>
+                        <!-- TitleSecond -->
+                        <h1 class="titlesecond">请选择想要学习的科目</h1>
+                    </div>
+                    <!-- Course -->
+                    <div class="course">
+                        <ul>
+                            <li v-for="item in class_name" :key="item.id" @click="childShow(item.id)">
+                                <a href="javascript:;">
+                                    <img :src="item.img" alt="">
+                                    <h4>{{item.name}}</h4>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
+                <div class="second-main" v-else-if="isClicked">
+                    <div v-for="studycomponents in studyPageComponentsList" :key="studycomponents.id" >
+                        <div v-if="isOpen === studycomponents.id" >
+                            <component @Clicked="() => isClicked = false" class="course-detail" :is="studycomponents.components"></component>
+                        </div>
+                    </div>
+                </div>
             </Transition>
         </div>
         <Footer></Footer>
