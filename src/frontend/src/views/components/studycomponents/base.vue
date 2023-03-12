@@ -1,9 +1,13 @@
 <script setup>
 import {ref} from 'vue';
 import {clanguageDownload} from './downloadComponents/index.js';
+import { studyPageComponentsList } from '.';
 
 const emit = defineEmits('Clicked')
 const isShow = ref(0)
+
+const props = defineProps(['courseId'])
+const courseId = ref(props.courseId)
 
 const nav_name = ref([
     {
@@ -34,11 +38,11 @@ function downloadShow(id) {
                     <!-- logo -->
                     <a href="javascript:;" class="fl title_btn" @click="close">
                         <div class="clogo fl">
-                            <img src="@img/c++语言.png" alt="">
+                            <img src={{ studyPageComponentsList[0].backgroundImage }} alt="">
                         </div>
                         <div class="ctitle fl">
-                            <h4>C/C++编程语言</h4>
-                            <h5>CYP.CSE120M.S2022</h5>
+                            <h4>{{studyPageComponentsList[0].name}}</h4>
+                            <h5>{{studyPageComponentsList[0].classId}}</h5>
                         </div>
                     </a>
                     <a href="javascript:;" class="fr">
@@ -53,7 +57,7 @@ function downloadShow(id) {
                     <div class="teacher fl">
                         <div class="information">
                             <img src="@img/个人信息.png" alt="" class="fl">
-                            <h3>汪涛</h3>
+                            <h3>{{studyPageComponentsList[0].teacher}}</h3>
                         </div>
                     </div>
                     <!-- Download -->

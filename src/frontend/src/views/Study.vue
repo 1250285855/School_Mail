@@ -25,8 +25,13 @@ const class_name = ref([
     {
         id: 0,
         name: "C/C++编程原理",
-        img: getImgUrl("c++语言.png"), 
+        img: getImgUrl("/c++语言.png"),
     },
+    // {
+    //     id: 8,
+    //     name: "C/C++编程原理",
+    //     img: getImgUrl("c++语言.png"), 
+    // },
     {
         id: 1,
         name: "高等数学",
@@ -84,7 +89,7 @@ const class_name = ref([
                     <!-- Course -->
                     <div class="course">
                         <ul>
-                            <li v-for="item in class_name" :key="item.id" @click="childShow(item.id)">
+                            <li v-for="item in class_name" :key="item.id" @click="childShow(item.id)" :courseId="item.id">
                                 <a href="javascript:;">
                                     <img :src="item.img" alt="">
                                     <h4>{{item.name}}</h4>
