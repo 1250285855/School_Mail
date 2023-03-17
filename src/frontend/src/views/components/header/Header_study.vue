@@ -1,27 +1,9 @@
 <script setup>
-import $ from 'jquery';
 import { onMounted } from 'vue'
+import router from '@/router'
 
-function loginOpen() {
-    $(".btn").show("fast");
-}
-
-function loginClose() {
-    $(".btn").hide("fast");
-}
-
-function colorTsf_red() {
-    $(".nav_forum a").css("color", "red");
-    $(".nav_study a").css("color", "black");
-}
-
-function colorTsf_black() {
-    $(".nav_study a").css("color", "red");
-    $(".nav_forum a").css("color", "black");
-}
-
-function textApper() {
-    
+function openMain() {
+    router.push('/')
 }
 
 onMounted(() => {
@@ -35,34 +17,36 @@ onMounted(() => {
     <div class="header">
         <div class="w">
             <!-- Logo -->
-        <a href="javascript:;">
-            <img src="@img/IDEC_CE_Logo.png" alt="" class="fl">
-            <h4 class="fl
-            ">计算机科学与技术云课</h4>
-        </a>
-        <!-- Nav -->
-        <div class="nav fl">
-            <ul>
-                <li class="nav_study">
-                    <a href="javascript:;" @click="colorTsf_black" style="color: red">云课学习</a>
-                </li>
-                <li class="nav_forum">
-                    <a href="javascript:;" @click="colorTsf_red">云课论坛</a>
-                </li>
-                <li class="nav_input">
-                    <input type="search" name="" id=""  value="请输入您想要查找的内容" @blur="textDisapper" @focus="textApper">
-                </li>
-            </ul>
-        </div>
-        <!-- Login -->
-        <div class="login fr" @mouseleave="loginClose">
-            <div class="btn fl">
-                <a href="javascript:;">
-                    登录/注册
-                </a>
+            <a href="javascript:;">
+                <img src="@img/IDEC_CE_Logo.png" alt="" class="fl">
+                <h4 class="fl
+                ">计算机科学与技术云课</h4>
+            </a>
+            <!-- Nav -->
+            <div class="nav fl">
+                <ul>
+                    <li class="nav_main">
+                        <a href="javascript:;" @click="openMain">首页</a>
+                    </li>
+                    <li class="nav_study">
+                        <a href="javascript:;" @click="colorTsf_black">云课学习</a>
+                    </li>
+                    <li class="nav_forum">
+                        <a href="javascript:;" @click="colorTsf_red">云课论坛</a>
+                    </li>
+                </ul>
             </div>
-            <img src="@img/会员注册登录管理.png" alt="" class="fr login_btn" @mouseover="loginOpen">
-        </div>
+            <!-- Login -->
+            <div class="login fr">
+                <span>
+                    <img src="@img/Enter-2登录.png" alt="">
+                    登录
+                </span>
+                <div class="top"></div>
+                <div class="right"></div>
+                <div class="bottom"></div>
+                <div class="left"></div>
+            </div>
         </div>
     </div>
 </div>
@@ -158,9 +142,10 @@ body {
     background-color: #fff;
 }
 .header {
+    margin-top: 10px;
     height: 50px;
-    /* background-color: pink; */
-    border-bottom: 1px solid #ccc;
+    background-color: #1e1e20;
+    /* border-bottom: 1px solid white; */
 }
 .header a img {
     width: 50px;
@@ -170,9 +155,10 @@ body {
     text-align: center;
     line-height: 50px;
     font-size: 18px;
+    color: #c99a55;
 }
 .nav ul {
-    margin-left: 270px;
+    margin-left: 500px;
 }
 .nav ul li {
     float: left;
@@ -180,15 +166,32 @@ body {
     padding: 0 15px;
 }
 .nav_study,
-.nav_forum {
+.nav_forum,
+.nav_main {
     margin-top: 10px;
 }
+.nav_main a {
+    color: rgba(255, 255, 245, .86);
+}
 .nav_study a {
-    color: #000;
+    color: rgba(255, 255, 245, .86);
 }
 .nav_forum a {
-    color: #000;
+    color: rgba(255, 255, 245, .86);
 }
+.nav_study a:hover {
+    color: #c99a55;
+}
+.nav_forum a:hover {
+    color: #c99a55;
+}
+.nav_main a:hover {
+    color: #c99a55;
+}
+/* .break {
+    width: 3px;
+    border: 1px solid #c99a55;
+} */
 .nav_input {
     margin-top: 8px;
 }
@@ -197,32 +200,91 @@ body {
     height: 20px;
     width: 180px;
     border-radius: 10px;
-    border: 1px solid #000;
+    color: #fff;
+    background-color: #191919;
+    border: 1px solid #c99a55;
 }
-.login {
-    margin-top: 10px;
+/* .login {
+    margin-top: 8px;
     margin-right: 10px;
-    /* width: 106px;
-    height: 30px; */
+    width: 115px;
+    height: 38px;
     border-radius: 10px;
-    background-color: #ccc;
-}
-.btn {
-    display: none;
-    width: 70px;
-    height: 30px;
-}
-.login a {
-    float: left;
-    display: block;
-    line-height: 30px;
-    text-align: center;
-    padding-left: 4px;
-}
-.login_btn {
-    width: 30px;
-    height: 30px;
+    cursor: pointer;
+    background-color: #161618;
+} */
+.login {
+    position: relative;
+    margin-top: 4px;
+    padding: 8px 40px 8px 32px;
+    cursor: pointer;
+    transition: 0.5s all;
     border-radius: 10px;
-    background-color: #ccc;
+    background-color: #161618;
+}
+
+.login span {
+    color: rgba(255, 255, 245, .86);;
+    font-size: 16px;
+}
+
+.login span img {
+    height: 20px;
+    width: 20px;
+}
+
+.login:hover {
+    box-shadow: inset 0px 0px 25px #ff7700;
+}
+
+.login:active {
+    margin-top: 305px;
+    transition: 0.2s all;
+    box-shadow: inset 0px 0px 25px #ffb676;
+}
+
+.login div {
+    transition: 0.5s all;
+    position: absolute;
+    background-color: #ff7700;
+    box-shadow: 0 0 15px #ff7700, 0 0 30px #ff7700, 0 0 50px #ff7700;
+}
+
+.login .top {
+    width: 15px;
+    height: 2px;
+    top: 0;
+    left: 0;
+}
+
+.login .bottom {
+    width: 15px;
+    height: 2px;
+    bottom: 0;
+    right: 0;
+}
+
+.login .left {
+    width: 2px;
+    height: 15px;
+    top: 0;
+    left: 0;
+}
+
+.login .right {
+    width: 2px;
+    height: 15px;
+    bottom: 0;
+    right: 0;
+}
+
+.login:hover .top,
+.login:hover .bottom {
+    width: 100%;
+}
+
+.login:hover .left,
+.login:hover .right {
+    height: 100%;
 }
 </style>
