@@ -270,7 +270,7 @@ body {
 .second-all {
     position: relative;
     width: 100%;
-    height: 1000px;
+    height: 960px;
     display: flex;
     justify-content: center;
 }

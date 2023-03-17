@@ -6,6 +6,10 @@ function openMain() {
     router.push('/')
 }
 
+function login() {
+    router.push('/login')
+}
+
 onMounted(() => {
 
 })
@@ -17,7 +21,7 @@ onMounted(() => {
     <div class="header">
         <div class="w">
             <!-- Logo -->
-            <a href="javascript:;">
+            <a href="javascript:;" class="zuoyi">
                 <img src="@img/IDEC_CE_Logo.png" alt="" class="fl">
                 <h4 class="fl
                 ">计算机科学与技术云课</h4>
@@ -29,19 +33,21 @@ onMounted(() => {
                         <a href="javascript:;" @click="openMain">首页</a>
                     </li>
                     <li class="nav_study">
-                        <a href="javascript:;" @click="colorTsf_black">云课学习</a>
+                        <a href="javascript:;">云课学习</a>
                     </li>
                     <li class="nav_forum">
-                        <a href="javascript:;" @click="colorTsf_red">云课论坛</a>
+                        <a href="javascript:;">云课论坛</a>
                     </li>
                 </ul>
             </div>
             <!-- Login -->
             <div class="login fr">
-                <span>
-                    <img src="@img/Enter-2登录.png" alt="">
-                    登录
-                </span>
+                <a href="javascript:;" @click="login">
+                    <span>
+                        <img src="@img/Enter-2登录.png" alt="">
+                        登录
+                    </span>
+                </a>
                 <div class="top"></div>
                 <div class="right"></div>
                 <div class="bottom"></div>
@@ -147,6 +153,10 @@ body {
     background-color: #1e1e20;
     /* border-bottom: 1px solid white; */
 }
+.zuoyi {
+    display: block;
+    margin-left: -150px;
+}
 .header a img {
     width: 50px;
     height: 50px;
@@ -158,7 +168,7 @@ body {
     color: #c99a55;
 }
 .nav ul {
-    margin-left: 500px;
+    margin-left: 800px;
 }
 .nav ul li {
     float: left;
@@ -204,17 +214,9 @@ body {
     background-color: #191919;
     border: 1px solid #c99a55;
 }
-/* .login {
-    margin-top: 8px;
-    margin-right: 10px;
-    width: 115px;
-    height: 38px;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: #161618;
-} */
 .login {
     position: relative;
+    margin-right: -120px;
     margin-top: 4px;
     padding: 8px 40px 8px 32px;
     cursor: pointer;
@@ -228,6 +230,10 @@ body {
     font-size: 16px;
 }
 
+.login span:hover {
+    color: #c99a55;
+}
+
 .login span img {
     height: 20px;
     width: 20px;
@@ -238,7 +244,7 @@ body {
 }
 
 .login:active {
-    margin-top: 305px;
+    /* margin-top: 305px; */
     transition: 0.2s all;
     box-shadow: inset 0px 0px 25px #ffb676;
 }
