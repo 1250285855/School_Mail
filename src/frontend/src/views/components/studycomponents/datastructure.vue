@@ -1,58 +1,32 @@
 <script setup>
-import $ from 'jquery'
 import { ref } from 'vue';
+import { studyPageComponentsList } from '.';
+import { datastructureDownload } from './downloadComponents/index.js';
+
 const emit = defineEmits('Clicked')
+const isShow = ref(0)
+
+const props = defineProps(['courseId'])
+const courseId = ref(props.courseId)
+
+const nav_name = ref([
+    {
+        id: 0,
+        name: '课程简介'
+    },
+    {
+        id: 1,
+        name: '课程文件'
+    }
+])
 
 function close() {
     emit('Clicked')
 }
 
-function navOpen() {
-    $(".download_information").fadeIn("slow");
-    $(".download_nav_btn1").css("color", "red");
-    $(".download_nav_btn2").css("color", "white");
-    $(".download_file").css("display", "none");
+function downloadShow(id) {
+    isShow.value = id
 }
-
-function fileOpen() {
-    $(".download_file").fadeIn("slow");
-    $(".download_nav_btn2").css("color", "red");
-    $(".download_nav_btn1").css("color", "white");
-    $(".download_information").css("display", "none");
-}
-
-const fileDownload = ref([
-    {
-        id: 0,
-        filename: "文件名称1",
-        download: '下载',
-        information: '详情'
-    },
-    {
-        id: 1,
-        filename: "文件名称2",
-        download: '下载',
-        information: '详情'
-    },
-    {
-        id: 2,
-        filename: "文件名称3",
-        download: '下载',
-        information: '详情'
-    },
-    {
-        id: 3,
-        filename: "文件名称4",
-        download: '下载',
-        information: '详情'
-    },
-    {
-        id: 4,
-        filename: "文件名称5",
-        download: '下载',
-        information: '详情'
-    }
-])
 </script>
 
 <template>
@@ -63,11 +37,11 @@ const fileDownload = ref([
                     <!-- logo -->
                     <a href="javascript:;" class="fl title_btn" @click="close">
                         <div class="clogo fl">
-                            <img src="@img/数据结构.png" alt="">
+                            <img :src=studyPageComponentsList[courseId].backgroundImage alt="">
                         </div>
                         <div class="ctitle fl">
-                            <h4>数据结构</h4>
-                            <h5>CYP.MAT160M.S2022</h5>
+                            <h4>{{ studyPageComponentsList[courseId].name }}</h4>
+                            <h5>{{ studyPageComponentsList[courseId].classId }}</h5>
                         </div>
                     </a>
                     <a href="javascript:;" class="fr">
@@ -82,39 +56,24 @@ const fileDownload = ref([
                     <div class="teacher fl">
                         <div class="information">
                             <img src="@img/个人信息.png" alt="" class="fl">
-                            <h3>蔡远征</h3>
+                            <h3>{{ studyPageComponentsList[courseId].teacher }}</h3>
                         </div>
                     </div>
                     <!-- Download -->
                     <div class="download">
                         <div class="download_nav">
                             <ul>
-                                <li><a href="javascript:;" class="download_nav_btn1" @click="navOpen" style="color: red;">课程简介</a></li>
-                                <li><a href="javascript:;" class="download_nav_btn2" @click="fileOpen">课程文件</a></li>
-                            </ul>
-                        </div>
-                        <div class="download_file">
-                            <ul>
-                                <li v-for="item in fileDownload" :key="item.id">
-                                    <div class="filename fl">
-                                        {{ item.filename }}
-                                    </div>
-                                    <div class="download_btn fr">
-                                        <a href="javascript:;">{{ item.download }}</a>
-                                        <a href="javascript:;">{{ item.information }}</a>
-                                    </div>
+                                <li v-for="nav in nav_name" :key="nav.id">
+                                    <a @click="downloadShow(nav.id)" style="cursor: pointer;">{{ nav.name }}</a>
                                 </li>
                             </ul>
                         </div>
-                        <div class="download_information">
-                            <div class="text fl">
-                                <p>
-                                    数据结构是计算机科学教育中的一门必修课程。这门课程主要是介绍数据结构及其相关操作的算法. 本课程将使用C++程序设计语言和面向对象技术来实现各种数据结构。它的内容包括：算法分析、抽象数据类型、数组、表、栈、递归、广义表、队列和优先队列、树、搜索树和平衡搜索树、集合、散列和散列表、排序、图和图的算法。通过对本课程的学习，要求学生掌握数据结构的基本概念和知识，并可用任何计算机语言实现这些数据结构，为今后的软件开发工作打下扎实的基础。
-                                </p>
-                            </div>
-                            <div class="picture fl">
-                                <img src="@img/c语言课程简介.png" alt="">
-                            </div>
+                        <div v-for="dldcomponents in datastructureDownload" :key="dldcomponents.id">
+                            <Transition name="slide-up">
+                                <div v-if="isShow === dldcomponents.id">
+                                    <component :is="dldcomponents.components" :downloadId=isShow></component>
+                                </div>
+                            </Transition>
                         </div>
                     </div>
                 </div>
@@ -123,6 +82,20 @@ const fileDownload = ref([
 </template>
 
 <style scoped>
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.25s ease-out;
+}
+
+.slide-up-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(-30px);
+}
 .fl {
     float: left;
 }
@@ -315,55 +288,5 @@ body {
 }
 .download_nav ul li a:hover {
     color: #c81623;
-}
-.download_file{
-    display: none;
-}
-.download_file ul li {
-    width: 100%;
-    height: 70px;
-    border-radius: 15px;
-    margin: 20px 0;
-    font-size: 24px;
-    line-height: 70px;
-    background-color: #ccc;
-}
-.download_file ul li:hover {
-    border: 2px solid #ff6700;
-}
-.filename {
-    padding-left: 15px;
-    color: #000;
-}
-.download_btn a {
-    padding: 0 15px;
-    color: rgba(42, 130, 228, 98%);
-}
-.download_information {
-    position: relative;
-    /* display: none; */
-}
-.text {
-    width: 700px;
-    height: 400px;
-    margin: 30px 20px;
-}
-.text p {
-    font-size: 18px;
-    text-align: justify;
-    color: #fff;
-}
-.picture {
-    position: absolute;
-    overflow: hidden;
-    left: 750px;
-    top: 30px;
-    width: 450px;
-    height: 300px;
-    border-radius: 15px;
-}
-.picture img {
-    width: 450px;
-    height: 300px;
 }
 </style>

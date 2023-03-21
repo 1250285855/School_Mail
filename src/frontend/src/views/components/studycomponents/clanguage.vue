@@ -1,9 +1,13 @@
 <script setup>
 import {ref} from 'vue';
-import {clanguageDownload} from './downloadComponents/index.js';
+import { studyPageComponentsList } from '.';
+import { clanguageDownload } from './downloadComponents/index.js';
 
 const emit = defineEmits('Clicked')
 const isShow = ref(0)
+
+const props = defineProps(['courseId'])
+const courseId = ref(props.courseId)
 
 const nav_name = ref([
     {
@@ -28,53 +32,53 @@ function downloadShow(id) {
 
 <template>
     <div class="clanguage">
-            <div class="window">
-                <!-- header -->
-                <div class="clanguage_header">
-                    <!-- logo -->
-                    <a href="javascript:;" class="fl title_btn" @click="close">
-                        <div class="clogo fl">
-                            <img src="@img/c++语言.png" alt="">
-                        </div>
-                        <div class="ctitle fl">
-                            <h4>C/C++编程语言</h4>
-                            <h5>CYP.CSE120M.S2022</h5>
-                        </div>
-                    </a>
-                    <a href="javascript:;" class="fr">
-                        <div class="shutdown" @click="close">
-                            <img src="@img/叉叉.png" alt="">
-                        </div>
-                    </a>
-                </div>
-                <!-- main -->
-                <div class="cmain">
-                    <!-- Teacher -->
-                    <div class="teacher fl">
-                        <div class="information">
-                            <img src="@img/个人信息.png" alt="" class="fl">
-                            <h3>汪涛</h3>
-                        </div>
+        <div class="window">
+            <!-- header -->
+            <div class="clanguage_header">
+                <!-- logo -->
+                <a href="javascript:;" class="fl title_btn" @click="close">
+                    <div class="clogo fl">
+                        <img :src=studyPageComponentsList[courseId].backgroundImage alt="">
                     </div>
-                    <!-- Download -->
-                    <div class="download">
-                        <div class="download_nav">
-                            <ul>
-                                <li v-for="nav in nav_name" :key="nav.id">
-                                    <a @click="downloadShow(nav.id)" style="cursor: pointer;">{{ nav.name }}</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div v-for="dldcomponents in clanguageDownload" :key="dldcomponents.id">
-                            <Transition name="slide-up">
-                                <div v-if="isShow === dldcomponents.id">
-                                    <component :is="dldcomponents.components"></component>
-                                </div>
-                            </Transition>
-                        </div>
+                    <div class="ctitle fl">
+                        <h4>{{ studyPageComponentsList[courseId].name }}</h4>
+                        <h5>{{ studyPageComponentsList[courseId].classId }}</h5>
+                    </div>
+                </a>
+                <a href="javascript:;" class="fr">
+                    <div class="shutdown" @click="close">
+                        <img src="@img/叉叉.png" alt="">
+                    </div>
+                </a>
+            </div>
+            <!-- main -->
+            <div class="cmain">
+                <!-- Teacher -->
+                <div class="teacher fl">
+                    <div class="information">
+                        <img src="@img/个人信息.png" alt="" class="fl">
+                        <h3>{{ studyPageComponentsList[courseId].teacher }}</h3>
+                    </div>
+                </div>
+                <!-- Download -->
+                <div class="download">
+                    <div class="download_nav">
+                        <ul>
+                            <li v-for="nav in nav_name" :key="nav.id">
+                                <a @click="downloadShow(nav.id)" style="cursor: pointer;">{{ nav.name }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div v-for="dldcomponents in clanguageDownload" :key="dldcomponents.id">
+                        <Transition name="slide-up">
+                            <div v-if="isShow === dldcomponents.id">
+                                <component :is="dldcomponents.components" :downloadId=isShow></component>
+                            </div>
+                        </Transition>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
 </template>
 

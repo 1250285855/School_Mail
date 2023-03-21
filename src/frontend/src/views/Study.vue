@@ -1,20 +1,34 @@
 <script setup>
 import { ref } from 'vue'
 import { getImgUrl } from '@/assets/js'
-import $ from 'jquery';
 
 import {studyPageComponentsList} from '@/views/components/studycomponents/index.js'
+import { useIntersectionObserver } from '@vueuse/core'
 
 import Header_study from '@/views/components/header/Header_study.vue';
 import Footer from '@/views/components/footer.vue';
-import { onMounted } from 'vue'
 
 const isOpen = ref(null)
 const isClicked = ref(false)
 
-onMounted(() => {
-    $(".titlefirst, .titlesecond, .course").fadeIn("slow");
-})
+const Move = ref(null)
+const TransitionLogo = ref(null)
+const Crouse = ref(null)
+
+const { stop }= useIntersectionObserver(
+  
+    Move,
+    ([{ isIntersecting }], observerElement) => {
+        if (isIntersecting) {
+            Move.value.classList.add('animate__animated', 'animate__fadeInLeft')
+            TransitionLogo.value.classList.add('animate__animated', 'animate__fadeInRight')
+            Crouse.value.classList.add('animate__animated', 'animate__fadeInUp')
+        }
+    },
+    {
+        threshold: 0,
+    },
+)
 
 function childShow(id) {
     isOpen.value = id
@@ -25,43 +39,51 @@ const class_name = ref([
     {
         id: 0,
         name: "C/C++编程原理",
-        img: getImgUrl("/c++语言.png"),
+        img: getImgUrl("/编程语言.png"),
+        text: 'C语言是一门面向过程的计算机编程语言，与C++、C#、Java等面向对象编程语言有所不同。',
     },
     {
         id: 1,
         name: "高等数学",
-        img: getImgUrl("/数学.png"),
+        img: getImgUrl("/高等数学.png"),
+        text: '高等数学以微积分理论为核心内容，以函数为基本研究对象，以极限作为贯穿微积分理论始终的基本思想。',
     },
     {
         id: 2,
         name: "线性代数",
         img: getImgUrl("/线性代数.png"),
+        text: '线性代数是一门基础数学课程，它的基本概念、理论和方法，具有较强的逻辑性、抽象性和广泛的实用性。',
     },
     {
         id: 3,
         name: "数据结构",
         img: getImgUrl("/数据结构.png"),
+        text: '数据结构是计算机科学教育中的一门必修课程。这门课程主要是介绍数据结构及其相关操作的算法。',
     },
     {
         id: 4,
         name: "数字系统",
-        img: getImgUrl("/网络系统.png"),
+        img: getImgUrl("/数字系统.png"),
+        text: '数字系统课程目标是通过理论和实践学习可使学生掌握数字电路的基本概念、数制及编码、逻辑代数及逻辑函数。',
     },
     {
         id: 5,
         name: "计算机科学写作",
         img: getImgUrl("/计算机写作.png"),
+        text: '计算机科学写作是一门应用特殊的文本性代码进行文本的编写，十分锻炼学生的编程思想能力。',
     },
     {
         id: 6,
         name: "电路与电子",
-        img: getImgUrl("/电路.png"),
+        img: getImgUrl("/电路与电子.png"),
+        text: '电路与电子技术课程原理性较强，注重实验技能的培养。',
     },
     {
         id: 7,
         name: "离散结构",
-        img: getImgUrl("/离散.png"),
-    },
+        img: getImgUrl("/离散数学.png"),
+        text: '离散数学是培养学生抽象思维和严密概括能力的素质训练课程。',
+    }
 ])
 
 </script>
@@ -76,18 +98,45 @@ const class_name = ref([
                 <div class="main" v-if="!isClicked">
                     <!-- Title -->
                     <div class="title">
-                        <!-- TitleFirst -->
-                        <h1 class="titlefirst">欢迎开启计算机学习之旅</h1>
-                        <!-- TitleSecond -->
-                        <h1 class="titlesecond">请选择想要学习的科目</h1>
+                       <div class="w">
+                            <div class="move" ref="Move">
+                                <!-- EnglishTitle -->
+                                <h1 class="englishtitle">IDEC</h1> 
+                                <!-- TitleFirst -->
+                                <h1 class="titlefirst">欢迎开启计算机学习之旅</h1>
+                                <!-- TitleSecond -->
+                                <h1 class="titlesecond">
+                                    为学习提供极为便捷的通道
+                                    <span class="fr">v0.0.1</span>
+                                </h1>
+                            </div>
+                            <!-- transitionLogo -->
+                            <div class="transitionLogo" ref="TransitionLogo">
+                                <div class="container">
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                       </div>
                     </div>
                     <!-- Course -->
-                    <div class="course">
+                    <div class="course" ref="Crouse">
                         <ul>
                             <li v-for="item in class_name" :key="item.id" @click="childShow(item.id)">
-                                <a href="javascript:;">
-                                    <img :src="item.img" alt="">
-                                    <h4>{{item.name}}</h4>
+                                <a href="javascript:;" class="transitionmodel">
+                                    <div class="img_bg">
+                                        <img :src="item.img" alt="">
+                                    </div>
+                                    <h4>
+                                        {{item.name}}
+                                    </h4>
+                                    <div class="introductiontext">
+                                        {{ item.text }}
+                                    </div>
                                 </a>
                             </li>
                         </ul>
@@ -107,6 +156,15 @@ const class_name = ref([
 </template>
 
 <style scoped>
+.animate__animated .animate__fadeInLeft {
+    animation-delay: 1s;
+}
+.animate__animated .animate__fadeInRight {
+    animation-delay: 1s;
+}
+.animate__animated .animate__fadeInUp {
+    animation-delay: 1s;
+}
 .slide-fade-enter-active {
   transition: all 0.3s ease-out;
 }
@@ -205,14 +263,14 @@ body {
 .all {
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: #1e1e20;
     display: flex;
     flex-direction: column;
 }
 .second-all {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 960px;
     display: flex;
     justify-content: center;
 }
@@ -268,24 +326,117 @@ body {
 }
 .title {
     width: 100%;
-    height: 173px;
+    /* background-color: pink; */
+}
+.title .w {
+    position: relative;
+}
+.englishtitle {
+    font-size: 56px;
+    color: #c99a55;
+    font-family: "Lucida Calligraphy", cursive, serif, sans-serif;
 }
 .titlefirst {
-    /* display: none; */
-    text-align: center;
     font-size: 60px;
-    color: #000;
+    margin-top: -20px;
+    color: rgba(255, 255, 245, .86);
 }
-
 .titlesecond {
-    /* display: none; */
+    font-size: 24px;
+    color: rgba(235, 235, 245, .6);
+}
+.titlesecond span {
+    position: absolute;
+    left: 300px;
+    bottom: 2px;
+    display: block;
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: "Lucida Calligraphy", cursive, serif, sans-serif;
     text-align: center;
-    font-size: 48px;
-    color: #000;
+    line-height: 30px;
+    color: rgba(255, 255, 245, .86);
+    background-color: #c99a55;
+}
+.transitionLogo {
+    position: absolute;
+    right: 17px;
+    top: 0;
+    width: 310px;
+    height: 204px;
+    /* background-color: #fff; */
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 107px;
+    top: 110px;
+}
+.circle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: pulse 3s ease-in-out infinite;
+    background-color: aliceblue;
+}
+.circle:nth-child(1) {
+    width: calc(50px * 1);
+    height: calc(50px * 1);
+    opacity: 1;
+    animation-delay: 0.12s;
+}
+.circle:nth-child(2) {
+    width: calc(50px * 2);
+    height: calc(50px * 2);
+    opacity: 0.5;
+    animation-delay: 0.24s;
+}
+.circle:nth-child(3) {
+    width: calc(50px * 3);
+    height: calc(50px * 3);
+    opacity: 0.33;
+    animation-delay: 0.36s;
+}
+.circle:nth-child(4) {
+    width: calc(50px * 4);
+    height: calc(50px * 4);
+    opacity: 0.25;
+    animation-delay: 0.48s;
+}
+.circle:nth-child(5) {
+    width: calc(50px * 5);
+    height: calc(50px * 5);
+    opacity: 0.2;
+    animation-delay: 0.6s;
+}
+.circle:nth-child(6) {
+    width: calc(50px * 6);
+    height: calc(50px * 6);
+    opacity: 0.16;
+    animation-delay: 0.72s;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.3);
+    }
+    50% {
+        transform: scale(0.7);
+    }
+    75% {
+        transform: scale(1);
+    }
 }
 .course {
-    /* display: none; */
-    margin-top: 30px;
+    position: relative;
+    margin-top: 100px;
     width: 100%;
 }
 .course ul {
@@ -302,6 +453,15 @@ body {
     margin-bottom: 30px;
     transition: all .5s;
 }
+.course ul li .img_bg {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #1e1e20;
+}
 .course ul li:hover {
     transform: translate(10px, -10px);
 }
@@ -311,24 +471,34 @@ body {
     width: 360px;
     height: 204px;
     border-radius: 15px;
-    background-color: #ccc;
+    background-color: #252529;
 }
 .course ul li a img {
     position: absolute;
     left: 50%;
-    top: 30%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 60px;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 35px;
+    height: 35px;
 }
 .course ul li a h4 {
-    text-align: center;
+    height: 100%;
     line-height: 204px;
-    padding-top: 45px;
-    font-size: 18px;
-    color: #000;
+    padding-left: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255, 255, 245, .86);;
 }
-
+.course ul li a .introductiontext {
+    position: absolute;
+    top: 125px;
+    left: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(235, 235, 245, .6);
+    height: 65px;
+    width: 315px;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease;

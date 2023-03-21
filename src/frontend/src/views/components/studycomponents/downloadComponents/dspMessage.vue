@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import { clanguageDownload } from '.';
+import { dspDownload } from '.';
 
 const props = defineProps(['downloadId'])
 const downloadId = ref(props.downloadId)
@@ -10,11 +10,11 @@ const downloadId = ref(props.downloadId)
     <div class="download_information">
         <div class="text fl">
             <p>
-                {{ clanguageDownload[downloadId].classIntroduction }}
+                {{ dspDownload[downloadId].classIntroduction }}
             </p>
         </div>
         <div class="picture fl">
-            <img :src= clanguageDownload[downloadId].IntroductionImage alt="">
+            <img :src= dspDownload[downloadId].IntroductionImage alt="">
         </div>
     </div>
 </template>

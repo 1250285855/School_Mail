@@ -1,58 +1,32 @@
 <script setup>
-import $ from 'jquery';
 import { ref } from 'vue';
+import { studyPageComponentsList } from '.';
+import { mathDownload } from './downloadComponents/index.js';
+
 const emit = defineEmits('Clicked')
+const isShow = ref(0)
+
+const props = defineProps(['courseId'])
+const courseId = ref(props.courseId)
+
+const nav_name = ref([
+    {
+        id: 0,
+        name: '课程简介'
+    },
+    {
+        id: 1,
+        name: '课程文件'
+    }
+])
 
 function close() {
     emit('Clicked')
 }
 
-function navOpen() {
-    $(".download_information").fadeIn("slow");
-    $(".download_nav_btn1").css("color", "red");
-    $(".download_nav_btn2").css("color", "white");
-    $(".download_file").css("display", "none");
+function downloadShow(id) {
+    isShow.value = id
 }
-
-function fileOpen() {
-    $(".download_file").fadeIn("slow");
-    $(".download_nav_btn2").css("color", "red");
-    $(".download_nav_btn1").css("color", "white");
-    $(".download_information").css("display", "none");
-}
-
-const fileDownload = ref([
-    {
-        id: 0,
-        filename: "文件名称1",
-        download: '下载',
-        information: '详情'
-    },
-    {
-        id: 1,
-        filename: "文件名称2",
-        download: '下载',
-        information: '详情'
-    },
-    {
-        id: 2,
-        filename: "文件名称3",
-        download: '下载',
-        information: '详情'
-    },
-    {
-        id: 3,
-        filename: "文件名称4",
-        download: '下载',
-        information: '详情'
-    },
-    {
-        id: 4,
-        filename: "文件名称5",
-        download: '下载',
-        information: '详情'
-    }
-])
 </script>
 
 <template>
@@ -63,11 +37,11 @@ const fileDownload = ref([
                     <!-- logo -->
                     <a href="javascript:;" class="fl title_btn" @click="close">
                         <div class="clogo fl">
-                            <img src="@img/数学.png" alt="">
+                            <img :src=studyPageComponentsList[courseId].backgroundImage alt="">
                         </div>
                         <div class="ctitle fl">
-                            <h4>高等数学</h4>
-                            <h5>CYP.MAT200M.F2022</h5>
+                            <h4>{{ studyPageComponentsList[courseId].name }}</h4>
+                            <h5>{{ studyPageComponentsList[courseId].classId }}</h5>
                         </div>
                     </a>
                     <a href="javascript:;" class="fr">
@@ -82,39 +56,24 @@ const fileDownload = ref([
                     <div class="teacher fl">
                         <div class="information">
                             <img src="@img/个人信息.png" alt="" class="fl">
-                            <h3>伍慧玲</h3>
+                            <h3>{{ studyPageComponentsList[courseId].teacher }}</h3>
                         </div>
                     </div>
                     <!-- Download -->
                     <div class="download">
                         <div class="download_nav">
                             <ul>
-                                <li><a href="javascript:;" class="download_nav_btn1" @click="navOpen" style="color: red;">课程简介</a></li>
-                                <li><a href="javascript:;" class="download_nav_btn2" @click="fileOpen">课程文件</a></li>
-                            </ul>
-                        </div>
-                        <div class="download_file">
-                            <ul>
-                                <li v-for="item in fileDownload" :key="item.id">
-                                    <div class="filename fl">
-                                        {{ item.filename }}
-                                    </div>
-                                    <div class="download_btn fr">
-                                        <a href="javascript:;">{{ item.download }}</a>
-                                        <a href="javascript:;">{{ item.information }}</a>
-                                    </div>
+                                <li v-for="nav in nav_name" :key="nav.id">
+                                    <a @click="downloadShow(nav.id)" style="cursor: pointer;">{{ nav.name }}</a>
                                 </li>
                             </ul>
                         </div>
-                        <div class="download_information">
-                            <div class="text fl">
-                                <p>
-                                    高等数学以微积分理论为核心内容，以函数为基本研究对象，以极限作为贯穿微积分理论始终的基本思想，通过解决求切线斜率和求瞬时速度等来自不同学科的问题引入导数这一研究函数的基本工具，再从求曲边梯形面积和求变速运动路程等不同问题的处理中抽象出了积分。以牛顿-莱布尼兹公式为桥梁，微分与积分这对矛盾得到了高度的统一。在空间解析几何和向量代数的基础上，将对多元函数建立微积分理论。此外，级数理论和常微分方程理论也将在本课程中呈现。通过本课程的学习，要使学生获得：函数、极限、连续,一元函数微积分学,向量代数和空间解析几何，多元函数微积分学，无穷级数（包括傅里叶级数），常微分方程等方面的基本概念、基本理论和基本运算技能，为学习后继课程和进一步获得数学知识奠定必要的数学基础。
-                                </p>
-                            </div>
-                            <div class="picture fl">
-                                <img src="@img/c语言课程简介.png" alt="">
-                            </div>
+                        <div v-for="dldcomponents in mathDownload" :key="dldcomponents.id">
+                            <Transition name="slide-up">
+                                <div v-if="isShow === dldcomponents.id">
+                                    <component :is="dldcomponents.components" :downloadId=isShow></component>
+                                </div>
+                            </Transition>
                         </div>
                     </div>
                 </div>
@@ -123,6 +82,20 @@ const fileDownload = ref([
 </template>
 
 <style scoped>
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.25s ease-out;
+}
+
+.slide-up-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(-30px);
+}
 .fl {
     float: left;
 }
@@ -315,55 +288,5 @@ body {
 }
 .download_nav ul li a:hover {
     color: #c81623;
-}
-.download_file{
-    display: none;
-}
-.download_file ul li {
-    width: 100%;
-    height: 70px;
-    border-radius: 15px;
-    margin: 20px 0;
-    font-size: 24px;
-    line-height: 70px;
-    background-color: #ccc;
-}
-.download_file ul li:hover {
-    border: 2px solid #ff6700;
-}
-.filename {
-    padding-left: 15px;
-    color: #000;
-}
-.download_btn a {
-    padding: 0 15px;
-    color: rgba(42, 130, 228, 98%);
-}
-.download_information {
-    position: relative;
-    /* display: none; */
-}
-.text {
-    width: 700px;
-    height: 400px;
-    margin: 30px 20px;
-}
-.text p {
-    font-size: 18px;
-    text-align: justify;
-    color: #fff;
-}
-.picture {
-    position: absolute;
-    overflow: hidden;
-    left: 750px;
-    top: 30px;
-    width: 450px;
-    height: 300px;
-    border-radius: 15px;
-}
-.picture img {
-    width: 450px;
-    height: 300px;
 }
 </style>

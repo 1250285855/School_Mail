@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import { clanguageDownload } from '.';
+import { datastructureDownload } from '.';
 
 const props = defineProps(['downloadId'])
 const downloadId = ref(props.downloadId)
@@ -10,13 +10,13 @@ const downloadId = ref(props.downloadId)
     <div class="download_information">
         <div class="text fl">
             <p>
-                {{ clanguageDownload[downloadId].classIntroduction }}
+                {{ datastructureDownload[downloadId].classIntroduction }}
             </p>
         </div>
         <div class="picture fl">
-            <img :src= clanguageDownload[downloadId].IntroductionImage alt="">
+            <img :src= datastructureDownload[downloadId].IntroductionImage alt="">
         </div>
-    </div>
+    </div>   
 </template>
 
 <style scoped>

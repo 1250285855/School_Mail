@@ -1,20 +1,54 @@
 <script setup>
 import { ref } from 'vue';
-import { clanguageDownload } from '.';
 
-const props = defineProps(['downloadId'])
-const downloadId = ref(props.downloadId)
+const fileDownload = ref([
+    {
+        id: 0,
+        filename: "文件名称1",
+        download: '下载',
+        information: '详情'
+    },
+    {
+        id: 1,
+        filename: "文件名称2",
+        download: '下载',
+        information: '详情'
+    },
+    {
+        id: 2,
+        filename: "文件名称3",
+        download: '下载',
+        information: '详情'
+    },
+    {
+        id: 3,
+        filename: "文件名称4",
+        download: '下载',
+        information: '详情'
+    },
+    {
+        id: 4,
+        filename: "文件名称5",
+        download: '下载',
+        information: '详情'
+    }
+])
 </script>
 
 <template>
-    <div class="download_information">
-        <div class="text fl">
-            <p>
-                {{ clanguageDownload[downloadId].classIntroduction }}
-            </p>
-        </div>
-        <div class="picture fl">
-            <img :src= clanguageDownload[downloadId].IntroductionImage alt="">
+    <div class="download_file">
+        <div class="window">
+            <ul>
+                <li v-for="item in fileDownload" :key="item.id" class="file">
+                    <div class="filename fl">
+                        {{ item.filename }}
+                    </div>
+                    <div class="download_btn fr">
+                        <a href="javascript:;">{{ item.download }}</a>
+                        <a href="javascript:;">{{ item.information }}</a>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
 </template>
@@ -102,31 +136,37 @@ body {
     width: 1300px;
     margin: 0 auto;
 }
-.download_information {
+.download_file ul li {
     position: relative;
-    /* display: none; */
-}
-.text {
-    width: 700px;
-    height: 400px;
-    margin: 30px 20px;
-}
-.text p {
-    font-size: 18px;
-    text-align: justify;
-    color: #fff;
-}
-.picture {
-    position: absolute;
-    overflow: hidden;
-    left: 750px;
-    top: 30px;
-    width: 450px;
-    height: 300px;
+    width: 100%;
+    height: 70px;
     border-radius: 15px;
+    margin: 20px 0;
+    font-size: 24px;
+    line-height: 70px;
+    background-color: #ccc;
 }
-.picture img {
-    width: 450px;
-    height: 300px;
+.download_file ul li:hover {
+    border: 2px solid #ff6700;
+}
+.filename {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-left: 15px;
+    color: #000;
+}
+.download_btn a {
+    padding: 0 15px;
+    color: rgba(42, 130, 228, 98%);
+}
+.window {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    /* Chrome 浏览器毛玻璃 */
+    backdrop-filter: blur(5px);
+    /* Safari 浏览器毛玻璃 */
+    -webkit-backdrop-filter: blur(5px);
 }
 </style>
