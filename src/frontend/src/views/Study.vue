@@ -39,50 +39,56 @@ const class_name = ref([
     {
         id: 0,
         name: "C/C++编程原理",
-        img: getImgUrl("/编程语言.png"),
+        img: getImgUrl("学习资源/编程语言.png"),
         text: 'C语言是一门面向过程的计算机编程语言，与C++、C#、Java等面向对象编程语言有所不同。',
     },
     {
         id: 1,
         name: "高等数学",
-        img: getImgUrl("/高等数学.png"),
+        img: getImgUrl("学习资源/高等数学.png"),
         text: '高等数学以微积分理论为核心内容，以函数为基本研究对象，以极限作为贯穿微积分理论始终的基本思想。',
     },
     {
         id: 2,
         name: "线性代数",
-        img: getImgUrl("/线性代数.png"),
+        img: getImgUrl("学习资源/线性代数.png"),
         text: '线性代数是一门基础数学课程，它的基本概念、理论和方法，具有较强的逻辑性、抽象性和广泛的实用性。',
     },
     {
         id: 3,
         name: "数据结构",
-        img: getImgUrl("/数据结构.png"),
+        img: getImgUrl("学习资源/数据结构.png"),
         text: '数据结构是计算机科学教育中的一门必修课程。这门课程主要是介绍数据结构及其相关操作的算法。',
     },
     {
         id: 4,
         name: "数字系统",
-        img: getImgUrl("/数字系统.png"),
+        img: getImgUrl("学习资源/数字系统.png"),
         text: '数字系统课程目标是通过理论和实践学习可使学生掌握数字电路的基本概念、数制及编码、逻辑代数及逻辑函数。',
     },
-    {
-        id: 5,
-        name: "计算机科学写作",
-        img: getImgUrl("/计算机写作.png"),
-        text: '计算机科学写作是一门应用特殊的文本性代码进行文本的编写，十分锻炼学生的编程思想能力。',
-    },
+    // {
+    //     id: 5,
+    //     name: "计算机科学写作",
+    //     img: getImgUrl("学习资源/计算机写作.png"),
+    //     text: '计算机科学写作是一门应用特殊的文本性代码进行文本的编写，十分锻炼学生的编程思想能力。',
+    // },
     {
         id: 6,
         name: "电路与电子",
-        img: getImgUrl("/电路与电子.png"),
+        img: getImgUrl("学习资源/电路与电子.png"),
         text: '电路与电子技术课程原理性较强，注重实验技能的培养。',
     },
     {
         id: 7,
         name: "离散结构",
-        img: getImgUrl("/离散数学.png"),
+        img: getImgUrl("学习资源/离散数学.png"),
         text: '离散数学是培养学生抽象思维和严密概括能力的素质训练课程。',
+    },
+    {
+        id: 8,
+        name: "Linux系统与应用",
+        img: getImgUrl("学习资源/linux.png"),
+        text: '由琳子大人倾力打造的Linux系统与应用课程，让你轻松学会Linux系统的使用。',
     }
 ])
 
