@@ -198,7 +198,10 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 15px;
+    /* Chrome 浏览器毛玻璃 */
     backdrop-filter: blur(5px);
+    /* Safari 浏览器毛玻璃 */
+    -webkit-backdrop-filter: blur(5px);
 }
 .clanguage_header {
     width: 100%;
