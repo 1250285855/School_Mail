@@ -13,6 +13,8 @@ import News from './news.vue'
 import FootprintWall from './footprintWall.vue'
 import PhotoWall from './photoWall.vue'
 import Welcome from './welcome.vue'
+import StudyEntrance from './studyEntrance.vue'
+import SavoGameShortcut from './SavoGameShortcut.vue'
 
 import Introduction from './Introduction.vue'
 import ClassView from './ClassView.vue'
@@ -36,7 +38,9 @@ export const homePageComponentsList = ref([
     components: {
       // News,
       // FootprintWall,
+      // StudyEntrance,
       PhotoWall,
+      SavoGameShortcut,
       Welcome,
     }
   },
