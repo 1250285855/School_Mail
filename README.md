@@ -1,12 +1,12 @@
 # <div align="center"> 校函 </div>
 <div align="center">
-  <a href="http://89.213.3.106"><img src="https://github.com/1250285855/School_Mail/blob/main/src/frontend/src/assets/icons/IDEC_CE/idec_ce2.png?raw=true" width="70%" alt="School Mail"></a>
+  <a href="http://89.213.3.106"><img src="https://github.com/Savo-Shen/School_Mail/blob/main/src/frontend/src/assets/icons/IDEC_CE/idec_ce2.png?raw=true" width="70%" alt="School Mail"></a>
 </div>
 
 ## <div align="center">IDEC计科官网</div>
 
 <div align="center">
-  <a href="https://github.com/1250285855/School_Mail/"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-github.png" width="2%" alt="space"></a>
+  <a href="https://github.com/Savo-Shen/School_Mail/"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-github.png" width="2%" alt="space"></a>
 </div>
 
 ### <div align="center">项目介绍</div>
