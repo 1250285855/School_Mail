@@ -7,6 +7,7 @@ import System from './system.vue'
 import Working from './working.vue'
 import Circuit from './circuit.vue'
 import Dispersed from './dispersed.vue'
+import Linux from './linux.vue'
 
 export const studyPageComponentsList = ref([
     {
@@ -15,7 +16,7 @@ export const studyPageComponentsList = ref([
         classId: 'CYP.CSE120M.S2022',
         teacher: '汪涛',
         //vite动态引入外部图片要在路径前加上/src
-        backgroundImage: '/src/assets/imgs/编程语言.png',
+        backgroundImage: '/src/assets/imgs/学习资源/编程语言.png',
         components: Clanguage,
     },
     {
@@ -23,7 +24,7 @@ export const studyPageComponentsList = ref([
         name: '高等数学',
         classId: 'CYP.MAT200M.F2022',
         teacher: '伍慧玲',
-        backgroundImage: '/src/assets/imgs/高等数学.png',
+        backgroundImage: '/src/assets/imgs/学习资源/高等数学.png',
         components: Math,
     },
     {
@@ -31,7 +32,7 @@ export const studyPageComponentsList = ref([
         name: '线性代数',
         classId: 'CYP.MAT160M.S2022',
         teacher: '范林元',
-        backgroundImage: '/src/assets/imgs/线性代数.png',
+        backgroundImage: '/src/assets/imgs/学习资源/线性代数.png',
         components: Algebra
     },
     {
@@ -39,7 +40,7 @@ export const studyPageComponentsList = ref([
         name: '数据结构',
         classId: 'CYP.CSE200M.F2022',
         teacher: '蔡远征',
-        backgroundImage: '/src/assets/imgs/数据结构.png',
+        backgroundImage: '/src/assets/imgs/学习资源/数据结构.png',
         components: Datastructure
     },
     {
@@ -47,7 +48,7 @@ export const studyPageComponentsList = ref([
         name: '数字系统',
         classId: 'CYP.ECE200M.F2022',
         teacher: 'Anastasia Ioannou',
-        backgroundImage: '/src/assets/imgs/数字系统.png',
+        backgroundImage: '/src/assets/imgs/学习资源/数字系统.png',
         components: System
     },
     {
@@ -55,7 +56,7 @@ export const studyPageComponentsList = ref([
         name: '计算机科学与技术写作',
         classId: 'CYP.CSE215M.F2022',
         teacher: 'Anastasia Ioannou',
-        backgroundImage: '/src/assets/imgs/计算机写作.png',
+        backgroundImage: '/src/assets/imgs/学习资源/计算机写作.png',
         components: Working
     },
     {
@@ -63,7 +64,7 @@ export const studyPageComponentsList = ref([
         name: '电路与电子',
         classId: 'CYP.ECE205M.F2022',
         teacher: 'Antonios Antoniou',
-        backgroundImage: '/src/assets/imgs/电路与电子.png',
+        backgroundImage: '/src/assets/imgs/学习资源/电路与电子.png',
         components: Circuit
     },
     {
@@ -71,8 +72,16 @@ export const studyPageComponentsList = ref([
         name: '离散结构',
         classId: 'CYP.MAT170M.S2022',
         teacher: 'Anastasia Ioannou',
-        backgroundImage: '/src/assets/imgs/离散数学.png',
+        backgroundImage: '/src/assets/imgs/学习资源/离散数学.png',
         components: Dispersed
+    },
+    {
+        id: 8,
+        name: 'Linux系统与应用',
+        classId: 'CYP.CSE210M.S2022',
+        teacher: 'Linzidaren',
+        backgroundImage: '/src/assets/imgs/学习资源/linux.png',
+        components: Linux
     }
 ])
 
