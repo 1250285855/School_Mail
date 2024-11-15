@@ -3,7 +3,6 @@
   <a href="http://89.213.3.106"><img src="https://github.com/1250285855/School_Mail/blob/main/src/frontend/src/assets/icons/IDEC_CE/idec_ce2.png?raw=true" width="70%" alt="School Mail"></a>
 </div>
 
-
 ## <div align="center">IDEC计科官网</div>
 
 <div align="center">
@@ -19,6 +18,8 @@
 
 ### <div align="center">项目运行</div>
 感谢[ruannan](https://blog.csdn.net/m0_64180167/)的服务器的帮助，本项目现在运行在[89.213.3.106](http://89.213.3.106/)上。
+
+暂时没有部署后端，所以没办法实现登录功能，但是可以查看主页和关于我们页面。
 
 ### <div align="center">项目结构介绍</div>
 | 目录            | 说明       |
