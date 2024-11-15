@@ -13,7 +13,7 @@ import News from './news.vue'
 import FootprintWall from './footprintWall.vue'
 import PhotoWall from './photoWall.vue'
 import Welcome from './welcome.vue'
-import StudyEntrance from './studyEntrance.vue'
+import StudyEntrance from './StudyEntrance.vue'
 import SavoGameShortcut from './SavoGameShortcut.vue'
 
 import Introduction from './Introduction.vue'
