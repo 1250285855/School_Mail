@@ -190,7 +190,7 @@ profile()
 	height: 100%;
 	width: 100%;
 	min-width: 1200px;
-	max-width: 1905px;
+	/* max-width: 1905px; */
 	min-height: 800px;
 	place-items: center;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
