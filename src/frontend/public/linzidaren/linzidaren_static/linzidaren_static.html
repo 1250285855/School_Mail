@@ -1,0 +1,148 @@
+<!doctype html>
+<!-- html标签的内容为html文件的所有 -->
+<html>
+<!-- head标签的内容可以理解为这个网页的配置信息吧 -->
+<head>
+<!-- meta标签的内容为字符集、使用作者什么的 -->
+<meta charset="utf-8">
+<!-- title标签的内容为在网页内时浏览器上显示的文字，就是这个网页的title -->
+<title>linzidaren</title>
+</head>
+
+<!-- body标签内的是网页的具体内容 -->
+<body>
+<!-- div标签为一般的标签，不像<p></p>、<h1></h1>等有特殊意义 -->
+<!-- class关键词用于为这个标签绑定css类， -->
+<!-- 标签头尾中间的为内容，通过css对内容进行修饰，就可以很漂亮 -->
+<div class="left">
+    <div class="title">琳子大人</div>
+    <div class="subtitle">Linzidaren</div>
+</div>
+<div class="content"></div>
+</body>
+
+</html>
+
+<!-- style标签用于在html文件中添加css代码块 -->
+<style>
+/*
+一段css代码由以下格式组成：
+选择器{
+    属性名: 属性值;
+    属性名: 属性值;
+    属性名: 属性值;
+}
+其中选择器有以下规则：
+1.标签选择器，如div、p、h1等            "div{},p{},h1{}"
+2.类选择器，如.title、.subtitle        ".title{},.subtitle{}"其中开头的`.`代表这是个类选择器，后面的title、subtitle是类名
+3.id选择器，如#id                     "#id{}"其中开头的`#`代表这是个id选择器，后面的id是id名
+4.伪类选择器，如:hover                 ":hover" hover代表鼠标悬停时的css
+5.伪元素选择器，如::before             "::before" before代表在元素前面添加一个元素
+6.组合选择器，如div.title、div .title  "div.title{},div .title{}"其中空格代表后代选择器，即div下的所有.title元素
+7.后代选择器，如div .title             "div .title{}"其中空格代表后代选择器，即div下的所有.title元素
+还有很多，暂时先这么多
+*/
+.left {
+    display: flex;
+    /* flex-direction表示布局的方向`column`表示竖向，即该元素的字元素会以从上往下的顺序排列，`row`即为横向 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height表示该元素的高度占空间为600像素 */
+    height: 600px;
+    background-color: black;
+}
+.title {
+    /* fotn-size: 是对文字的大小进行设置 */
+    /* 100px: 表示大小为100px，有其他长度单位rem, em, ex等但是px比较常用，也可以设置为预设值`small`,`large`等等 */
+    font-size: 100px;
+    font-family: '至尊书法字体';
+    /* background: 是对背景进行设置 */
+    /* linear-gradient(to right, #147B96, #E6D205 25%, #147B96 50%, #E6D205 75%, #147B96)是对背景进行渐变设置 */
+    /* to right: 表示渐变方向为从左到右 */
+    /* #147B96: 表示渐变的颜色，可以是rgb(0,0,0)、rgba(0,0,0,0.5)、#000000、#000、red、blue等等 */
+    /* 25%: 表示从0%到25%的区间内，颜色为#E6D205 */
+    background: linear-gradient(to right,rgb(229, 73, 73), rgb(211, 149, 87), rgb(234, 234, 108), rgb(100, 228, 164), rgb(100, 232, 232), rgb(0,128,255), rgb(109, 109, 234), rgb(128,0,255), rgb(230, 102, 230), rgb(255, 111, 183));
+    /* color: 是对文字颜色进行设置 */
+    /* transparent: 表示透明 */
+    /* 也可以以rbg颜色格式设置具体的颜色 */
+    color: transparent;
+    /* -webkit-background-clip: 表示背景裁剪，即背景的显示范围 */
+    /* text: 表示文字的显示范围 */
+    /* 这样就可以实现背景颜色显示在文字上 */
+    -webkit-background-clip: text;
+    /* width: 表示宽度 */
+    /* 100%: 表示宽度为100%即当前区域内的所有宽度 */
+    width: 100%;
+    /* animation: 表示动画 */
+    /* move: 表示动画的名称，可以自定义 */
+    /* 5s: 表示动画的持续时间为5s */
+    /* infinite: 表示动画的循环次数为无限次 */
+    animation: move 5s infinite; 
+    /* display: 表示显示方式 */
+    /* flex: 表示弹性布局，在css中有许多种显示方式，各有各的特点，其中flex弹性布局可以根据不同屏幕调整元素 */
+    display: flex;
+    /* justify-content: 表示水平方向的对齐方式 */
+    /* center: 表示居中对齐 */
+    justify-content: center;
+    /* align-items: 表示垂直方向的对齐方式 */
+    /* center: 表示居中对齐 */
+    align-items: center;
+}
+.subtitle {
+    /* margin是设置元素外边距的 */
+    /* margin-top是制定设置上边的外边距 */
+    /* 100px: 表示外边距为100px */
+    margin-top: 100px;
+    font-size: 80px;
+    font-family: Snell Roundhand, cursive;
+    background: linear-gradient(to right, #147B96, #E6D205 25%, #147B96 50%, #E6D205 75%, #147B96);
+    color: transparent;
+    -webkit-background-clip: text;
+    width: 100%;
+    animation: move 5s infinite; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content {
+    height: 100px;
+    width: 100px;
+    background-image: url(../two_flower.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-bottom: 100px;
+}
+body {
+    display: flex;
+    /* flex-direction表示布局的方向`column`表示竖向，即该元素的字元素会以从上往下的顺序排列，`row`即为横向 */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* height表示该元素的高度占空间为600像素 */
+    height: 600px;
+    background-color: black;
+}
+/* @keyframes表示动画的关键帧 */
+/* move表示动画的名称，可以自定义 */
+@keyframes move {
+    /* from表示动画的开始状态 */
+    from {
+        /* filter: 表示滤镜 */
+        /* hue-rotate: 表示色相旋转 */
+        /* 0: 表示色相旋转的角度为0 */
+        filter: hue-rotate(0);
+    }
+
+    /* to表示动画的结束状态 */
+    to {
+        filter: hue-rotate(-360deg);
+    }
+}
+
+@font-face {
+    font-family: '至尊书法字体';
+    src: url('../至尊书法字体.ttf');
+}
+</style>
