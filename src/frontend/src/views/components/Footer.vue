@@ -1,5 +1,7 @@
 <script setup>
-
+function open_linzidaren() {
+    window.open("/linzidaren/linzidaren_static/linzidaren_static.html")
+}
 </script>
 
 <template>
@@ -15,6 +17,7 @@
                     <a href="#">隐私政策</a> |
                     <a href="#">用户协议</a> |
                     <a href="#">问题反馈</a> |
+                    <a href="#" @click="open_linzidaren">Linzidaren</a>
                 </div>
             </div>
             <div class="_my"> 
