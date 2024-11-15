@@ -240,20 +240,20 @@ body {
 }
 
 .login:hover {
-    box-shadow: inset 0px 0px 25px #ff7700;
+    box-shadow: inset 0px 0px 25px #c99a55;
 }
 
 .login:active {
     /* margin-top: 305px; */
     transition: 0.2s all;
-    box-shadow: inset 0px 0px 25px #ffb676;
+    box-shadow: inset 0px 0px 25px #c99a55;
 }
 
 .login div {
     transition: 0.5s all;
     position: absolute;
-    background-color: #ff7700;
-    box-shadow: 0 0 15px #ff7700, 0 0 30px #ff7700, 0 0 50px #ff7700;
+    background-color: #c99a55;
+    /* box-shadow: 0 0 15px #ff7700, 0 0 30px #ff7700, 0 0 50px #ff7700; */
 }
 
 .login .top {
